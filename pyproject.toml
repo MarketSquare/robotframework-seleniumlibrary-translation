@@ -1,0 +1,126 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robotframework-seleniumlibrary-translation-fi"
+version = "0.0.1"
+authors = [
+  { name="Tatu Aalto", email="aalto.tatu@gmail.com" },
+]
+license = {file = "LICENSE"}
+description = "Robot Framework SeleniumLibrary translation to Finnish languege"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Framework :: Robot Framework :: Library",
+  "Topic :: Software Development :: Testing :: Acceptance",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+]
+keywords = ["Robot Framework", "SeleniumLibrary"]
+
+dependencies = ["robotframework-seleniumlibrary >= 6.4.0"]
+
+[project.urls]
+Homepage = "https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi"
+Issues = "https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi/issues"
+Changelog = "https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["robotframework_seleniumlibrary_translation_fi"]
+
+[tool.setuptools.package-data]
+robotframework_seleniumlibrary_translation_fi = ["*.json"]
+
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:project.version",
+]
+version_variables = [
+    "robotframework_seleniumlibrary_translation_fi/__init__.py:__version__",
+]
+
+[tool.black]
+target-version = ['py38']
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.mypy_cache
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | generated
+	| wrapper
+  | browser\.pyi
+)/
+'''
+
+[tool.ruff]
+lint.unfixable = []
+exclude = [
+  "__pycache__",
+]
+target-version = "py38"
+lint.select = [
+  "E",
+  "F",
+  "W",
+  "C90",
+  "I",
+  "N",
+  "B",
+  "PYI",
+  "PL",
+  "PTH",
+  "UP",
+  "A",
+  "C4",
+  "DTZ",
+  "ISC",
+  "ICN",
+  "INP",
+  "PIE",
+  "T20",
+  "PYI",
+  "PT",
+  "RSE",
+  "RET",
+  "SIM",
+  "RUF"
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tasks.py" = ["T201"]
+"utest/*" = ["INP001"]
+"atest/*" = ["INP001"]
+
+[tool.pytest.ini_options]
+testpaths = ["utest"]
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+
+[tool.robotidy]
+lineseparator = "unix"
+configure = [
+    "NormalizeAssignments:equal_sign_type=space_and_equal_sign",
+    "NormalizeAssignments:equal_sign_type_variables=space_and_equal_sign",
+    "NormalizeNewLines:section_lines=1",
+    "RenameTestCases:enabled=True:capitalize_each_word=True",
+    "RenameKeywords:enabled=True",
+]
+
+[tool.mypy]
+exclude = [
+  "utest/*",
+]

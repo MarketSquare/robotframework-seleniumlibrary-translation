@@ -1,0 +1,53 @@
+name: SemanticRelease
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: release
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python 3.12 with Robot Framework 7
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+      - name: Install dependencies
+        run: |
+          pip install uv
+          uv pip install -r requirements-dev.txt --python 3.23  --system
+          uv pip install robotframework-seleniumlibrary --python 3.23  --system
+      - name: Lint files
+        run: inv lint
+      - name: Run unit tests
+        run: |
+          inv utest
+      - name: Run acceptance tests
+        run: |
+          inv atest
+      - name: Python Semantic Release
+        id: release
+        uses: python-semantic-release/python-semantic-release@v9.7.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build package
+        run: python -m build
+        if: steps.release.outputs.released == 'true'
+      - name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        if: steps.release.outputs.released == 'true'
+      - name: Publish package to GitHub Release
+        uses: python-semantic-release/upload-to-gh-release@main
+        if: steps.release.outputs.released == 'true'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.release.outputs.tag }}
