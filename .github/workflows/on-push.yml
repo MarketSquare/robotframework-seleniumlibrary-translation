@@ -21,8 +21,8 @@ jobs:
     - name: Install dependencies
       run: |
         pip install uv
-        uv pip install -r requirements-dev.txt --python ${{ matrix.python-version }}  --system
-        uv pip install robotframework-seleniumlibrary --python ${{ matrix.python-version }}  --system
+        uv pip install -r requirements-dev.txt --python ${{ matrix.python-version }}  --system --verbose
+        uv pip install robotframework-seleniumlibrary --python ${{ matrix.python-version }}  --system --verbose
     - name: Lint files
       run: |
         inv lint
