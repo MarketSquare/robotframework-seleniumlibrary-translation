@@ -85,38 +85,38 @@
         "sha256": "186bf0854602fddcbf9400b50a6db19549cfa23171c01e4708702cbfeaf4a921"
     },
     "get_title": {
-        "name": "get_title",
-        "doc": "Returns the title of the current page.",
+        "name": "hae_otsikko",
+        "doc": "Palauttaa nykyisen sivun otsikon.",
         "sha256": "15ca2c42f74a7447ac29d6431219afa7b827245f9bd45e8d220c597c8c76ea72"
     },
     "go_back": {
-        "name": "go_back",
-        "doc": "Simulates the user clicking the back button on their browser.",
+        "name": "mene_takaisin",
+        "doc": "Simuloi käyttäjän selaimensa takaisin-painikkeen painallusta.",
         "sha256": "c1ad3668ded03441f5e9019fe3e6417d6c0786fad522ef2d126b233112436ae7"
     },
     "go_to": {
-        "name": "go_to",
-        "doc": "Navigates the current browser window to the provided ``url``.",
+        "name": "mene",
+        "doc": "Navigoi nykyisen selainikkunan annettuun ``url``-osoitteeseen.",
         "sha256": "c7db5e459ba7a16a1e895bd0a948765b75bfc536284a2a50ac02e7153ccb0450"
     },
     "location_should_be": {
-        "name": "location_should_be",
-        "doc": "Verifies that the current URL is exactly ``url``.\n\n        The ``url`` argument contains the exact url that should exist in browser.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        ``message`` argument is new in SeleniumLibrary 3.2.0.\n        ",
+        "name": "sijainnin_pitäisi_olla",
+        "doc": "Varmistaa, että nykyinen URL on täsmälleen ``url``.\n\n        ``url``-argumentti sisältää tarkan URL-osoitteen, jonka pitäisi näkyä selaimessa.\n\n        ``message``-argumenttia voidaan käyttää oletusvirheilmoituksen\n        korvaamiseen.\n\n        ``message``-argumentti on uusi SeleniumLibrary 3.2.0:ssa.\n        ",
         "sha256": "ea4b77e8386a52d7881a76cc42cf6c7754da4c44f1b54aa8d71467770a919839"
     },
     "location_should_contain": {
-        "name": "location_should_contain",
-        "doc": "Verifies that the current URL contains ``expected``.\n\n        The ``expected`` argument contains the expected value in url.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        ``message`` argument is new in SeleniumLibrary 3.2.0.\n        ",
+        "name": "sijainnin_pitäisi_sisältää",
+        "doc": "Varmistaa, että nykyinen URL sisältää ``expected``.\n\n        ``expected``-argumentti sisältää URL-osoitteessa odotetun arvon.\n\n        ``message``-argumenttia voidaan käyttää oletusvirheilmoituksen\n        korvaamiseen.\n\n        ``message``-argumentti on uusi SeleniumLibrary 3.2.0:ssa.\n        ",
         "sha256": "be7e648ca2a1f5a7d83f5fe99d0e9aef696f0c645b57985059179476c4d1d0ed"
     },
     "log_location": {
-        "name": "log_location",
-        "doc": "Logs and returns the current browser window URL.",
+        "name": "kirjaa_sijainti",
+        "doc": "Kirjaa ja palauttaa nykyisen selainikkunan URL-osoitteen.",
         "sha256": "ecdeee422f6587f42650730b5d1510d9f207cda56a2346fa3f6245ad62f4bac5"
     },
     "log_source": {
-        "name": "log_source",
-        "doc": "Logs and returns the HTML source of the current page or frame.\n\n        The ``loglevel`` argument defines the used log level. Valid log\n        levels are ``WARN``, ``INFO`` (default), ``DEBUG``, ``TRACE``\n        and ``NONE`` (no logging).\n        ",
+        "name": "kirjaa_lähde",
+        "doc": "Kirjaa ja palauttaa nykyisen sivun tai kehyksen HTML-lähdekoodin.\n\n        ``loglevel``-argumentti määrittää käytetyn lokitason. Voimassa olevat\n        lokitasot ovat ``WARN``, ``INFO`` (oletus), ``DEBUG``, ``TRACE``\n        ja ``NONE`` (ei lokitusta).\n        ",
         "sha256": "ccfb24c918224eb021f3f020cd9dd1375b128835d8295fc0a40d7f76c628d0b7"
     },
     "log_title": {
