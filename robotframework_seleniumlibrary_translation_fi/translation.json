@@ -215,103 +215,103 @@
         "sha256": "31d7803b76e63ff90ff333f06e323aba4f820632b8795d51d24242fb65f4e7d2"
     },
     "click_button": {
-        "name": "click_button",
-        "doc": "Clicks the button identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax. When using the default locator strategy, buttons are\n        searched using ``id``, ``name``, and ``value``.\n\n        See the `Click Element` keyword for details about the\n        ``modifier`` argument.\n\n        The ``modifier`` argument is new in SeleniumLibrary 3.3\n        ",
+        "name": "napsauta_painiketta",
+        "doc": "Napsauttaa painiketta, joka on tunnistettu ``locator`` avulla.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta. Kun käytetään oletuspaikannusstrategiaa, painikkeita haetaan käyttämällä ``id``, ``name`` ja ``value``.\n\nKatso `Napsauta Elementtiä` -avainsanaa saadaksesi lisätietoja ``modifier``-argumentista.\n\n``Modifier``-argumentti on uusi SeleniumLibrary 3.3:ssa.\n",
         "sha256": "72dcaeaa3bc1a4e14c596d72a19cbd82e0881732440153cbfb27272b2066dd77"
     },
     "click_element": {
-        "name": "click_element",
-        "doc": "Click the element identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The ``modifier`` argument can be used to pass\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys|Selenium Keys]\n        when clicking the element. The `+` can be used as a separator\n        for different Selenium Keys. The `CTRL` is internally translated to\n        the `CONTROL` key. The ``modifier`` is space and case insensitive, example\n        \"alt\" and \" aLt \" are supported formats to\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys.ALT|ALT key]\n        . If ``modifier`` does not match to Selenium Keys, keyword fails.\n\n        If ``action_chain`` argument is true, see `Boolean arguments` for more\n        details on how to set boolean argument, then keyword uses ActionChain\n        based click instead of the <web_element>.click() function. If both\n        ``action_chain`` and ``modifier`` are defined, the click will be\n        performed using ``modifier`` and ``action_chain`` will be ignored.\n\n        Example:\n        | Click Element | id:button |                   | # Would click element without any modifiers.               |\n        | Click Element | id:button | CTRL              | # Would click element with CTLR key pressed down.          |\n        | Click Element | id:button | CTRL+ALT          | # Would click element with CTLR and ALT keys pressed down. |\n        | Click Element | id:button | action_chain=True | # Clicks the button using an Selenium  ActionChains        |\n\n        The ``modifier`` argument is new in SeleniumLibrary 3.2\n        The ``action_chain`` argument is new in SeleniumLibrary 4.1\n        ",
+        "name": "napsauta_elementtiä",
+        "doc": "Napsauttaa elementtiä, joka on tunnistettu ``locator`` avulla.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\n``Modifier``-argumenttia voidaan käyttää välittämään [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys|Selenium Keys] elementtiä napsautettaessa. `+` voidaan käyttää eri Selenium Keys -näppäimien erottimena. `CTRL` käännetään sisäisesti `CONTROL`-näppäimeksi. ``Modifier`` on välilyönti- ja kirjainkoolla riippumaton, esimerkiksi \"alt\" ja \" aLt \" ovat tuettuja muotoja [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys.ALT|ALT-näppäimelle]. Jos ``modifier`` ei vastaa Selenium Keys -näppäimiä, avainsana epäonnistuu.\n\nJos ``action_chain``-argumentti on tosi, katso `Boolean arguments` lisätietoja varten siitä, miten asetetaan totuusarvoargumentti, silloin avainsana käyttää ActionChain-pohjaista napsautusta <web_element>.click()-funktion sijasta. Jos sekä ``action_chain`` että ``modifier`` on määritelty, napsautus suoritetaan käyttäen ``modifier``-argumenttia ja ``action_chain`` jätetään huomiotta.\n\nEsimerkki:\n| Napsauta Elementtiä | id:button |                   | # Napsauttaa elementtiä ilman mitään modifioijia.               |\n| Napsauta Elementtiä | id:button | CTRL              | # Napsauttaa elementtiä CTRL-näppäin painettuna.                |\n| Napsauta Elementtiä | id:button | CTRL+ALT          | # Napsauttaa elementtiä CTRL- ja ALT-näppäimet painettuina.      |\n| Napsauta Elementtiä | id:button | action_chain=True | # Napsauttaa painiketta käyttäen Selenium ActionChainsia        |\n\n``Modifier``-argumentti on uusi SeleniumLibrary 3.2:ssa\n``Action_chain``-argumentti on uusi SeleniumLibrary 4.1:ssä\n",
         "sha256": "5099da1ff98ae3351fb740f301498066e1f86b8f9a6ef7f178e2b29d5d5afb35"
     },
     "click_element_at_coordinates": {
-        "name": "click_element_at_coordinates",
-        "doc": "Click the element ``locator`` at ``xoffset/yoffset``.\n\n        The Cursor is moved and the center of the element and x/y coordinates are\n        calculated from that point.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "napsauta_elementtiä_koordinaateissa",
+        "doc": "Napsauttaa elementtiä ``locator`` kohdassa ``xoffset/yoffset``.\n\nKursori siirretään elementin keskelle ja x/y-koordinaatit lasketaan siitä pisteestä.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n",
         "sha256": "6c9be5ef41acf068a8ecf3972fe88f5f9c5257cf843d014dd9a76f7b4a3719c7"
     },
     "click_image": {
-        "name": "click_image",
-        "doc": "Clicks an image identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax. When using the default locator strategy, images are searched\n        using ``id``, ``name``, ``src`` and ``alt``.\n\n        See the `Click Element` keyword for details about the\n        ``modifier`` argument.\n\n        The ``modifier`` argument is new in SeleniumLibrary 3.3\n        ",
+        "name": "napsauta_kuvaa",
+        "doc": "Napsauttaa kuvaa, joka on tunnistettu ``locator`` avulla.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta. Kun käytetään oletuspaikannusstrategiaa, kuvia haetaan käyttämällä ``id``, ``name``, ``src`` ja ``alt``.\n\nKatso `Napsauta Elementtiä` -avainsanaa saadaksesi lisätietoja ``modifier``-argumentista.\n\n``Modifier``-argumentti on uusi SeleniumLibrary 3.3:ssa.\n",
         "sha256": "a83623f5affb23d6a089b6cab14e9983dd55eba3b11deedf672c6d2c3d387cf4"
     },
     "click_link": {
-        "name": "click_link",
-        "doc": "Clicks a link identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax. When using the default locator strategy, links are searched\n        using ``id``, ``name``, ``href`` and the link text.\n\n        See the `Click Element` keyword for details about the\n        ``modifier`` argument.\n\n        The ``modifier`` argument is new in SeleniumLibrary 3.3\n        ",
+        "name": "napsauta_linkkiä",
+        "doc": "Napsauttaa linkkiä, joka on tunnistettu ``locator`` avulla.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta. Kun käytetään oletuspaikannusstrategiaa, linkkejä haetaan käyttämällä ``id``, ``name``, ``href`` ja linkkitekstiä.\n\nKatso `Napsauta Elementtiä` -avainsanaa saadaksesi lisätietoja ``modifier``-argumentista.\n\n``Modifier``-argumentti on uusi SeleniumLibrary 3.3:ssa.\n",
         "sha256": "d8c5ec4c5359fed7c6a5094f5d18e8766b4dfb6f4e4d5ea1d61d50b7b09e7c31"
     },
     "cover_element": {
-        "name": "cover_element",
-        "doc": "Will cover elements identified by ``locator`` with a blue div without breaking page layout.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        New in SeleniumLibrary 3.3.0\n\n        Example:\n        |`Cover Element` | css:div#container |\n        ",
+        "name": "peitä_elementti",
+        "doc": "Peittää ``locator`` avulla tunnistetut elementit sinisellä div-elementillä rikkomatta sivun asettelua.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nUusi ominaisuus SeleniumLibrary 3.3.0:ssa.\n\nEsimerkki:\n|`Peitä Elementti` | css:div#container |\n",
         "sha256": "0dd30bea744e70b71f3e5fc5358833c291d404cdfa23970d09ece25f2380fb28"
     },
     "double_click_element": {
-        "name": "double_click_element",
-        "doc": "Double clicks the element identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "kaksoisnapsauta_elementtiä",
+        "doc": "Kaksoisnapsauttaa elementtiä, joka on tunnistettu ``locator`` avulla.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n",
         "sha256": "c7b11722014178d683d80e276fcea367307d1d4cbe3b93b17cbbbe30b35b7174"
     },
     "drag_and_drop": {
-        "name": "drag_and_drop",
-        "doc": "Drags the element identified by ``locator`` into the ``target`` element.\n\n        The ``locator`` argument is the locator of the dragged element\n        and the ``target`` is the locator of the target. See the\n        `Locating elements` section for details about the locator syntax.\n\n        Example:\n        | `Drag And Drop` | css:div#element | css:div.target |\n        ",
+        "name": "raahaa_ja_pudota",
+        "doc": "Raahaa elementin, joka on tunnistettu ``locator`` avulla, ``target`` elementtiin.\n\n``Locator``-argumentti on raahattavan elementin paikannin ja ``target`` on kohteen paikannin. Katso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nEsimerkki:\n| `Raahaa Ja Pudota` | css:div#element | css:div.target |\n",
         "sha256": "af13a511a462a2540dc93baf3bc42d05143aaf0de6ce9771029044a25b40bd64"
     },
     "drag_and_drop_by_offset": {
-        "name": "drag_and_drop_by_offset",
-        "doc": "Drags the element identified with ``locator`` by ``xoffset/yoffset``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The element will be moved by ``xoffset`` and ``yoffset``, each of which\n        is a negative or positive number specifying the offset.\n\n        Example:\n        | `Drag And Drop By Offset` | myElem | 50 | -35 | # Move myElem 50px right and 35px down |\n        ",
+        "name": "raahaa_ja_pudota_koordinaateilla",
+        "doc": "Raahaa elementin, joka on tunnistettu ``locator`` avulla, ``xoffset/yoffset`` verran.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nElementtiä siirretään ``xoffset`` ja ``yoffset`` verran, joista kumpikin on negatiivinen tai positiivinen luku, joka määrittää siirtymän.\n\nEsimerkki:\n| `Raahaa Ja Pudota Koordinaateilla` | myElem | 50 | -35 | # Siirrä myElem 50px oikealle ja 35px alas |\n",
         "sha256": "89750f538dc14ca0c04fbe1a3aba732352f9723d658bbd971905003ee9c351f6"
     },
     "element_attribute_value_should_be": {
-        "name": "element_attribute_value_should_be",
-        "doc": "Verifies element identified by ``locator`` contains expected attribute value.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        Example:\n        `Element Attribute Value Should Be` | css:img | href | value\n\n        New in SeleniumLibrary 3.2.\n        ",
+        "name": "elementin_attribuutin_arvon_pitäisi_olla",
+        "doc": "Varmistaa, että elementti, joka on tunnistettu ``locator`` avulla, sisältää odotetun attribuuttin arvon.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nEsimerkki:\n`Elementin Attribuutin Arvon Pitäisi Olla` | css:img | href | value\n\nUusi ominaisuus SeleniumLibrary 3.2:ssa.\n",
         "sha256": "330701ee8d3307c6543bdfeafa649d14689f639f2e139e499aae8ec495d7d015"
     },
     "element_should_be_disabled": {
-        "name": "element_should_be_disabled",
-        "doc": "Verifies that element identified by ``locator`` is disabled.\n\n        This keyword considers also elements that are read-only to be\n        disabled.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "elementin_pitäisi_olla_poistettu_käytöstä",
+        "doc": "Varmistaa, että ``locator`` avulla tunnistettu elementti on poistettu käytöstä.\n\nTämä avainsana katsoo myös, että vain luku -elementit ovat poistettu käytöstä.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n",
         "sha256": "6f34019f6e68805c2b73ef5207b424743c9461dfd30061f163d21948304bb012"
     },
     "element_should_be_enabled": {
-        "name": "element_should_be_enabled",
-        "doc": "Verifies that element identified by ``locator`` is enabled.\n\n        This keyword considers also elements that are read-only to be\n        disabled.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "elementin_pitäisi_olla_käytössä",
+        "doc": "Varmistaa, että ``locator`` avulla tunnistettu elementti on käytössä.\n\nTämä avainsana katsoo myös, että vain luku -elementit ovat poistettu käytöstä.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n",
         "sha256": "014f8538093bdcef0ed8c7a13020ae513a4a14bd2d0b71f1843de951f5c7b5d3"
     },
     "element_should_be_focused": {
-        "name": "element_should_be_focused",
-        "doc": "Verifies that element identified by ``locator`` is focused.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        New in SeleniumLibrary 3.0.\n        ",
+        "name": "elementin_pitäisi_olla_fokusoitu",
+        "doc": "Varmistaa, että ``locator`` avulla tunnistettu elementti on fokusoitu.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nUusi SeleniumLibrary 3.0:ssa.\n",
         "sha256": "f327420520f06421e0a11062af115eaa7bb3eaf97a0ae4b6f02c0c82c9fa1f73"
     },
     "element_should_be_visible": {
-        "name": "element_should_be_visible",
-        "doc": "Verifies that the element identified by ``locator`` is visible.\n\n        Herein, visible means that the element is logically visible, not\n        optically visible in the current browser viewport. For example,\n        an element that carries ``display:none`` is not logically visible,\n        so using this keyword on that element would fail.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The ``message`` argument can be used to override the default error\n        message.\n        ",
+        "name": "elementin_pitäisi_olla_näkyvissä",
+        "doc": "Varmistaa, että ``locator`` avulla tunnistettu elementti on näkyvissä.\n\nTässä yhteydessä näkyvä tarkoittaa, että elementti on loogisesti näkyvä, ei optisesti näkyvä nykyisessä selaimen näkymässä. Esimerkiksi, elementti, jolla on ``display:none``, ei ole loogisesti näkyvä, joten tämän avainsanan käyttäminen kyseiseen elementtiin epäonnistuu.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\n``message``-argumenttia voidaan käyttää oletusvirheilmoituksen korvaamiseen.\n",
         "sha256": "98c4fb9d0b90e73c3d702b553aa6a30f027320463eb18e298cd5b9133f1cc36a"
     },
     "element_should_contain": {
-        "name": "element_should_contain",
-        "doc": "Verifies that element ``locator`` contains text ``expected``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        The ``ignore_case`` argument can be set to True to compare case\n        insensitive, default is False. New in SeleniumLibrary 3.1.\n\n        ``ignore_case`` argument is new in SeleniumLibrary 3.1.\n\n        Use `Element Text Should Be` if you want to match the exact text,\n        not a substring.\n        ",
+        "name": "elementin_pitäisi_sisältää",
+        "doc": "Varmistaa, että ``locator``-elementti sisältää tekstin ``expected``.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\n``message``-argumenttia voidaan käyttää oletusvirheilmoituksen korvaamiseen.\n\n``ignore_case``-argumentti voidaan asettaa todeksi (True) vertailtaessa merkkien suuruus ei ole tärkeää, oletuksena arvo on epätosi (False). Uutta SeleniumLibrary 3.1:ssä.\n\n``ignore_case``-argumentti on uusi SeleniumLibrary 3.1:ssä.\n\nKäytä `Elementin Tekstin Pitäisi Olla` jos haluat täsmätä tarkalleen tekstin, et osamerkijonoa.\n",
         "sha256": "998a924785fef84597b5e5fc866f4c5d7e4b0a753cba68d15be0f3b44588c06d"
     },
     "element_should_not_be_visible": {
-        "name": "element_should_not_be_visible",
-        "doc": "Verifies that the element identified by ``locator`` is NOT visible.\n\n        Passes if the element does not exists. See `Element Should Be Visible`\n        for more information about visibility and supported arguments.\n        ",
+        "name": "elementin_ei_pitäisi_olla_näkyvissä",
+        "doc": "Varmistaa, että ``locator``-elementti EI ole näkyvissä.\n\nHyväksyy, jos elementtiä ei ole olemassa. Katso `Elementin Pitäisi Olla Näkyvissä` saadaksesi lisätietoja näkyvyydestä ja tuetuista argumenteista.\n",
         "sha256": "811779774da3cf876101661d4c15a6e89ea0568493be61b19fded7a0bd40f0c4"
     },
     "element_should_not_contain": {
-        "name": "element_should_not_contain",
-        "doc": "Verifies that element ``locator`` does not contain text ``expected``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        The ``ignore_case`` argument can be set to True to compare case\n        insensitive, default is False.\n\n        ``ignore_case`` argument new in SeleniumLibrary 3.1.\n        ",
+        "name": "elementin_ei_pitäisi_sisältää",
+        "doc": "Varmistaa, että ``locator``-elementti ei sisällä tekstiä ``expected``.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\n``message``-argumenttia voidaan käyttää oletusvirheilmoituksen korvaamiseen.\n\n``ignore_case``-argumentti voidaan asettaa todeksi (True) vertailtaessa merkkien suuruus ei ole tärkeää, oletuksena arvo on epätosi (False).\n\n``ignore_case``-argumentti on uusi SeleniumLibrary 3.1:ssä.\n",
         "sha256": "ef9492bae813b1597fabc9d6f02a21c05ff736a18fb6eb20fb81e6ca40011437"
     },
     "element_text_should_be": {
-        "name": "element_text_should_be",
-        "doc": "Verifies that element ``locator`` contains exact the text ``expected``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        The ``ignore_case`` argument can be set to True to compare case\n        insensitive, default is False.\n\n        ``ignore_case`` argument is new in SeleniumLibrary 3.1.\n\n        Use `Element Should Contain` if a substring match is desired.\n        ",
+        "name": "elementin_teksti_pitäisi_olla",
+        "doc": "Varmistaa, että ``locator``-elementti sisältää täsmälleen tekstin ``expected``.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\n``message``-argumenttia voidaan käyttää oletusvirheilmoituksen korvaamiseen.\n\n``ignore_case``-argumentti voidaan asettaa todeksi (True) vertailtaessa merkkien suuruus ei ole tärkeää, oletuksena arvo on epätosi (False).\n\n``ignore_case``-argumentti on uusi SeleniumLibrary 3.1:ssä.\n\nKäytä `Elementin Pitäisi Sisältää` jos haluat osamerkkijonon täsmäytyksen.\n",
         "sha256": "4036c0bb4fe36085fcab4421f3ffb65265d70d8cb852106ea13a983438a77723"
     },
     "element_text_should_not_be": {
-        "name": "element_text_should_not_be",
-        "doc": "Verifies that element ``locator`` does not contain exact the text ``not_expected``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        The ``ignore_case`` argument can be set to True to compare case\n        insensitive, default is False.\n\n        New in SeleniumLibrary 3.1.1\n        ",
+        "name": "elementin_teksti_ei_pitäisi_olla",
+        "doc": "Varmistaa, että ``locator``-elementti ei sisällä täsmälleen tekstiä ``not_expected``.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\n``message``-argumenttia voidaan käyttää oletusvirheilmoituksen korvaamiseen.\n\n``ignore_case``-argumentti voidaan asettaa todeksi (True) vertailtaessa merkkien suuruus ei ole tärkeää, oletuksena arvo on epätosi (False).\n\nUutta SeleniumLibrary 3.1.1:ssä\n",
         "sha256": "67821af845f34ba19ebffb38fa558c375f7261e3d9c9f04cb653bad828e99cf4"
     },
     "get_all_links": {
-        "name": "get_all_links",
-        "doc": "Returns a list containing ids of all links found in current page.\n\n        If a link has no id, an empty string will be in the list instead.\n        ",
+        "name": "hae_kaikki_linkit",
+        "doc": "Palauttaa listan, joka sisältää kaikkien nykyisellä sivulla löytyvien linkkien id:t.\n\nJos linkillä ei ole id:tä, listassa on tyhjä merkkijono sen sijaan.\n",
         "sha256": "f17319af1acc205f3ee5fe01b5e8960bba45ff05629b4b1d2e4fdec770163c1a"
     },
     "get_dom_attribute": {
