@@ -69,7 +69,13 @@ def test_keyword_names_no_space(
 def test_verify_checksum(file: Path, tmp_path: Path):
     translation_file = tmp_path / "translation.json"
     subprocess.run(
-        [sys.executable, "-m", "SeleniumLibrary.entry", "translation", translation_file],
+        [
+            sys.executable,
+            "-m",
+            "SeleniumLibrary.entry",
+            "translation",
+            translation_file,
+        ],
         check=True,
     )
     with translation_file.open("r") as source_translation:
