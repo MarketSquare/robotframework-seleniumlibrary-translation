@@ -315,53 +315,53 @@
         "sha256": "f17319af1acc205f3ee5fe01b5e8960bba45ff05629b4b1d2e4fdec770163c1a"
     },
     "get_dom_attribute": {
-        "name": "get_dom_attribute",
-        "doc": "Returns the value of ``attribute`` from the element ``locator``. `Get DOM Attribute` keyword\n        only returns attributes declared within the element's HTML markup.  If the requested attribute\n        is not there, the keyword returns ${None}.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        Example:\n        | ${id}= | `Get DOM Attribute` | css:h1 | id |\n\n        ",
+        "name": "hae_dom_attribuutti",
+        "doc": "Palauttaa ``attribuutin`` arvon ``locator``-elementistä. `Hae DOM Attribuutti`-avainsana palauttaa\n        vain attribuutit, jotka on määritelty elementin HTML-merkinnässä. Jos pyydettyä attribuuttia ei ole, avainsana palauttaa ${None}.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nEsimerkki:\n| ${id}= | `Hae DOM Attribuutti` | css:h1 | id |\n\n",
         "sha256": "1337e3b21fae3759b85da9dba5fda08378fd8ea4ff16b9d9a03fa54f1d75853f"
     },
     "get_element_attribute": {
-        "name": "get_element_attribute",
-        "doc": "Returns the value of ``attribute`` from the element ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        Example:\n        | ${id}= | `Get Element Attribute` | css:h1 | id |\n\n        Passing attribute name as part of the ``locator`` was removed\n        in SeleniumLibrary 3.2. The explicit ``attribute`` argument\n        should be used instead.\n        ",
+        "name": "hae_elementin_attribuutti",
+        "doc": "Palauttaa ``attribuutin`` arvon ``locator``-elementistä.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nEsimerkki:\n| ${id}= | `Hae Elementin Attribuutti` | css:h1 | id |\n\nAttribuutin nimen välittäminen osana ``locator``-elementtiä poistettiin SeleniumLibrary 3.2:ssa. Selkeä ``attribuutti``-argumentti tulisi käyttää sen sijaan.\n",
         "sha256": "3325a9affcfb67bbb11b250a7479d125f3a7c0ca3e6b4772b35f873c6942a300"
     },
     "get_element_count": {
-        "name": "get_element_count",
-        "doc": "Returns the number of elements matching ``locator``.\n\n        If you wish to assert the number of matching elements, use\n        `Page Should Contain Element` with ``limit`` argument. Keyword will\n        always return an integer.\n\n        Example:\n        | ${count} =       | `Get Element Count` | name:div_name  |\n        | `Should Be True` | ${count} > 2        |                |\n\n        New in SeleniumLibrary 3.0.\n        ",
+        "name": "hae_elementtien_lukumäärä",
+        "doc": "Palauttaa ``locator``-elementtiä vastaavien elementtien lukumäärän.\n\nJos haluat vahvistaa vastaavien elementtien lukumäärän, käytä `Sivun Pitäisi Sisältää Elementti` -avainsanaa ``limit``-argumentin kanssa. Avainsana palauttaa aina kokonaisluvun.\n\nEsimerkki:\n| ${lukumaara} = | `Hae Elementtien Lukumäärä` | name:div_name  |\n| `Pitäisi Olla Tosi` | ${lukumaara} > 2 | |\n\nUutta SeleniumLibrary 3.0:ssa.\n",
         "sha256": "edc00542de29af7b4b11d459c21c6a8f87fd21233f49c1b9a5b4d8e06d0128f8"
     },
     "get_element_size": {
-        "name": "get_element_size",
-        "doc": "Returns width and height of the element identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        Both width and height are returned as integers.\n\n        Example:\n        | ${width} | ${height} = | `Get Element Size` | css:div#container |\n        ",
+        "name": "hae_elementin_koko",
+        "doc": "Palauttaa ``locator``-elementin leveyden ja korkeuden.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nSekä leveys että korkeus palautetaan kokonaislukuina.\n\nEsimerkki:\n| ${leveys} | ${korkeus} = | `Hae Elementin Koko` | css:div#container |\n",
         "sha256": "d1dc235938760fc871c68838032587be56a8ebb13dc295f68e9df6a03c72d266"
     },
     "get_horizontal_position": {
-        "name": "get_horizontal_position",
-        "doc": "Returns the horizontal position of the element identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The position is returned in pixels off the left side of the page,\n        as an integer.\n\n        See also `Get Vertical Position`.\n        ",
+        "name": "hae_vaakasuora_sijainti",
+        "doc": "Palauttaa ``locator``-elementin vaakasuuntaisen sijainnin.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nSijainti palautetaan pikseleinä sivun vasemmasta reunasta, kokonaislukuna.\n\nKatso myös `Hae Pystysuora Sijainti`.\n",
         "sha256": "7b81ffe406d7708e72861971ec879a7cdb3adff3cf3a6ad4c816c0b36de84a79"
     },
     "get_property": {
-        "name": "get_property",
-        "doc": "Returns the value of ``property`` from the element ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        Example:\n        | ${text_length}= | `Get Property` | css:h1 | text_length |\n\n        ",
+        "name": "hae_ominaisuus",
+        "doc": "Palauttaa ``property``-ominaisuuden arvon ``locator``-elementistä.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nEsimerkki:\n| ${teksti_pituus}= | `Hae Ominaisuus` | css:h1 | text_length |\n",
         "sha256": "6335a05f73d42212f78d4285872595fec96dbb4e669b8026b2e9bdab4f3284eb"
     },
     "get_text": {
-        "name": "get_text",
-        "doc": "Returns the text value of the element identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "hae_teksti",
+        "doc": "Palauttaa ``locator``-elementin tekstiarvon.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n",
         "sha256": "c5df21cb13fca76338626c63ce4e0e83be2e5563eb296833f55678c3424ad333"
     },
     "get_value": {
-        "name": "get_value",
-        "doc": "Returns the value attribute of the element identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "hae_arvo",
+        "doc": "Palauttaa ``locator``-elementin value-attribuutin.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n",
         "sha256": "5856fe53c0581268a5a395418f08aedb118762d5ec8fbd553cf2d44b82aa27c6"
     },
     "get_vertical_position": {
-        "name": "get_vertical_position",
-        "doc": "Returns the vertical position of the element identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The position is returned in pixels off the top of the page,\n        as an integer.\n\n        See also `Get Horizontal Position`.\n        ",
+        "name": "hae_vertikaalinen_sijainti",
+        "doc": "Palauttaa ``locator``-elementin vertikaalisen sijainnin.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n\nSijainti palautetaan pikseleinä sivun yläreunasta, kokonaislukuna.\n\nKatso myös `Hae Horisontaalinen Sijainti`.\n",
         "sha256": "a1f1cc8075b6323bf4b900ea52357586f28721239e45ec11fb1a130faa9246c0"
     },
     "get_webelement": {
-        "name": "get_webelement",
-        "doc": "Returns the first WebElement matching the given ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "hae_web_elementti",
+        "doc": "Palauttaa ensimmäisen WebElementin, joka vastaa annettua ``locator``-paikanninta.\n\nKatso tarkemmat tiedot paikantimen syntaksista `Paikannuselementit`-osiosta.\n",
         "sha256": "5deaaabc9162680121dbe744d4e476e40c7eacba17922459c209f211ba74b5cd"
     },
     "get_webelements": {
