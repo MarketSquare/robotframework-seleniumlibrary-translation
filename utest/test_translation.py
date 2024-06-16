@@ -70,11 +70,9 @@ def test_verify_checksum(file: Path, tmp_path: Path):
     translation_file = tmp_path / "translation.json"
     subprocess.run(
         [
-            sys.executable,
-            "-m",
-            "SeleniumLibrary.entry",
+            "selib",
             "translation",
-            translation_file,
+            str(translation_file),
         ],
         check=True,
     )
