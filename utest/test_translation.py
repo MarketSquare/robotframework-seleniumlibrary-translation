@@ -49,12 +49,15 @@ def test_keywords_are_unique(data: dict):
 
 
 def test_keyword_names_are_unique(data: dict):
+    failed_kw_names = []
     for translation in data:
-        if translation in ["http", "__init__", "__intro__"]:
+        if translation in ["__init__", "__intro__"]:
             continue
-        assert (
-            translation != data[translation]["name"]
-        ), f"{translation} == {data[translation]['name']}"
+        if translation == data[translation]["name"]:
+            failed_kw_names.append(f"{translation} == {data[translation]['name']}")
+    assert (
+        not failed_kw_names
+    ), f"Keyword names where same: {', '.join(failed_kw_names)}"
 
 
 def test_keyword_names_no_space(
