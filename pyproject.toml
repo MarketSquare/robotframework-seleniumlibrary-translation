@@ -27,7 +27,7 @@ classifiers = [
 ]
 keywords = ["Robot Framework", "SeleniumLibrary"]
 
-dependencies = ["robotframework-seleniumlibrary >= 6.5.0rc1"]
+dependencies = ["robotframework-seleniumlibrary >= 6.5.0"]
 
 [project.urls]
 Homepage = "https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi"
