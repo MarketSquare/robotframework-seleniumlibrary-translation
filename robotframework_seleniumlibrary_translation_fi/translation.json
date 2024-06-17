@@ -365,38 +365,38 @@
         "sha256": "5deaaabc9162680121dbe744d4e476e40c7eacba17922459c209f211ba74b5cd"
     },
     "get_webelements": {
-        "name": "get_webelements",
-        "doc": "Returns a list of WebElement objects matching the ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        Starting from SeleniumLibrary 3.0, the keyword returns an empty\n        list if there are no matching elements. In previous releases, the\n        keyword failed in this case.\n        ",
+        "name": "hae_web_elementtit",
+        "doc": "Palauttaa luettelon WebElement-objekteista, jotka vastaavat ``locator``-määritystä.\n\nKatso `Elementtien löytäminen`-osio saadaksesi lisätietoja locator-syntaksista.\n\nSeleniumLibrary 3.0:sta alkaen avainsana palauttaa tyhjän\nluettelon, jos vastaavia elementtejä ei ole. Aikaisemmissa julkaisuissa avainsana epäonnistui tässä tapauksessa.\n",
         "sha256": "ab7b4634b7c54b2b17daf4c290704fe45af948eeff41f9dbc1c01fab33273496"
     },
     "mouse_down": {
-        "name": "mouse_down",
-        "doc": "Simulates pressing the left mouse button on the element ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The element is pressed without releasing the mouse button.\n\n        See also the more specific keywords `Mouse Down On Image` and\n        `Mouse Down On Link`.\n        ",
+        "name": "hiiri_klikattu_alas",
+        "doc": "Simuloi vasemman hiiren painikkeen painamista elementissä ``locator``.\n\nKatso `Elementtien löytäminen`-osio saadaksesi lisätietoja locator-syntaksista.\n\nElementtiä painetaan vapauttamatta hiiren painiketta.\n\nKatso myös tarkemmat avainsanat `Mouse Down On Image` ja `Mouse Down On Link`.\n",
         "sha256": "c0e5431b9b9eb6875830eadccc1ed0f9a9d34781ecef40ab059194054eeae9e4"
     },
     "mouse_down_on_image": {
-        "name": "mouse_down_on_image",
-        "doc": "Simulates a mouse down event on an image identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax. When using the default locator strategy, images are searched\n        using ``id``, ``name``, ``src`` and ``alt``.\n        ",
+        "name": "hiiri_klikattu_kuvaan",
+        "doc": "Simuloi hiiren painallustapahtuman kuvaan, joka on tunnistettu ``locator``-parametrin avulla.\n\n        Katso `Elementtien löytäminen` -osio löytämismäärityksen yksityiskohtia varten. Kun käytetään oletusarvoista sijainnin määritysstrategiaa, kuvia etsitään käyttämällä ``id``, ``name``, ``src`` ja ``alt`` arvoja.\n        ",
         "sha256": "3b7c0b9a83908e60012f095acc71305c853dd07864497077420f1a3930ea144c"
     },
     "mouse_down_on_link": {
-        "name": "mouse_down_on_link",
-        "doc": "Simulates a mouse down event on a link identified by ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax. When using the default locator strategy, links are searched\n        using ``id``, ``name``, ``href`` and the link text.\n        ",
+        "name": "hiiri_klikattu_linkkiin",
+        "doc": "Simuloi hiiren painallustapahtuman linkkiin, joka on tunnistettu ``locator``-parametrin avulla.\n\n        Katso `Elementtien löytäminen` -osio löytämismäärityksen yksityiskohtia varten. Kun käytetään oletusarvoista sijainnin määritysstrategiaa, linkkejä etsitään käyttämällä ``id``, ``name``, ``href`` ja linkin tekstiä.\n        ",
         "sha256": "8ef3134ef374ebc89f76985b09abd2caac10f603e8db38cf78dcbac9c826cc3e"
     },
     "mouse_out": {
-        "name": "mouse_out",
-        "doc": "Simulates moving the mouse away from the element ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "hiiri_poistuu",
+        "doc": "Simuloi hiiren siirtämistä pois elementistä ``locator``.\n\n        Katso `Elementtien löytäminen` -osio löytämismäärityksen yksityiskohtia varten.\n        ",
         "sha256": "835368b635d5d1c5c50250595a8e7cb2feb9eb4af4fa14753c561a9c35894db1"
     },
     "mouse_over": {
-        "name": "mouse_over",
-        "doc": "Simulates hovering the mouse over the element ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "hiiri_yläpuolella",
+        "doc": "Simuloi hiiren liikutusta elementin ``locator`` yläpuolelle.\n\n        Katso `Elementtien löytäminen` -osio löytämismäärityksen yksityiskohtia varten.\n        ",
         "sha256": "b4c14a2a10cfddb07d7748630ba6546991d3da2311a20aa146685a0f78e41241"
     },
     "mouse_up": {
-        "name": "mouse_up",
-        "doc": "Simulates releasing the left mouse button on the element ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "hiiren_nosto",
+        "doc": "Simuloi hiiren vasemman painikkeen vapauttamista elementissä ``locator``.\n\n        Katso `Elementtien löytäminen` -osio löytämismäärityksen yksityiskohtia varten.\n        ",
         "sha256": "47c3666126bc84aa9104f6137fd51817efcd1804aaf7c965df143a6aad71895a"
     },
     "open_context_menu": {
