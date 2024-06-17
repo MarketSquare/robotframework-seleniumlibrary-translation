@@ -1,5 +1,5 @@
 *** Settings ***
-Library     SeleniunLibrary    language=FI
+Library     SeleniumLibrary    language=FI
 Library     Process
 Library     OperatingSystem
 Library     json_lib.py
