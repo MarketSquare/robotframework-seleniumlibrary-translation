@@ -57,7 +57,7 @@ def test_keyword_names_are_unique(data: dict):
             failed_kw_names.append(f"{translation} == {data[translation]['name']}")
     assert (
         not failed_kw_names
-    ), f"Keyword names where same: {', '.join(failed_kw_names)}"
+    ), f"{len(failed_kw_names)} keyword names where same: {', '.join(failed_kw_names)}"
 
 
 def test_keyword_names_no_space(
