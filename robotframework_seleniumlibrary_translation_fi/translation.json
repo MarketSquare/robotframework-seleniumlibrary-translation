@@ -400,8 +400,8 @@
         "sha256": "47c3666126bc84aa9104f6137fd51817efcd1804aaf7c965df143a6aad71895a"
     },
     "open_context_menu": {
-        "name": "open_context_menu",
-        "doc": "Opens the context menu on the element identified by ``locator``.",
+        "name": "avaa_kontekstivalikko",
+        "doc": "Avaa kontekstivalikkon elementin kohdalla jota ``locator`` osoittaa.",
         "sha256": "8cb9023a05753eb5cc230116dec98188b5bdfac0b94955b69957726131189493"
     },
     "page_should_contain": {
