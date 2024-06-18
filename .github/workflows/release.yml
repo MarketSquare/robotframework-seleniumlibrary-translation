@@ -25,7 +25,7 @@ jobs:
         run: |
           pip install uv
           uv pip install -r requirements-dev.txt --python 3.12  --system --verbose
-          uv pip install robotframework-seleniumlibrary --python 3.12  --system --verbose
+          uv pip install robotframework-seleniumlibrary>=6.5.0 --python 3.12  --system --verbose
       - name: Lint files
         run: inv lint
       - name: Run unit tests
