@@ -50,14 +50,15 @@ def test_keywords_are_unique(data: dict):
 
 def test_keyword_names_are_unique(data: dict):
     failed_kw_names = []
-    for translation in data:
+    for index, translation in enumerate(data):  # noqa: B007
         if translation in ["__init__", "__intro__"]:
             continue
         if translation == data[translation]["name"]:
             failed_kw_names.append(f"{translation} == {data[translation]['name']}")
-    assert (
-        not failed_kw_names
-    ), f"{len(failed_kw_names)} keyword names where same: {', '.join(failed_kw_names)}"
+    assert not failed_kw_names, (
+        f"{len(failed_kw_names)} out of {index + 1} keyword "
+        f"names where same: {', '.join(failed_kw_names)}"
+    )
 
 
 def test_keyword_names_no_space(
