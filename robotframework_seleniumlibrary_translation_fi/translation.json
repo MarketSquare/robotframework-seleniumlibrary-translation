@@ -405,28 +405,28 @@
         "sha256": "8cb9023a05753eb5cc230116dec98188b5bdfac0b94955b69957726131189493"
     },
     "page_should_contain": {
-        "name": "page_should_contain",
-        "doc": "Verifies that current page contains ``text``.\n\n        If this keyword fails, it automatically logs the page source\n        using the log level specified with the optional ``loglevel``\n        argument. Valid log levels are ``TRACE`` (default), ``DEBUG``,\n        ``INFO``, ``WARN``, and ``NONE``. If the log level is ``NONE``\n        or below the current active log level the source will not be logged.\n\n        !! WARNING !! If you have an iframe selected, `Page Should Contain`\n        will reset the frame reference back to the main frame. This is due\n        to the fact that is searches for the ``text`` in all frames. To locate\n        an element in an iframe after calling `Page Should Contian` one needs\n        to (re)select the frame.\n        ",
+        "name": "sivun_tulisi_sisältää",
+        "doc": "Tarkistaa, että nykyisellä sivulla on ``teksti``.\n\n        Jos tämä avainsana epäonnistuu, se tallentaa automaattisesti sivun lähdekoodin\n        käyttämällä valinnaisen ``lokitaso``-argumentin määrittämää lokitasoa.\n        Sallittuja lokitasoja ovat ``TRACE`` (oletus), ``DEBUG``,\n        ``INFO``, ``WARN`` ja ``NONE``. Jos lokitaso on ``NONE``\n        tai alempi kuin nykyinen aktiivinen lokitaso, lähdekoodia ei tallenneta.\n\n        !! VAROITUS !! Jos sinulla on valittuna iframe, `Page Should Contain`\n        palauttaa kehysviittauksen takaisin pääkehykseen. Tämä johtuu siitä,\n        että se etsii ``tekstiä`` kaikista kehyksistä. Jos haluat etsiä\n        elementin iframesta kutsumisen jälkeen `Page Should Contain`, sinun tulee\n        (uudelleen)valita kehys.\n        ",
         "sha256": "bb1186dbfae09e52cad4cad8def5bf2980085e48f75b6af2330bcd4da67477af"
     },
     "page_should_contain_element": {
-        "name": "page_should_contain_element",
-        "doc": "Verifies that element ``locator`` is found on the current page.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        The ``limit`` argument can used to define how many elements the\n        page should contain. When ``limit`` is ``None`` (default) page can\n        contain one or more elements. When limit is a number, page must\n        contain same number of elements.\n\n        See `Page Should Contain` for an explanation about the ``loglevel``\n        argument.\n\n        Examples assumes that locator matches to two elements.\n        | `Page Should Contain Element` | div_name | limit=1    | # Keyword fails.                  |\n        | `Page Should Contain Element` | div_name | limit=2    | # Keyword passes.                 |\n        | `Page Should Contain Element` | div_name | limit=none | # None is considered one or more. |\n        | `Page Should Contain Element` | div_name |            | # Same as above.                  |\n\n        The ``limit`` argument is new in SeleniumLibrary 3.0.\n        ",
+        "name": "sivun_tulisi_sisältää_elementti",
+        "doc": "Varmistaa, että elementti ``locator`` löytyy nykyiseltä sivulta.\n\n        Katso `Elementtien paikantaminen` -osio saadaksesi tietoja lokaation\n        syntaksista.\n\n        ``viesti``-argumenttia voidaan käyttää oletusvirheviestin ohittamiseen.\n\n        ``raja``-argumenttia voidaan käyttää määrittelemään, kuinka monta elementtiä\n        sivun tulisi sisältää. Kun ``raja`` on ``None`` (oletus), sivu voi\n        sisältää yhden tai useamman elementin. Kun raja on numero, sivulla täytyy\n        olla sama määrä elementtejä.\n\n        Katso `Sivun Tulisi Sisältää` selitys ``lokitustaso``-argumentista.\n\n        Esimerkit olettavat, että lokaation osumia on kaksi elementtiä.\n        | `Sivun Tulisi Sisältää Elementti` | div_nimi | raja=1    | # Avainsana epäonnistuu.            |\n        | `Sivun Tulisi Sisältää Elementti` | div_nimi | raja=2    | # Avainsana onnistuu.               |\n        | `Sivun Tulisi Sisältää Elementti` | div_nimi | raja=none | # None lasketaan yhdeksi tai useammaksi. |\n        | `Sivun Tulisi Sisältää Elementti` | div_nimi |          | # Sama kuin yllä.                   |\n\n        ``raja``-argumentti on uusi SeleniumLibraryssa 3.0.\n        ",
         "sha256": "d2c24d9ce997c94b3cd391306893b9d864c389a047c274ca1ab323e51f960f8e"
     },
     "page_should_contain_image": {
-        "name": "page_should_contain_image",
-        "doc": "Verifies image identified by ``locator`` is found from current page.\n\n        See the `Locating elements` section for details about the locator\n        syntax. When using the default locator strategy, images are searched\n        using ``id``, ``name``, ``src`` and ``alt``.\n\n        See `Page Should Contain Element` for an explanation about ``message``\n        and ``loglevel`` arguments.\n        ",
+        "name": "sivun_tulisi_sisältää_kuva",
+        "doc": "Varmistaa, että nykyiseltä sivulta löytyy kuvaksi tunnistettu ``lokaatio``.\n\n        Katso `Elementtien paikantaminen` -osio saadaksesi tietoja lokaation\n        syntaksista. Kun käytetään oletuspaikannusstrategiaa, kuvia etsitään\n        käyttämällä ``id``, ``nimi``, ``src`` ja ``alt``.\n\n        Katso `Sivun Tulisi Sisältää Elementti` saadaksesi selityksen ``viesti``\n        ja ``lokitustaso`` -argumenteista.\n        ",
         "sha256": "84ab3a648d3b18c5e266ba075408f3cb2ac3b736e1e2009a6cca125de5d07a50"
     },
     "page_should_contain_link": {
-        "name": "page_should_contain_link",
-        "doc": "Verifies link identified by ``locator`` is found from current page.\n\n        See the `Locating elements` section for details about the locator\n        syntax. When using the default locator strategy, links are searched\n        using ``id``, ``name``, ``href`` and the link text.\n\n        See `Page Should Contain Element` for an explanation about ``message``\n        and ``loglevel`` arguments.\n        ",
+        "name": "sivun_tulisi_sisältää_linkki",
+        "doc": "Varmistaa, että nykyiseltä sivulta löytyy linkiksi tunnistettu ``lokaatio``.\n\n        Katso `Elementtien paikantaminen` -osio saadaksesi tietoja lokaation\n        syntaksista. Kun käytetään oletuspaikannusstrategiaa, linkkejä etsitään\n        käyttämällä ``id``, ``nimi``, ``href`` ja linkin tekstiä.\n\n        Katso `Sivun Tulisi Sisältää Elementti` saadaksesi selityksen ``viesti``\n        ja ``lokitustaso`` -argumenteista.\n        ",
         "sha256": "005f6565f4fcd9b91f87a2274c32fae7545619549be26f23b2cc06856e44ecba"
     },
     "page_should_not_contain": {
-        "name": "page_should_not_contain",
-        "doc": "Verifies the current page does not contain ``text``.\n\n        See `Page Should Contain` for an explanation about the ``loglevel``\n        argument.\n        ",
+        "name": "sivun_ei_tulisi_sisältää",
+        "doc": "Varmistaa, että nykyinen sivu ei sisällä ``tekstiä``.\n\n        Katso `Sivun Tulisi Sisältää` saadaksesi selityksen ``lokitustaso``\n        -argumentista.\n        ",
         "sha256": "72389be32f084ed5a3716a32e833e117c419bc2c6ebfa525a79e69054bb2a8cc"
     },
     "page_should_not_contain_element": {
