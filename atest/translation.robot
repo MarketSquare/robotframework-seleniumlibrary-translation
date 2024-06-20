@@ -6,7 +6,7 @@ Library     json_lib.py
 
 *** Test Cases ***
 Translation Works With Translation
-    Avaa Selain    https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi    chrome
+    Sulje Kaikki Selaimet
 
 LibDoc Works With Translation
     [Setup]    Remove File    ${CURDIR}/SL.json
