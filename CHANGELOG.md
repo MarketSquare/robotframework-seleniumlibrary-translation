@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v0.1.0 (2024-06-20)
+
+### Feature
+
+* feat: update switch_window doc ([`69e25fc`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi/commit/69e25fcd5a64146fc58376c641b3cd4190644f97))
+
+### Unknown
+
+* Feat: improving doc for switch_window keyword ([`fdbfef6`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi/commit/fdbfef67608f7d8ef0274243f8e50714784210e0))
+
+* Chore: Use Python 3.11, not 3.12 in CI ([`8014b88`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation-fi/commit/8014b881a78bbe0d800f5759eb472a9152fa6fde))
+
 ## v0.0.0 (2024-06-20)
 
 ### Build
