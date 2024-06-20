@@ -685,227 +685,227 @@
         "sha256": "1d70ccc8a2dc868e265fc29e9cbc2317799eb12d0dd3f21d61fa4ffea7a7e4c2"
     },
     "list_should_have_no_selections": {
-        "name": "list_should_have_no_selections",
-        "doc": "Verifies selection list ``locator`` has no options selected.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "luettelossa_ei_tulisi_olla_valintoja",
+        "doc": "Varmistaa, että valintaluettelossa ``locator`` ei ole valittuja vaihtoehtoja.\n\n        Katso lisätietoja sijaintielementeistä kohdasta `Elementtien paikantaminen`.\n        ",
         "sha256": "429fc50c47319d8267bc5c2306a7d1d191a124d457a6f6655bb4ff5d64d71def"
     },
     "page_should_contain_list": {
-        "name": "page_should_contain_list",
-        "doc": "Verifies selection list ``locator`` is found from current page.\n\n        See `Page Should Contain Element` for an explanation about ``message``\n        and ``loglevel`` arguments.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "sivun_tulisi_sisältää_lista",
+        "doc": "Tarkistaa, että valintalista ``locator`` löytyy nykyiseltä sivulta.\n\n        Katso `Page Should Contain Element` saadaksesi selityksen ``message``\n        ja ``loglevel`` argumenteista.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "9ad2d87bd51bee3365d5ca32153adae2ea4b137f916f07fc39416a54aa117bf6"
     },
     "page_should_not_contain_list": {
-        "name": "page_should_not_contain_list",
-        "doc": "Verifies selection list ``locator`` is not found from current page.\n\n        See `Page Should Contain Element` for an explanation about ``message``\n        and ``loglevel`` arguments.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "sivun_ei_tulisi_sisältää_lista",
+         "doc": "Tarkistaa, että valintalista ``locator`` ei löydy nykyiseltä sivulta.\n\n        Katso `Page Should Contain Element` saadaksesi selityksen ``message``\n        ja ``loglevel`` argumenteista.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "2f2e58b399f73b2ab4dc795368b0b18b9a63c37e2764de722d897039d6e7881c"
     },
     "select_all_from_list": {
-        "name": "select_all_from_list",
-        "doc": "Selects all options from multi-selection list ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "valitse_kaikki_listasta",
+        "doc": "Valitsee kaikki vaihtoehdot monivalintalistasta ``locator``.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "7113bdf3faec639e3bdb3b1beb09c526dec522a0181ae11fd94398fdfb3f6fd2"
     },
     "select_from_list_by_index": {
-        "name": "select_from_list_by_index",
-        "doc": "Selects options from selection list ``locator`` by ``indexes``.\n\n        Indexes of list options start from 0.\n\n        If more than one option is given for a single-selection list,\n        the last value will be selected. With multi-selection lists all\n        specified options are selected, but possible old selections are\n        not cleared.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "valitse_listasta_indeksin_mukaan",
+        "doc": "Valitsee vaihtoehtoja valintalistasta ``locator`` käyttämällä ``indeksit``.\n\n        Listan vaihtoehtojen indeksit alkavat 0:sta.\n\n        Jos yksi-valintalistaan annetaan enemmän kuin yksi vaihtoehto,\n        viimeinen arvo valitaan. Monivalintalistoissa kaikki\n        määritetyt vaihtoehdot valitaan, mutta mahdollisia vanhoja valintoja\n        ei poisteta.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "220f77e512662cfff307efa29f5b46dba2e0d1b04760707cface96f63ff87e7c"
     },
     "select_from_list_by_label": {
-        "name": "select_from_list_by_label",
-        "doc": "Selects options from selection list ``locator`` by ``labels``.\n\n        If more than one option is given for a single-selection list,\n        the last value will be selected. With multi-selection lists all\n        specified options are selected, but possible old selections are\n        not cleared.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "valitse_listasta_tunnisteen_mukaan",
+        "doc": "Valitsee vaihtoehtoja valintalistasta ``locator`` käyttämällä ``tunnisteet``.\n\n        Jos yksi-valintalistaan annetaan enemmän kuin yksi vaihtoehto,\n        viimeinen arvo valitaan. Monivalintalistoissa kaikki\n        määritetyt vaihtoehdot valitaan, mutta mahdollisia vanhoja valintoja\n        ei poisteta.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "12c2af99cb8c78b6edd06ee17d902a575d1a2a4932d21bb67b040233a5a80318"
     },
     "select_from_list_by_value": {
-        "name": "select_from_list_by_value",
-        "doc": "Selects options from selection list ``locator`` by ``values``.\n\n        If more than one option is given for a single-selection list,\n        the last value will be selected. With multi-selection lists all\n        specified options are selected, but possible old selections are\n        not cleared.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "valitse_listasta_arvon_mukaan",
+        "doc": "Valitsee vaihtoehtoja valintalistasta ``locator`` käyttämällä ``arvot``.\n\n        Jos yksi-valintalistaan annetaan enemmän kuin yksi vaihtoehto,\n        viimeinen arvo valitaan. Monivalintalistoissa kaikki\n        määritetyt vaihtoehdot valitaan, mutta mahdollisia vanhoja valintoja\n        ei poisteta.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "9989cd962aeddb746a6ac8c632023bb9fbbe1ae832ae618635fb1c072049d7ab"
     },
     "unselect_all_from_list": {
-        "name": "unselect_all_from_list",
-        "doc": "Unselects all options from multi-selection list ``locator``.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n\n        New in SeleniumLibrary 3.0.\n        ",
+        "name": "poista_valinnat_listasta",
+        "doc": "Poistaa kaikki valinnat monivalintalistasta ``locator``.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n\n        Uutta SeleniumLibrary 3.0:ssa.\n        ",
         "sha256": "e273c674b217707452b897e66ccfa2ff12ef2279198364b4f95350b0cc557c4c"
     },
     "unselect_from_list_by_index": {
-        "name": "unselect_from_list_by_index",
-        "doc": "Unselects options from selection list ``locator`` by ``indexes``.\n\n        Indexes of list options start from 0. This keyword works only with\n        multi-selection lists.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "poista_valinta_listasta_indeksin_mukaan",
+        "doc": "Poistaa valintoja valintalistasta ``locator`` käyttämällä ``indeksejä``.\n\n        Listan vaihtoehtojen indeksit alkavat 0:sta. Tämä avainsana toimii vain\n        monivalintalistoissa.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "5aac4cc2fa0bec90621d29b2eac7064d18510c447b7357d8eb5948d2cd459cef"
     },
     "unselect_from_list_by_label": {
-        "name": "unselect_from_list_by_label",
-        "doc": "Unselects options from selection list ``locator`` by ``labels``.\n\n        This keyword works only with multi-selection lists.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "poista_valinta_listasta_tunnisteen_mukaan",
+        "doc": "Poistaa valintoja valintalistasta ``locator`` käyttämällä ``tunnisteita``.\n\n        Tämä avainsana toimii vain monivalintalistoissa.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "3dfe87450d9a1a8cad3f8cad3e159b8bd4c3e25f25f91dd747aeb23403b18ab5"
     },
     "unselect_from_list_by_value": {
-        "name": "unselect_from_list_by_value",
-        "doc": "Unselects options from selection list ``locator`` by ``values``.\n\n        This keyword works only with multi-selection lists.\n\n        See the `Locating elements` section for details about the locator\n        syntax.\n        ",
+        "name": "poista_valinta_listasta_arvon_mukaan",
+        "doc": "Poistaa valintoja valintalistasta ``locator`` käyttämällä ``arvoja``.\n\n        Tämä avainsana toimii vain monivalintalistoissa.\n\n        Katso `Locating elements` osio saadaksesi yksityiskohtia locator\n        syntaksista.\n        ",
         "sha256": "7ee06a01319ea95e02d4ba34cfbc0d845cf5dbaf58244d93338760609a67ec02"
     },
     "get_table_cell": {
-        "name": "get_table_cell",
-        "doc": "Returns contents of a table cell.\n\n        The table is located using the ``locator`` argument and its cell\n        found using ``row`` and ``column``. See the `Locating elements`\n        section for details about the locator syntax.\n\n        Both row and column indexes start from 1, and header and footer\n        rows are included in the count. It is possible to refer to rows\n        and columns from the end by using negative indexes so that -1\n        is the last row/column, -2 is the second last, and so on.\n\n        All ``<th>`` and ``<td>`` elements anywhere in the table are\n        considered to be cells.\n\n        See `Page Should Contain` for an explanation about the ``loglevel``\n        argument.\n        ",
+        "name": "hae_taulukon_solun_sisalto",
+        "doc": "Palauttaa taulukon solun sisällön.\n\n        Taulukko paikannetaan käyttäen ``locator`` argumenttia ja sen solu\n        löydetään käyttäen ``rivi`` ja ``sarake`` argumentteja. Katso `Locating elements`\n        osio saadaksesi yksityiskohtia locator syntaksista.\n\n        Sekä rivi- että sarakeindeksit alkavat 1:stä, ja otsikko- ja alatunniste\n        rivit sisältyvät laskentaan. On mahdollista viitata riveihin\n        ja sarakkeisiin myös lopusta käyttämällä negatiivisia indeksejä, jolloin -1\n        on viimeinen rivi/sarake, -2 toiseksi viimeinen ja niin edelleen.\n\n        Kaikki ``<th>`` ja ``<td>`` elementit missä tahansa taulukossa\n        katsotaan soluiksi.\n\n        Katso `Page Should Contain` saadaksesi selityksen ``loglevel``\n        argumentista.\n        ",
         "sha256": "616f2d925fbd431f1cdde9427ff865b4f402806b2f15b99dfd033a96e0d0a42e"
     },
     "table_cell_should_contain": {
-        "name": "table_cell_should_contain",
-        "doc": "Verifies table cell contains text ``expected``.\n\n        See `Get Table Cell` that this keyword uses internally for\n        an explanation about accepted arguments.\n        ",
+        "name": "taulukon_solun_tulee_sisaltaa",
+        "doc": "Varmistaa, että taulukon solu sisältää tekstin ``expected``.\n\n        Katso `Get Table Cell`-osio, jota tämä avainsana käyttää sisäisesti,\n        saadaksesi lisätietoja hyväksytyistä argumenteista.\n        ",
         "sha256": "628c09aa35b649beda7c500e914fa906cf91f9eb30afad19973809784ee1f8d6"
     },
     "table_column_should_contain": {
-        "name": "table_column_should_contain",
-        "doc": "Verifies table column contains text ``expected``.\n\n        The table is located using the ``locator`` argument and its column\n        found using ``column``. See the `Locating elements` section for\n        details about the locator syntax.\n\n        Column indexes start from 1. It is possible to refer to columns\n        from the end by using negative indexes so that -1 is the last column,\n        -2 is the second last, and so on.\n\n        If a table contains cells that span multiple columns, those merged\n        cells count as a single column.\n\n        See `Page Should Contain Element` for an explanation about the\n        ``loglevel`` argument.\n        ",
+        "name": "taulukon_sarakkeen_tulee_sisaltaa",
+        "doc": "Varmistaa, että taulukon sarake sisältää tekstin ``expected``.\n\n        Taulukko paikannetaan käyttäen ``locator`` argumenttia ja sen sarake\n        löydetään käyttäen ``sarake`` argumenttia. Katso `Locating elements` osio\n        saadaksesi yksityiskohtia locator syntaksista.\n\n        Sarakeindeksit alkavat 1:stä. On mahdollista viitata sarakkeisiin\n        myös lopusta käyttämällä negatiivisia indeksejä, jolloin -1 on viimeinen sarake,\n        -2 toiseksi viimeinen ja niin edelleen.\n\n        Jos taulukossa on soluja, jotka ulottuvat useisiin sarakkeisiin,\n        nämä yhdistetyt solut lasketaan yhdeksi sarakkeeksi.\n\n        Katso `Page Should Contain Element` saadaksesi selityksen\n        ``loglevel`` argumentista.\n        ",
         "sha256": "e0f898ce00b22cd66e2f4c5ab1cdcbea733f294d53bc210ec33667dfcd1963de"
     },
     "table_footer_should_contain": {
-        "name": "table_footer_should_contain",
-        "doc": "Verifies table footer contains text ``expected``.\n\n        Any ``<td>`` element inside ``<tfoot>`` element is considered to\n        be part of the footer.\n\n        The table is located using the ``locator`` argument. See the\n        `Locating elements` section for details about the locator syntax.\n\n        See `Page Should Contain Element` for an explanation about the\n        ``loglevel`` argument.\n        ",
+        "name": "taulukon_alatunnisteen_tulee_sisaltaa",
+        "doc": "Varmistaa, että taulukon alatunniste sisältää tekstin ``expected``.\n\n        Mikä tahansa ``<td>`` elementti ``<tfoot>`` elementissä katsotaan\n        osaksi alatunnistetta.\n\n        Taulukko paikannetaan käyttäen ``locator`` argumenttia. Katso\n        `Locating elements` osio saadaksesi yksityiskohtia locator syntaksista.\n\n        Katso `Page Should Contain Element` saadaksesi selityksen\n        ``loglevel`` argumentista.\n        ",
         "sha256": "454fb3be070acb378460038572ed4268de8b18b96b3aaa903d3a1f0093147691"
     },
     "table_header_should_contain": {
-        "name": "table_header_should_contain",
-        "doc": "Verifies table header contains text ``expected``.\n\n        Any ``<th>`` element anywhere in the table is considered to be\n        part of the header.\n\n        The table is located using the ``locator`` argument. See the\n        `Locating elements` section for details about the locator syntax.\n\n        See `Page Should Contain Element` for an explanation about the\n        ``loglevel`` argument.\n        ",
+        "name": "taulukon_otsikon_tulee_sisaltaa",
+        "doc": "Varmistaa, että taulukon otsikko sisältää tekstin ``expected``.\n\n        Mikä tahansa ``<th>`` elementti missä tahansa taulukossa katsotaan\n        osaksi otsikkoa.\n\n        Taulukko paikannetaan käyttäen ``locator`` argumenttia. Katso\n        `Locating elements` osio saadaksesi yksityiskohtia locator syntaksista.\n\n        Katso `Page Should Contain Element` saadaksesi selityksen\n        ``loglevel`` argumentista.\n        ",
         "sha256": "66208e9741c9d18d1c09645bfcb9b54b4ffe2c104e5402c86f2cf54feb02de79"
     },
     "table_row_should_contain": {
-        "name": "table_row_should_contain",
-        "doc": "Verifies that table row contains text ``expected``.\n\n        The table is located using the ``locator`` argument and its column\n        found using ``column``. See the `Locating elements` section for\n        details about the locator syntax.\n\n        Row indexes start from 1. It is possible to refer to rows\n        from the end by using negative indexes so that -1 is the last row,\n        -2 is the second last, and so on.\n\n        If a table contains cells that span multiple rows, a match\n        only occurs for the uppermost row of those merged cells.\n\n        See `Page Should Contain Element` for an explanation about the\n        ``loglevel`` argument.\n        ",
+        "name": "taulukon_rivin_tulee_sisaltaa",
+        "doc": "Varmistaa, että taulukon rivi sisältää tekstin ``expected``.\n\n        Taulukko paikannetaan käyttäen ``locator`` argumenttia ja sen sarakkeet\n        löydetään käyttäen ``sarake`` argumenttia. Katso `Locating elements` osio\n        saadaksesi yksityiskohtia locator syntaksista.\n\n        Rivin indeksit alkavat 1:stä. On mahdollista viitata riveihin\n        myös lopusta käyttämällä negatiivisia indeksejä, jolloin -1 on viimeinen rivi,\n        -2 toiseksi viimeinen ja niin edelleen.\n\n        Jos taulukossa on soluja, jotka ulottuvat useisiin riveihin, vastaa\n        osumaa ainoastaan näiden yhdistettyjen solujen yläimmälle riville.\n\n        Katso `Page Should Contain Element` saadaksesi selityksen\n        ``loglevel`` argumentista.\n        ",
         "sha256": "2ad4f79443748abaa86e768fb0994f32a2d1386c435688727093fb0c1034d23f"
     },
     "table_should_contain": {
-        "name": "table_should_contain",
-        "doc": "Verifies table contains text ``expected``.\n\n        The table is located using the ``locator`` argument. See the\n        `Locating elements` section for details about the locator syntax.\n\n        See `Page Should Contain Element` for an explanation about the\n        ``loglevel`` argument.\n        ",
+        "name": "taulukon_tulee_sisaltaa",
+        "doc": "Varmistaa, että taulukko sisältää tekstin ``expected``.\n\n        Taulukko paikannetaan käyttäen ``locator`` argumenttia. Katso\n        `Locating elements` osio saadaksesi yksityiskohtia locator syntaksista.\n\n        Katso `Page Should Contain Element` saadaksesi selityksen\n        ``loglevel`` argumentista.\n        ",
         "sha256": "ea4dc362f588ab33332b985ea6ff059499de1e4c25bdbfceb6e6517cd36b24fc"
     },
     "wait_for_condition": {
-        "name": "wait_for_condition",
-        "doc": "Waits until ``condition`` is true or ``timeout`` expires.\n\n        The condition can be arbitrary JavaScript expression but it\n        must return a value to be evaluated. See `Execute JavaScript` for\n        information about accessing content on pages.\n\n        Fails if the timeout expires before the condition becomes true. See\n        the `Timeouts` section for more information about using timeouts\n        and their default value.\n\n        ``error`` can be used to override the default error message.\n\n        Examples:\n        | `Wait For Condition` | return document.title == \"New Title\" |\n        | `Wait For Condition` | return jQuery.active == 0            |\n        | `Wait For Condition` | style = document.querySelector('h1').style; return style.background == \"red\" && style.color == \"white\" |\n        ",
+        "name": "odota_ehtoa",
+        "doc": "Odottaa, kunnes ``ehto`` on tosi tai ``timeout`` aika loppuu.\n\n        Ehto voi olla mielivaltainen JavaScript-lauseke, mutta sen\n        on palautettava arvo arvioitavaksi. Katso `Execute JavaScript` saadaksesi\n        lisätietoja sivujen sisällön käyttämisestä.\n\n        Epäonnistuu, jos aikaraja umpeutuu ennen kuin ehto toteutuu. Katso\n        `Timeouts` osiota saadaksesi lisätietoja aikarajojen käytöstä\n        ja niiden oletusarvoista.\n\n        ``error`` voidaan käyttää korvaamaan oletusvirheviesti.\n\n        Esimerkit:\n        | `Odota Ehtoa` | return document.title == \"Uusi Otsikko\" |\n        | `Odota Ehtoa` | return jQuery.active == 0            |\n        | `Odota Ehtoa` | style = document.querySelector('h1').style; return style.background == \"red\" && style.color == \"white\" |\n        ",
         "sha256": "4998ab3cee46a578df2b064d390401d2ec0268454607ef194db5c0d3d73c81db"
     },
     "wait_until_element_contains": {
-        "name": "wait_until_element_contains",
-        "doc": "Waits until the element ``locator`` contains ``text``.\n\n        Fails if ``timeout`` expires before the text appears. See\n        the `Timeouts` section for more information about using timeouts and\n        their default value and the `Locating elements` section for details\n        about the locator syntax.\n\n        ``error`` can be used to override the default error message.\n        ",
+        "name": "odota_kunnes_elementti_sisaltaa",
+        "doc": "Odottaa, kunnes elementti ``locator`` sisältää tekstin ``text``.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin teksti ilmestyy. Katso\n        `Timeouts` osiota saadaksesi lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta sekä `Locating elements` osiota yksityiskohtia locator syntaksista.\n\n        ``error`` voidaan käyttää korvaamaan oletusvirheviesti.\n        ",
         "sha256": "982c68220bb622a3d985c04b39ea3bc11b20437e73bcf8e38d51ed7e2032852c"
     },
     "wait_until_element_does_not_contain": {
-        "name": "wait_until_element_does_not_contain",
-        "doc": "Waits until the element ``locator`` does not contain ``text``.\n\n        Fails if ``timeout`` expires before the text disappears. See\n        the `Timeouts` section for more information about using timeouts and\n        their default value and the `Locating elements` section for details\n        about the locator syntax.\n\n        ``error`` can be used to override the default error message.\n        ",
+        "name": "odota_kunnes_elementti_ei_sisalla",
+        "doc": "Odottaa, kunnes elementti ``locator`` ei sisällä tekstiä ``text``.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin teksti katoaa. Katso\n        `Timeouts` osiota saadaksesi lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta sekä `Locating elements` osiota yksityiskohtia locator syntaksista.\n\n        ``error`` voidaan käyttää korvaamaan oletusvirheviesti.\n        ",
         "sha256": "a2b8bc5ee7de21f06e79317935026beddee2105ae645c22b322446dd5a8be0ad"
     },
     "wait_until_element_is_enabled": {
-        "name": "wait_until_element_is_enabled",
-        "doc": "Waits until the element ``locator`` is enabled.\n\n        Element is considered enabled if it is not disabled nor read-only.\n\n        Fails if ``timeout`` expires before the element is enabled. See\n        the `Timeouts` section for more information about using timeouts and\n        their default value and the `Locating elements` section for details\n        about the locator syntax.\n\n        ``error`` can be used to override the default error message.\n\n        Considering read-only elements to be disabled is a new feature\n        in SeleniumLibrary 3.0.\n        ",
+        "name": "odota_kunnes_elementti_on_kaytossa",
+        "doc": "Odottaa, kunnes elementti ``locator`` on käytössä.\n\n        Elementti katsotaan käytössä olevaksi, jos se ei ole käytöstä poistettu eikä vain luku -tilassa.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin elementti tulee käyttöön. Katso\n        `Timeouts` osiota saadaksesi lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta sekä `Locating elements` osiota yksityiskohtia locator syntaksista.\n\n        ``error`` voidaan käyttää korvaamaan oletusvirheviesti.\n\n        Luku -tilassa olevien elementtien huomioiminen käytöstä poistettuina on uusi ominaisuus\n        SeleniumLibrary 3.0:ssa.\n        ",
         "sha256": "6202e0635b377e2e7d5eaa091eb6a582b64bc49f9d5edf6ddeb7754723015543"
     },
     "wait_until_element_is_not_visible": {
-        "name": "wait_until_element_is_not_visible",
-        "doc": "Waits until the element ``locator`` is not visible.\n\n        Fails if ``timeout`` expires before the element is not visible. See\n        the `Timeouts` section for more information about using timeouts and\n        their default value and the `Locating elements` section for details\n        about the locator syntax.\n\n        ``error`` can be used to override the default error message.\n        ",
+        "name": "odota_kunnes_elementti_ei_ole_nakyvissa",
+        "doc": "Odottaa, kunnes elementti ``locator`` ei ole näkyvissä.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin elementti ei ole näkyvissä. Katso\n        `Timeouts` osiota saadaksesi lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta sekä `Locating elements` osiota yksityiskohtia locator syntaksista.\n\n        ``error`` voidaan käyttää korvaamaan oletusvirheviesti.\n        ",
         "sha256": "e112e160d739b0cd0f8730703738cc0692e1c0d57e42308b6d50206db23e6d52"
     },
     "wait_until_element_is_visible": {
-        "name": "wait_until_element_is_visible",
-        "doc": "Waits until the element ``locator`` is visible.\n\n        Fails if ``timeout`` expires before the element is visible. See\n        the `Timeouts` section for more information about using timeouts and\n        their default value and the `Locating elements` section for details\n        about the locator syntax.\n\n        ``error`` can be used to override the default error message.\n        ",
+        "name": "odota_kunnes_elementti_on_nakyvissa",
+        "doc": "Odottaa, kunnes elementti ``locator`` on näkyvissä.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin elementti tulee näkyviin. Katso\n        `Timeouts` osiota saadaksesi lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta sekä `Locating elements` osiota yksityiskohtia locator syntaksista.\n\n        ``error`` voidaan käyttää korvaamaan oletusvirheviesti.\n        ",
         "sha256": "90878c583a727db5da943e7f532efa4e73c59a525a0107233fd59740bb9dd116"
     },
     "wait_until_location_contains": {
-        "name": "wait_until_location_contains",
-        "doc": "Waits until the current URL contains ``expected``.\n\n        The ``expected`` argument contains the expected value in url.\n\n        Fails if ``timeout`` expires before the location contains. See\n        the `Timeouts` section for more information about using timeouts\n        and their default value.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        New in SeleniumLibrary 4.0\n        ",
+        "name": "odota_kunnes_sijainti_sisaltaa",
+        "doc": "Odottaa, kunnes nykyinen URL sisältää ``expected``.\n\n        ``expected`` argumentissa on odotettu arvo URL:ssä.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin sijainti sisältää odotetun arvon. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta.\n\n        ``message`` argumenttia voidaan käyttää oletusvirheviestin korvaamiseen.\n\n        Uusi ominaisuus SeleniumLibrary 4.0:ssa.\n        ",
         "sha256": "33b91c79fe956c37284bccdb56d318e679ec774ca1565db5e2140250b6b46fb5"
     },
     "wait_until_location_does_not_contain": {
-        "name": "wait_until_location_does_not_contain",
-        "doc": "Waits until the current URL does not contains ``location``.\n\n        The ``location`` argument contains value not expected in url.\n\n        Fails if ``timeout`` expires before the location not contains. See\n        the `Timeouts` section for more information about using timeouts\n        and their default value.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        New in SeleniumLibrary 4.3\n        ",
+        "name": "odota_kunnes_sijainti_ei_sisalla",
+        "doc": "Odottaa, kunnes nykyinen URL ei sisällä ``location``.\n\n        ``location`` argumentissa on arvo, jota ei odoteta URL:ssä.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin sijainti ei sisällä odotettua arvoa. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta.\n\n        ``message`` argumenttia voidaan käyttää oletusvirheviestin korvaamiseen.\n\n        Uusi ominaisuus SeleniumLibrary 4.3:ssa.\n        ",
         "sha256": "5ea0b9da22370c90d509d3e4a8aad47b69652b2bd0ce5b29a9264508d4bea432"
     },
     "wait_until_location_is": {
-        "name": "wait_until_location_is",
-        "doc": "Waits until the current URL is ``expected``.\n\n        The ``expected`` argument is the expected value in url.\n\n        Fails if ``timeout`` expires before the location is. See\n        the `Timeouts` section for more information about using timeouts\n        and their default value.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        New in SeleniumLibrary 4.0\n        ",
+        "name": "odota_kunnes_sijainti_on",
+        "doc": "Odottaa, kunnes nykyinen URL on ``expected``.\n\n        ``expected`` argumentissa on odotettu arvo URL:ssä.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin sijainti on odotettu. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta.\n\n        ``message`` argumenttia voidaan käyttää oletusvirheviestin korvaamiseen.\n\n        Uusi ominaisuus SeleniumLibrary 4.0:ssa.\n        ",
         "sha256": "2a0604e9e096908cda4caef1486d56310d6f10d0d974804c96a32a0492eb1f82"
     },
     "wait_until_location_is_not": {
-        "name": "wait_until_location_is_not",
-        "doc": "Waits until the current URL is not ``location``.\n\n        The ``location`` argument is the unexpected value in url.\n\n        Fails if ``timeout`` expires before the location is not. See\n        the `Timeouts` section for more information about using timeouts\n        and their default value.\n\n        The ``message`` argument can be used to override the default error\n        message.\n\n        New in SeleniumLibrary 4.3\n        ",
+        "name": "odota_kunnes_sijainti_ei_ole",
+        "doc": "Odottaa, kunnes nykyinen URL ei ole ``location``.\n\n        ``location`` argumentissa on odottamaton arvo URL:ssä.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin sijainti ei ole odotettu. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta.\n\n        ``message`` argumenttia voidaan käyttää oletusvirheviestin korvaamiseen.\n\n        Uusi ominaisuus SeleniumLibrary 4.3:ssa.\n        ",
         "sha256": "96f19cceb6f263cde977b3dfd4b90d06691a1533ebef77c9c5ef1f0e0925e228"
     },
     "wait_until_page_contains": {
-        "name": "wait_until_page_contains",
-        "doc": "Waits until ``text`` appears on the current page.\n\n        Fails if ``timeout`` expires before the text appears. See\n        the `Timeouts` section for more information about using timeouts\n        and their default value.\n\n        ``error`` can be used to override the default error message.\n        ",
+        "name": "odota_kunnes_sivu_sisaltaa",
+        "doc": "Odottaa, kunnes ``text`` ilmestyy nykyiselle sivulle.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin teksti ilmestyy. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta.\n\n        ``error`` voidaan käyttää oletusvirheviestin korvaamiseen.\n        ",
         "sha256": "2e6b9f7e424ed5ba676c82ce9b6ae964050a5fb7b47baa35a3f94125107d9e57"
     },
     "wait_until_page_contains_element": {
-        "name": "wait_until_page_contains_element",
-        "doc": "Waits until the element ``locator`` appears on the current page.\n\n        Fails if ``timeout`` expires before the element appears. See\n        the `Timeouts` section for more information about using timeouts and\n        their default value and the `Locating elements` section for details\n        about the locator syntax.\n\n        ``error`` can be used to override the default error message.\n\n        The ``limit`` argument can used to define how many elements the\n        page should contain. When ``limit`` is `None` (default) page can\n        contain one or more elements. When limit is a number, page must\n        contain same number of elements.\n\n        ``limit`` is new in SeleniumLibrary 4.4\n        ",
+        "name": "odota_kunnes_sivu_sisaltaa_elementin",
+        "doc": "Odottaa, kunnes elementti ``locator`` ilmestyy nykyiselle sivulle.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin elementti ilmestyy. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta, sekä `Locating elements`-osio yksityiskohtia locator-syntaksista.\n\n        ``error`` voidaan käyttää oletusvirheviestin korvaamiseen.\n\n        ``limit`` argumentilla voidaan määrittää, kuinka monta elementtiä sivun tulisi sisältää. Kun ``limit`` on `None` (oletus), sivu voi sisältää yhden tai useampia elementtejä. Kun limit on numero, sivun on sisällettävä tasan niin monta elementtiä.\n\n        ``limit`` on uusi ominaisuus SeleniumLibraryssa 4.4:ssä.\n        ",
         "sha256": "712da49e8aff630cb2843522331935693ce334aea9ccb2aacb6c015af9c921b5"
     },
     "wait_until_page_does_not_contain": {
-        "name": "wait_until_page_does_not_contain",
-        "doc": "Waits until ``text`` disappears from the current page.\n\n        Fails if ``timeout`` expires before the text disappears. See\n        the `Timeouts` section for more information about using timeouts\n        and their default value.\n\n        ``error`` can be used to override the default error message.\n        ",
+        "name": "odota_kunnes_sivu_ei_sisällä",
+        "doc": "Odottaa, kunnes ``text`` katoaa nykyiseltä sivulta.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin teksti katoaa. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta.\n\n        ``error`` voidaan käyttää oletusvirheviestin korvaamiseen.\n        ",
         "sha256": "96c2f8840c677afdb9f207107bf3f7bbdfb9d1b56e3ce887cf34a88e3e273974"
     },
     "wait_until_page_does_not_contain_element": {
-        "name": "wait_until_page_does_not_contain_element",
-        "doc": "Waits until the element ``locator`` disappears from the current page.\n\n        Fails if ``timeout`` expires before the element disappears. See\n        the `Timeouts` section for more information about using timeouts and\n        their default value and the `Locating elements` section for details\n        about the locator syntax.\n\n        ``error`` can be used to override the default error message.\n\n        The ``limit`` argument can used to define how many elements the\n        page should not contain. When ``limit`` is `None` (default) page can`t\n        contain any elements. When limit is a number, page must not\n        contain same number of elements.\n\n        ``limit`` is new in SeleniumLibrary 4.4\n        ",
+        "name": "odota_kunnes_sivu_ei_sisällä_elementtiä",
+        "doc": "Odottaa, kunnes elementti ``locator`` katoaa nykyiseltä sivulta.\n\n        Epäonnistuu, jos ``timeout`` aikaraja umpeutuu ennen kuin elementti katoaa. Katso\n        `Timeouts`-osio lisätietoja aikarajojen käytöstä ja niiden\n        oletusarvosta sekä `Locating elements`-osio yksityiskohtia\n        sijainnin määrittäjien syntaksista.\n\n        ``error`` voidaan käyttää oletusvirheviestin korvaamiseen.\n\n        ``limit``-argumenttia voidaan käyttää määrittämään, kuinka monta elementtiä sivu\n        ei saa sisältää. Kun ``limit`` on `None` (oletus), sivu ei saa sisältää\n        mitään elementtejä. Kun limit on numero, sivulla ei saa olla\n        samaa määrää elementtejä.\n\n        ``limit`` on uusi ominaisuus SeleniumLibraryssä 4.4\n        ",
         "sha256": "081d0393a8d8f100d9db65f81170222f4a6678fcc2703a3e123c907ef5ade430"
     },
     "close_window": {
-        "name": "close_window",
-        "doc": "Closes currently opened and selected browser window/tab. ",
+        "name": "sulje_ikkuna",
+        "doc": "Sulkee tällä hetkellä avoinna olevan ja valitun selainikkunan/välilehden.",
         "sha256": "8d00f3bcf62126a5fcc61ca14d62631ad918c2993ee9e8f2641cb57595b591bb"
     },
     "get_locations": {
-        "name": "get_locations",
-        "doc": "Returns and logs URLs of all windows of the selected browser.\n\n        *Browser Scope:*\n\n        The ``browser`` argument specifies the browser that shall return\n        its windows information.\n\n        - ``browser`` can be ``index_or_alias`` like in `Switch Browser`.\n\n        - If ``browser`` is ``CURRENT`` (default, case-insensitive)\n          the currently active browser is selected.\n\n        - If ``browser`` is ``ALL`` (case-insensitive)\n          the window information of all windows of all opened browsers are returned.",
+        "name": "hanki_sijainnit",
+        "doc": "Palauttaa ja kirjaa kaikkien valitun selaimen ikkunoiden URL-osoitteet.\n\n        *Selaimen laajuus:*\n\n        ``browser``-argumentti määrittää selaimen, jonka ikkunatiedot halutaan palauttaa.\n\n        - ``browser`` voi olla ``index_or_alias``, kuten `Vaihda selain`-toiminnossa.\n\n        - Jos ``browser`` on ``CURRENT`` (oletus, kirjaimia ei oteta huomioon), valitaan tällä hetkellä aktiivinen selain.\n\n        - Jos ``browser`` on ``ALL`` (kirjaimia ei oteta huomioon), palautetaan kaikkien avoinna olevien selainten kaikkien ikkunoiden tiedot.",
         "sha256": "3e73811fa673371891cffa16aa99f24fa6dbc87ff826d0d84be6d54fc937163c"
     },
     "get_window_handles": {
-        "name": "get_window_handles",
-        "doc": "Returns all child window handles of the selected browser as a list.\n\n        Can be used as a list of windows to exclude with `Select Window`.\n\n        How to select the ``browser`` scope of this keyword, see `Get Locations`.\n\n        Prior to SeleniumLibrary 3.0, this keyword was named `List Windows`.\n        ",
+        "name": "hanki_ikkunan_kahvat",
+        "doc": "Palauttaa valitun selaimen kaikki alaikkunan kahvat listana.\n\n        Voidaan käyttää ikkunalistanä `Select Window`-toiminnossa.\n\n        Kuinka valita tämän toiminnon ``browser``-laajuus, katso `Hanki sijainnit`-toiminnossa.\n\n        SeleniumLibrary 3.0:n edellä tämä toiminto oli nimeltään `Listaa ikkunat`.",
         "sha256": "b051b51a36766e2a3c748a2ecbb76ed6516a20cec807a38d29a96f95c5ea7efa"
     },
     "get_window_identifiers": {
-        "name": "get_window_identifiers",
-        "doc": "Returns and logs id attributes of all windows of the selected browser.\n\n        How to select the ``browser`` scope of this keyword, see `Get Locations`.",
+        "name": "hanki_ikkunoidentifikaattorit",
+        "doc": "Palauttaa ja kirjaa kaikkien valitun selaimen ikkunoiden id-attribuutit.\n\n        Kuinka valita tämän avainsanan ``browser``-kohde, katso `Hanki sijainnit`.",
         "sha256": "9342df3471d9923e299c60511d11006762b1797802153c97ac0451adcdd5e0bf"
     },
     "get_window_names": {
-        "name": "get_window_names",
-        "doc": "Returns and logs names of all windows of the selected browser.\n\n        How to select the ``browser`` scope of this keyword, see `Get Locations`.",
+        "name": "hanki_ikkunanimet",
+        "doc": "Palauttaa ja kirjaa valitun selaimen kaikkien ikkunoiden nimet.\n\n        Kuinka valita tämän avainsanan ``browser``-kohde, katso `Hanki sijainnit`.",
         "sha256": "557778bcbb2b4be2e575416f5422c8077397f2e7d7614e3b064fe3f222bf3225"
     },
     "get_window_position": {
-        "name": "get_window_position",
-        "doc": "Returns current window position.\n\n        The position is relative to the top left corner of the screen. Returned\n        values are integers. See also `Set Window Position`.\n\n        Example:\n        | ${x} | ${y}= | `Get Window Position` |\n        ",
+        "name": "hanki_ikkunan_sijainti",
+        "doc": "Palauttaa nykyisen ikkunan sijainnin.\n\n        Sijainti on suhteessa näytön vasempaan yläkulmaan. Palautetut\n        arvot ovat kokonaislukuja. Katso myös `Aseta ikkunan sijainti`.\n\n        Esimerkki:\n        | ${x} | ${y}= | `Hanki ikkunan sijainti` |\n        ",
         "sha256": "c9f1ab8ee31517bc91a6ae9f3dd3782c695f0c3c64adf1639fc3e34ea85e7d9c"
     },
     "get_window_size": {
-        "name": "get_window_size",
-        "doc": "Returns current window width and height as integers.\n\n        See also `Set Window Size`.\n\n        If ``inner`` parameter is set to True, keyword returns\n        HTML DOM window.innerWidth and window.innerHeight properties.\n        See `Boolean arguments` for more details on how to set boolean\n        arguments. The ``inner`` is new in SeleniumLibrary 4.0.\n\n        Example:\n        | ${width} | ${height}= | `Get Window Size` |      |\n        | ${width} | ${height}= | `Get Window Size` | True |\n        ",
+        "name": "hanki_ikkunan_koko",
+        "doc": "Palauttaa nykyisen ikkunan leveyden ja korkeuden kokonaislukuina.\n\n        Katso myös `Aseta ikkunan koko`.\n\n        Jos ``inner``-parametri on asetettu todeksi (True), avainsana palauttaa\n        HTML DOM:n window.innerWidth ja window.innerHeight ominaisuudet.\n        Katso lisätietoja boolean-argumenttien asettamisesta `Boolean-argumentit`-osiosta.\n        ``inner`` on uusi SeleniumLibraryn versiossa 4.0.\n\n        Esimerkki:\n        | ${leveys} | ${korkeus}= | `Hanki ikkunan koko` |      |\n        | ${leveys} | ${korkeus}= | `Hanki ikkunan koko` | True |\n        ",
         "sha256": "d9fc8a6bc4dd38749c761722027b783dfd74ff3c69d16ad3e4ceceb162f2ed64"
     },
     "get_window_titles": {
-        "name": "get_window_titles",
-        "doc": "Returns and logs titles of all windows of the selected browser.\n\n        How to select the ``browser`` scope of this keyword, see `Get Locations`.",
+        "name": "hanki_ikkunan_otsikot",
+        "doc": "Palauttaa ja kirjaa valitun selaimen kaikkien ikkunoiden otsikot.\n\n        Kuinka valita tämän avainsanan ``browser``-kohde, katso `Hanki sijainnit`.",
         "sha256": "7b2a62a9e808f584ec9674faae954855135aec5ac168ec0b929b11ac73f7fcec"
     },
     "maximize_browser_window": {
-        "name": "maximize_browser_window",
-        "doc": "Maximizes current browser window.",
+        "name": "suurenna_selainikkuna",
+        "doc": "Suurentaa nykyisen selainikkunan.",
         "sha256": "de016b8b98dc0a25f624060424c8ae449cc680990baf8789da09181b2643d77b"
     },
     "minimize_browser_window": {
-        "name": "minimize_browser_window",
-        "doc": "Minimizes current browser window.",
+        "name": "minimoi_selainikkuna",
+        "doc": "Minimoi nykyisen selainikkunan.",
         "sha256": "6a99ddaa41cde69ae82c33df6d43976d9ad76a358be5d4e35f065895e94e95db"
     },
     "set_window_position": {
-        "name": "set_window_position",
-        "doc": "Sets window position using ``x`` and ``y`` coordinates.\n\n        The position is relative to the top left corner of the screen,\n        but some browsers exclude possible task bar set by the operating\n        system from the calculation. The actual position may thus be\n        different with different browsers.\n\n        Values can be given using strings containing numbers or by using\n        actual numbers. See also `Get Window Position`.\n\n        Example:\n        | `Set Window Position` | 100 | 200 |\n        ",
+        "name": "asettaa_ikkunan_sijainti",
+        "doc": "Asettaa ikkunan sijainnin käyttäen ``x`` ja ``y`` koordinaatteja.\n\n        Sijainti on suhteessa näytön vasempaan yläkulmaan,\n        mutta joissakin selaimissa käyttöjärjestelmän mahdollisesti\n        määrittämä tehtäväpalkki saattaa jäädä pois laskuista.\n        Todellinen sijainti voi siten vaihdella eri selaimissa.\n\n        Arvot voidaan antaa joko merkkijonoina sisältäen numeroita tai käyttämällä\n        suoria numeroarvoja. Katso myös `Hanki ikkunan sijainti`.\n\n        Esimerkki:\n        | `Aseta ikkunan sijainti` | 100 | 200 |\n        ",
         "sha256": "d9c3d6dc138cd350941a1660e5601dbc4441ee6c0a7df08902c76dd15953017c"
     },
     "set_window_size": {
-        "name": "set_window_size",
-        "doc": "Sets current windows size to given ``width`` and ``height``.\n\n        Values can be given using strings containing numbers or by using\n        actual numbers. See also `Get Window Size`.\n\n        Browsers have a limit on their minimum size. Trying to set them\n        smaller will cause the actual size to be bigger than the requested\n        size.\n\n        If ``inner`` parameter is set to True, keyword sets the necessary\n        window width and height to have the desired HTML DOM _window.innerWidth_\n        and _window.innerHeight_. See `Boolean arguments` for more details on how to set boolean\n        arguments.\n\n        The ``inner`` argument is new since SeleniumLibrary 4.0.\n\n        This ``inner`` argument does not support Frames. If a frame is selected,\n        switch to default before running this.\n\n        Example:\n        | `Set Window Size` | 800 | 600 |      |\n        | `Set Window Size` | 800 | 600 | True |\n        ",
+        "name": "asettaa_ikkunan_koko",
+        "doc": "Asettaa nykyisen ikkunan koon annettuun ``leveys`` ja ``korkeus`` arvoihin.\n\n        Arvot voidaan antaa joko merkkijonoina sisältäen numeroita tai käyttämällä\n        suoria numeroarvoja. Katso myös `Hanki ikkunan koko`.\n\n        Selaimilla on rajoitus niiden minimitoiminnossa. Yrittäminen\n        asettaa ne pienemmäksi aiheuttaa, että todellinen koko on suurempi\n        kuin pyydetty koko.\n\n        Jos ``inner``-parametri on asetettu todeksi (True), avainsana asettaa tarvittavan\n        ikkunan leveyden ja korkeuden saavuttaakseen halutun HTML DOM -ikkunan _window.innerWidth_\n        ja _window.innerHeight_. Katso lisätietoja boolean-argumenttien asettamisesta `Boolean-argumentit`-osiossa.\n\n        Tämä ``inner``-argumentti on uusi SeleniumLibraryn versiossa 4.0.\n\n        Tätä ``inner``-argumenttia ei tueta kehyksissä (Frames). Jos kehys on valittu,\n        vaihda oletustilaan ennen tämän suorittamista.\n\n        Esimerkki:\n        | `Aseta ikkunan koko` | 800 | 600 |      |\n        | `Aseta ikkunan koko` | 800 | 600 | True |\n        ",
         "sha256": "31b5febddcb935b20320728accc28a892b8a0956301646827aa8c7c74e1cdfec"
     },
     "switch_window": {
-        "name": "switch_window",
+        "name": "vaihda_ikkuna",
         "doc": "Switches to browser window matching ``locator``.\n\n        If the window is found, all subsequent commands use the selected\n        window, until this keyword is used again. If the window is not\n        found, this keyword fails. The previous windows handle is returned\n        and can be used to switch back to it later.\n\n        Notice that alerts should be handled with\n        `Handle Alert` or other alert related keywords.\n\n        The ``locator`` can be specified using different strategies somewhat\n        similarly as when `locating elements` on pages.\n\n        - By default, the ``locator`` is matched against window handle, name,\n          title, and URL. Matching is done in that order and the first\n          matching window is selected.\n\n        - The ``locator`` can specify an explicit strategy by using the format\n          ``strategy:value`` (recommended) or ``strategy=value``. Supported\n          strategies are ``name``, ``title``, and ``url``. These matches windows\n          using their name, title, or URL, respectively. Additionally, ``default``\n          can be used to explicitly use the default strategy explained above.\n\n        - If the ``locator`` is ``NEW`` (case-insensitive), the latest\n          opened window is selected. It is an error if this is the same\n          as the current window.\n\n        - If the ``locator`` is ``MAIN`` (default, case-insensitive),\n          the main window is selected.\n\n        - If the ``locator`` is ``CURRENT`` (case-insensitive), nothing is\n          done. This effectively just returns the current window handle.\n\n        - If the ``locator`` is not a string, it is expected to be a list\n          of window handles _to exclude_. Such a list of excluded windows\n          can be got from `Get Window Handles` before doing an action that\n          opens a new window.\n\n        The ``timeout`` is used to specify how long keyword will poll to select\n        the new window. The ``timeout`` is new in SeleniumLibrary 3.2.\n\n        Example:\n        | `Click Link`      | popup1      |      | # Open new window |\n        | `Switch Window`   | example     |      | # Select window using default strategy |\n        | `Title Should Be` | Pop-up 1    |      |\n        | `Click Button`    | popup2      |      | # Open another window |\n        | ${handle} = | `Switch Window`   | NEW  | # Select latest opened window |\n        | `Title Should Be` | Pop-up 2    |      |\n        | `Switch Window`   | ${handle}   |      | # Select window using handle |\n        | `Title Should Be` | Pop-up 1    |      |\n        | `Switch Window`   | MAIN        |      | # Select the main window |\n        | `Title Should Be` | Main        |      |\n        | ${excludes} = | `Get Window Handles` | | # Get list of current windows |\n        | `Click Link`      | popup3      |      | # Open one more window |\n        | `Switch Window`   | ${excludes} |      | # Select window using excludes |\n        | `Title Should Be` | Pop-up 3    |      |\n\n        The ``browser`` argument allows with ``index_or_alias`` to implicitly switch to\n        a specific browser when switching to a window. See `Switch Browser`\n\n        - If the ``browser`` is ``CURRENT`` (case-insensitive), no other browser is\n          selected.\n\n        *NOTE:*\n\n        - The ``strategy:value`` syntax is only supported by SeleniumLibrary\n          3.0 and newer.\n        - Prior to SeleniumLibrary 3.0 matching windows by name, title\n          and URL was case-insensitive.\n        - Earlier versions supported aliases ``None``, ``null`` and the\n          empty string for selecting the main window, and alias ``self``\n          for selecting the current window. Support for these aliases was\n          removed in SeleniumLibrary 3.2.\n        ",
         "sha256": "2ae583a5179810f31a4f7ae665918443d1f068c53e255c552b51bd1f5205c608"
     },
