@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-import robotframework_seleniumlibrary_translation_fi
+import robotframework_seleniumlibrary_translation
 
 
 @pytest.fixture(scope="module")
@@ -18,15 +18,15 @@ def file() -> Path:
 
 
 @pytest.fixture(scope="module")
-def data() -> robotframework_seleniumlibrary_translation_fi.Language:
-    lang = robotframework_seleniumlibrary_translation_fi.get_language()
+def data() -> robotframework_seleniumlibrary_translation.Language:
+    lang = robotframework_seleniumlibrary_translation.get_language()
     result_path = Path(lang["path"])
     with result_path.open("r") as file:
         return json.load(file)
 
 
 def test_translation(file: Path):
-    lang = robotframework_seleniumlibrary_translation_fi.get_language()
+    lang = robotframework_seleniumlibrary_translation.get_language()
     assert lang["language"] == "fi"
     result_path = Path(lang["path"])
     assert result_path == file
@@ -62,7 +62,7 @@ def test_keyword_names_are_unique(data: dict):
 
 
 def test_keyword_names_no_space(
-    data: robotframework_seleniumlibrary_translation_fi.Language,
+    data: robotframework_seleniumlibrary_translation.Language,
 ):
     for translation, value in data.items():
         assert " " not in translation, translation
