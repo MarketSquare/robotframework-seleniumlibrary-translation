@@ -446,8 +446,8 @@
     },
     "press_key": {
         "name": "paina_näppäintä",
-        "doc": "Simuloi käyttäjän näppäimen painallusta elementissä, joka on tunnistettu ``locator`` avulla.\n\n        Katso `Elementtien paikantaminen` -osio saadaksesi lisätietoja paikantimen\n        syntaksista.\n\n        ``key`` voi olla joko yksi merkki, merkkijono tai näppäimen numeerinen ASCII\n        koodi, jonka edessä on '\\'.\n\n        Esimerkkejä:\n        | `Paina Näppäintä` | tekstikenttä  | q     |\n        | `Paina Näppäintä` | tekstikenttä  | abcde |\n        | `Paina Näppäintä` | kirjaudu_painike | \\13  | # ASCII-koodi enter-näppäimelle |\n\n        `Paina Näppäintä` ja `Paina Näppäimiä` eroavat tavoissa simuloida näppäimen\n        painalluksia. `Paina Näppäintä` käyttää WebDriverin `SEND_KEYS_TO_ELEMENT` -komentoa\n        käyttäen seleniumin send_keys -metodia. Vaikka kumpaakaan ei suositella toisen\n        yli, jos `Paina Näppäintä` ei toimi, suosittelemme kokeilemaan\n        `Paina Näppäimiä`.\n        ",
-        "sha256": "fd4035762f6f532aed3cd2b93ad24002a51503e8a86cd7da956a3e2cf8a1038d"
+        "doc": "Simuloi käyttäjän näppäimen painalluksen elementille, joka on tunnistettu ``locator``-parametrilla.\n\n        Katso `Elementtien paikantaminen` -osio saadaksesi lisätietoja paikannussyntaksista.\n\n        ``key`` voi olla joko yksittäinen merkki, merkkijono tai numerollinen ASCII-koodi, jonka edellä on '\\'.\n\n        Esimerkkejä:\n        | `Press Key` | text_field   | q     |\n        | `Press Key` | text_field   | abcde |\n        | `Press Key` | login_button | \\13  | # ASCII-koodi enter-näppäimelle |\n\n        `Press Key` ja `Press Keys` eroavat toisistaan siinä, miten ne simuloivat näppäinpainalluksia. `Press Key` käyttää WebDriverin `SEND_KEYS_TO_ELEMENT` -komentoa hyödyntäen Seleniumin send_keys-menetelmää. Vaikka kumpaakaan ei suositella toisen sijaan, jos `Press Key` ei toimi, suosittelemme kokeilemaan `Press Keys` -komentoa.\n",
+        "sha256": "b86c54e3fbbe94d4ea6a3a800f73fd52bf7ab3210c91061be10fa10a58cc41cc"
     },
     "press_keys": {
         "name": "paina_näppäimiä",
