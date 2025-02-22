@@ -6,8 +6,10 @@ from robot.api import logger
 
 def compare_translations(file: Path):
     sl_translation = Path(__file__).parent.parent.joinpath(
-        "robotframework_seleniumlibrary_translation_fi", "translation.json"
+        "robotframework_seleniumlibrary_translation", "translation_fi.json"
     )
+    logger.info(f"Created file: {file}")
+    logger.info(f"Provided translation: {sl_translation}")
     with sl_translation.open("r") as file_object:
         expected_data = json.load(file_object)
     expected_keywords = [kw["name"].lower() for kw in expected_data.values()]
