@@ -88,6 +88,6 @@ def test_verify_checksum(file: Path, tmp_path: Path):
     for kw in source_data:
         source_sha256 = source_data[kw]["sha256"]
         translation_sha256 = translation_data[kw]["sha256"]
-        assert (
-            source_sha256 == translation_sha256
-        ), f"{kw} sha256 was {source_sha256} expected {translation_sha256}"
+        assert source_sha256 == translation_sha256, (
+            f"{kw} sha256 was {source_sha256} expected {translation_sha256}"
+        )
