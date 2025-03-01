@@ -1,6 +1,42 @@
 # CHANGELOG
 
 
+## v1.0.1 (2025-03-01)
+
+### Bug Fixes
+
+- Support for SL 6.7.1
+  ([`1702f36`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/commit/1702f36c9849af3fa1a37041ced60653fafcdb22))
+
+### Build System
+
+- **deps**: Bump python-semantic-release/python-semantic-release
+  ([`7a400a1`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/commit/7a400a153735a92c18aa0a8b98e77f7786560449))
+
+Bumps
+  [python-semantic-release/python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
+  from 9.20.0 to 9.21.0. - [Release
+  notes](https://github.com/python-semantic-release/python-semantic-release/releases) -
+  [Changelog](https://github.com/python-semantic-release/python-semantic-release/blob/master/CHANGELOG.rst)
+  -
+  [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.20.0...v9.21.0)
+
+--- updated-dependencies: - dependency-name: python-semantic-release/python-semantic-release
+  dependency-type: direct:production
+
+update-type: version-update:semver-minor ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+### Chores
+
+- Deps updates
+  ([`c8e61fd`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/commit/c8e61fd0593a6c51f6c3c7e8d2a070b60f1b3f9e))
+
+- Ruff instead of black
+  ([`cae3172`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/commit/cae31727cfec478bbfe2aa325e7b58f864d78156))
+
+
 ## v1.0.0 (2025-02-22)
 
 ### Build System

@@ -14,7 +14,7 @@
 from pathlib import Path
 from typing import TypedDict
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 class Language(TypedDict):
