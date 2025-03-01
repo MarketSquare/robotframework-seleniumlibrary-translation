@@ -37,7 +37,7 @@ Changelog = "https://github.com/MarketSquare/robotframework-seleniumlibrary-tran
 packages = ["robotframework_seleniumlibrary_translation"]
 
 [tool.setuptools.package-data]
-robotframework_seleniumlibrary_translation_fi = ["*.json"]
+robotframework_seleniumlibrary_translation = ["*.json"]
 
 [tool.semantic_release]
 version_toml = [
