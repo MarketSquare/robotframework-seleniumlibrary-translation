@@ -1,6 +1,16 @@
 # CHANGELOG
 
 
+## v1.0.2 (2025-03-01)
+
+### Bug Fixes
+
+- Docs fix
+  ([`e54de15`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/commit/e54de155aae301931b0716deaf2b68e5702c7172))
+
+Done only to try out new releaee flow
+
+
 ## v1.0.1 (2025-03-01)
 
 ### Bug Fixes
