@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v1.0.3 (2025-03-01)
+
+### Bug Fixes
+
+- Build shuold include json files
+  ([`312a088`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/commit/312a088581cba52ec25cd8a9b7d5cb5d6211731a))
+
+### Continuous Integration
+
+- Use python-semantic-release/publish-action@v9.21.0 action
+  ([`6470934`](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/commit/64709348d3c1e30ce4b6d3de2572292becaf0e3b))
+
+
 ## v1.0.2 (2025-03-01)
 
 ### Bug Fixes
