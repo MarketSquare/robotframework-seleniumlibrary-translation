@@ -3,7 +3,7 @@ This project contains a localizations for the Robot Framework SeleniumLibrary. C
 [Finnish](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/blob/main/robotframework_seleniumlibrary_translation/translation_fi.json)
 , but new languages can be added by creating translation_xx.json file and adding the definition to
 [init.py](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/blob/main/robotframework_seleniumlibrary_translation/__init__.py)
-file.
+file. The xx should be replaced with correct language code.
 
 This project uses SeleniumLibrary Python plugin API to provide translation_xx.json file for the
 Seleniumlibrary. SeleniumLibrary searches Python plugins by using naming convention: `robotframework_seleniumlibrary_translation`. This module fulfils the SeleniumLibrary
