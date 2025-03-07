@@ -1,5 +1,5 @@
 # SeleniumLibrary localisation project
-This project contains a localizations for the Robot Framework SeleniumLibrary. Currently project contains only one translation,
+This project contains all localizations for the Robot Framework SeleniumLibrary. Currently project contains only one translation,
 [Finnish](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/blob/main/robotframework_seleniumlibrary_translation/translation_fi.json)
 , but new languages can be added by creating translation_xx.json file and adding the definition to
 [init.py](https://github.com/MarketSquare/robotframework-seleniumlibrary-translation/blob/main/robotframework_seleniumlibrary_translation/__init__.py)
