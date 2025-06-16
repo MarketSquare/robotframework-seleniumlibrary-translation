@@ -36,7 +36,7 @@ jobs:
           inv atest
       - name: Python Semantic Release
         id: release
-        uses: python-semantic-release/python-semantic-release@v10.0.2
+        uses: python-semantic-release/python-semantic-release@v10.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build package
