@@ -5,5 +5,5 @@ approvaltests == 17.4.3
 robotframework-tidy >= 4.16.0
 python-semantic-release >= 10.5.3
 setuptools >= 75.0
-build >= 1.2.2
+build >= 1.4.4
 mypy >= 1.19.1
