@@ -2,7 +2,7 @@ ruff >= 0.15.12
 invoke >= 2.2.0
 pytest >= 8.4.2
 approvaltests == 17.4.3
-robotframework-tidy >= 4.16.0
+robotframework-tidy >= 4.18.0
 python-semantic-release >= 10.5.3
 setuptools >= 75.0
 build >= 1.4.4
