@@ -1,5 +1,5 @@
 ruff >= 0.15.12
-invoke >= 2.2.0
+invoke >= 3.0.3
 pytest >= 8.4.2
 approvaltests == 17.4.3
 robotframework-tidy >= 4.16.0
