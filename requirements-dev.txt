@@ -1,4 +1,4 @@
-ruff >= 0.16.4
+ruff >= 0.16.5
 invoke >= 3.0.3
 pytest >= 9.1.1
 approvaltests == 19.1.1
