@@ -1,5 +1,7 @@
+import hashlib
 import json
 import subprocess
+import textwrap
 from collections import Counter
 from pathlib import Path
 
@@ -8,29 +10,31 @@ import pytest
 import robotframework_seleniumlibrary_translation
 
 
+@pytest.fixture(scope="module", params=["fi", "fr"])
+def language(request):
+    return request.param
+
+
 @pytest.fixture(scope="module")
-def file() -> Path:
+def file(language) -> Path:
     return (
         Path(__file__).parent.parent
         / "robotframework_seleniumlibrary_translation"
-        / "translation_fi.json"
+        / f"translation_{language}.json"
     )
 
 
 @pytest.fixture(scope="module")
-def data() -> robotframework_seleniumlibrary_translation.Language:
-    lang = robotframework_seleniumlibrary_translation.get_language()
-    result_path = Path(lang[0]["path"])
-    with result_path.open("r") as file:
-        return json.load(file)
+def data(file: Path) -> dict:
+    with file.open(encoding="utf-8") as stream:
+        return json.load(stream)
 
 
-def test_translation(file: Path):
+def test_translation(file: Path, language):
     lang = robotframework_seleniumlibrary_translation.get_language()
-    assert len(lang) == 1
-    lang_fi = lang[0]
-    assert lang_fi["language"] == "fi"
-    result_path = Path(lang_fi["path"])
+    assert [item["language"] for item in lang] == ["fi", "fr"]
+    translation = next(item for item in lang if item["language"] == language)
+    result_path = Path(translation["path"])
     assert result_path == file
     assert result_path.is_file()
 
@@ -71,6 +75,30 @@ def test_keyword_names_no_space(
         assert " " not in value["name"], value
 
 
+def source_checksums(translation: dict) -> set[str]:
+    # The CI Python versions expose different common docstring indentation.
+    # SeleniumLibrary hashes raw docstrings as UTF-16, so accept both forms.
+    first, separator, rest = translation["doc"].partition("\n")
+    dedented = first + separator + textwrap.dedent(rest)
+    return {
+        translation["sha256"],
+        hashlib.sha256(dedented.encode("utf-16")).hexdigest(),
+    }
+
+
+def test_source_checksums_handle_indentation():
+    old_doc = "Summary.\n\n        Details.\n        "
+    new_doc = "Summary.\n\nDetails.\n"
+    old_hash = hashlib.sha256(old_doc.encode("utf-16")).hexdigest()
+    new_hash = hashlib.sha256(new_doc.encode("utf-16")).hexdigest()
+    hashes = source_checksums({"doc": old_doc, "sha256": old_hash})
+    assert hashes == {old_hash, new_hash}
+    changed_hash = hashlib.sha256(
+        new_doc.replace("Details", "Changed").encode("utf-16")
+    )
+    assert changed_hash.hexdigest() not in hashes
+
+
 def test_verify_checksum(file: Path, tmp_path: Path):
     translation_file = tmp_path / "translation.json"
     subprocess.run(
@@ -81,13 +109,13 @@ def test_verify_checksum(file: Path, tmp_path: Path):
         ],
         check=True,
     )
-    with translation_file.open("r") as source_translation:
+    with translation_file.open(encoding="utf-8") as source_translation:
         source_data = json.load(source_translation)
-    with file.open("r") as translation_file:
+    with file.open(encoding="utf-8") as translation_file:
         translation_data = json.load(translation_file)
     for kw in source_data:
         source_sha256 = source_data[kw]["sha256"]
         translation_sha256 = translation_data[kw]["sha256"]
-        assert source_sha256 == translation_sha256, (
+        assert translation_sha256 in source_checksums(source_data[kw]), (
             f"{kw} sha256 was {source_sha256} expected {translation_sha256}"
         )
