@@ -28,4 +28,5 @@ def get_language() -> list[Language]:
     return [
         {"language": "fi", "path": str(folder / "translation_fi.json")},
         {"language": "fr", "path": str(folder / "translation_fr.json")},
+        {"language": "de", "path": str(folder / "translation_de.json")},
     ]
