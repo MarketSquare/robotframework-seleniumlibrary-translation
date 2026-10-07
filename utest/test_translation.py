@@ -10,7 +10,7 @@ import pytest
 import robotframework_seleniumlibrary_translation
 
 
-@pytest.fixture(scope="module", params=["fi", "fr"])
+@pytest.fixture(scope="module", params=["fi", "fr", "de"])
 def language(request):
     return request.param
 
@@ -32,7 +32,7 @@ def data(file: Path) -> dict:
 
 def test_translation(file: Path, language):
     lang = robotframework_seleniumlibrary_translation.get_language()
-    assert [item["language"] for item in lang] == ["fi", "fr"]
+    assert [item["language"] for item in lang] == ["fi", "fr", "de"]
     translation = next(item for item in lang if item["language"] == language)
     result_path = Path(translation["path"])
     assert result_path == file
