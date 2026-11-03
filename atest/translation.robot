@@ -2,6 +2,7 @@
 Library     SeleniumLibrary    language=FI
 Library     SeleniumLibrary    language=FR    WITH NAME    French
 Library     SeleniumLibrary    language=DE    WITH NAME    German
+Library     SeleniumLibrary    language=ES    WITH NAME    Spanish
 Library     Process
 Library     OperatingSystem
 Library     json_lib.py
@@ -15,6 +16,9 @@ French Translation Works
 
 German Translation Works
     Alle Browser Schließen
+
+Spanish Translation Works
+    Cerrar Todos Los Navegadores
 
 LibDoc Works With Translation
     [Setup]    Remove File    ${CURDIR}/SL.json
@@ -53,3 +57,15 @@ LibDoc Works With German Translation
     ...    ${json_kw_speck}
     Run Process    ${cmd}    shell=True
     Compare Translations    ${json_kw_speck}    de
+
+LibDoc Works With Spanish Translation
+    ${json_kw_speck} =    Join Path    ${OUTPUT DIR}    SL_es.json
+    ${result} =    Run Process
+    ...    python
+    ...    -m
+    ...    robot.libdoc
+    ...    --format\=json
+    ...    SeleniumLibrary::language\=ES
+    ...    ${json_kw_speck}
+    Should Be Equal As Integers    ${result.rc}    0    ${result.stderr}
+    Compare Translations    ${json_kw_speck}    es
