@@ -2,27 +2,27 @@
     "alert_should_be_present": {
         "name": "la_alerta_debe_estar_presente",
         "doc": "Comprueba que hay una alerta presente y, por defecto, la acepta.\n\n        Falla si no hay ninguna alerta presente. Si ``text`` es una cadena que no está vacía,\n        luego se utiliza para verificar el mensaje de alerta. Se acepta la alerta\n        por defecto, pero ese comportamiento se puede controlar utilizando el\n        argumento ``action`` de la misma manera que con `Manejar Alerta`.\n\n        ``timeout`` especifica cuánto tiempo se debe esperar para que aparezca la alerta.\n        Si no se proporciona, en su lugar se utiliza el valor predeterminado global `timeout`.\n\n        Los argumentos ``action`` y ``timeout`` son nuevos en SeleniumLibrary 3.0.\n        En versiones anteriores, la alerta siempre se aceptaba y se establecía un tiempo de espera.\n        codificado a un segundo.\n        ",
-        "sha256": "c2389ab996f30509c4a5951f32dcfe2c8630040e00cedba19e19faa76a15299d"
+        "sha256": "e24b6bf27184a7e27732ddbffc2f535da8bc1a0b6e5f00460e7eed0ca1739c2f"
     },
     "alert_should_not_be_present": {
         "name": "la_alerta_no_debe_estar_presente",
         "doc": "Verifica que no haya ninguna alerta presente.\n\n        Si la alerta realmente existe, el argumento ``action`` determina\n        cómo se debe manejar. Por defecto, se acepta la alerta, pero\n        También se puede descartar o dejar abierto del mismo modo que con el\n        `Manejar Alerta` palabra clave.\n\n        ``timeout`` especifica cuánto tiempo se debe esperar para que aparezca la alerta.\n        Por defecto, no se espera ninguna alerta, pero se puede establecer un tiempo personalizado.\n        se dará si la alerta puede retrasarse. Ver la sección `formato de hora`\n        para obtener información sobre la sintaxis.\n\n        Nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "75343dfda0a68c40607e961ead1e104553ba074110f33627131125e8c11ecef0"
+        "sha256": "ecbe400271baf21ba5615f33d10d47875b5dcf24ca69f3e8a48fdfc472a93648"
     },
     "handle_alert": {
         "name": "manejar_alerta",
         "doc": "Maneja la alerta actual y devuelve su mensaje.\n\n        Por defecto se acepta la alerta, pero esto se puede controlar\n        con el argumento ``action`` que respalda lo siguiente\n        valores que no distinguen entre mayúsculas y minúsculas:\n\n        - ``ACCEPT``: Acepte la alerta, es decir, presione ``Ok``. Por defecto.\n        - ``DISMISS``: descartar la alerta, es decir, presionar ``Cancel``.\n        - ``LEAVE``: Dejar abierta la alerta.\n\n        El argumento ``timeout`` especifica cuánto tiempo esperar la alerta.\n        para aparecer. Si no se proporciona, se utiliza el valor predeterminado global `timeout`.\n        en cambio.\n\n        Ejemplos:\n        | `Manejar Alerta` |                |       | # Aceptar alerta.  |\n        | `Manejar Alerta` | action=DISMISS |       | # Descartar alerta. |\n        | `Manejar Alerta` | timeout=10 s |       | # Utilice un tiempo de espera personalizado y acepte la alerta.  |\n        | `Manejar Alerta` | DISMISS | 1 min | # Utilice un tiempo de espera personalizado y descarte la alerta. |\n        | ${message} = | `Manejar Alerta` |       | # Aceptar alerta y recibir su mensaje.     |\n        | ${message} = | `Manejar Alerta` | LEAVE | # Deje la alerta abierta y reciba su mensaje. |\n\n        Nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "7620b9059b37d2cb1d5823256d0f71d32d3f66af153d6be8ff5100219d4270d6"
+        "sha256": "d7b9b957388be09465824109eeb33e6ff5f44f49b2aad1ad4d70afeb4b03008d"
     },
     "input_text_into_alert": {
         "name": "escribir_texto_en_alerta",
         "doc": "Escribe el ``text`` proporcionado en un campo de entrada en una alerta.\n\n        La alerta se acepta por defecto, pero ese comportamiento se puede controlar.\n        utilizando el argumento ``action`` de la misma manera que con `Manejar Alerta`.\n\n        ``timeout`` especifica cuánto tiempo se debe esperar para que aparezca la alerta.\n        Si no se proporciona, se utiliza en su lugar el valor predeterminado global `timeout`.\n\n        Nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "77f522107ebbde4fbcca0e9d1f1e31911dad7f3256ea39d078ed3365cfefbc46"
+        "sha256": "9d1efacc04de7e06422b12ea98a92463409d0e4fd32651e963254a01e16d17b1"
     },
     "close_all_browsers": {
         "name": "cerrar_todos_los_navegadores",
         "doc": "Cierra todos los navegadores abiertos y restablece el caché del navegador.\n\n        Después de esta palabra clave, se devuelven nuevos índices de la palabra clave `Abrir Navegador`\n        se restablecen a 1.\n\n        Esta palabra clave debe usarse en la prueba o desmontaje de suite para asegurarse\n        Todos los navegadores están cerrados.\n        ",
-        "sha256": "34bfcab8a0c99c9fc0ebeeaec4432664ab8fbcc99673bd4bb3f9be2e897dbb5b"
+        "sha256": "7f331c0697c39c41eaed153a9f4f20a62735d5e1fdb24dd6b531784d06ca4418"
     },
     "close_browser": {
         "name": "cerrar_navegador",
@@ -32,7 +32,7 @@
     "create_webdriver": {
         "name": "crear_webdriver",
         "doc": "Crea una instancia de Selenium WebDriver.\n\n        Como `Abrir Navegador`, pero permite pasar argumentos al creado\n        Instancia de WebDriver directamente. Esta palabra clave sólo debe usarse si\n        la funcionalidad proporcionada por `Abrir Navegador` no es adecuada.\n\n        ``driver_name`` debe ser un nombre de implementación de WebDriver como Firefox,\n        Chrome, IE, Edge, Safari o Remoto.\n\n        El WebDriver inicializado se puede configurar con Python\n        diccionario ``kwargs`` o utilizando argumentos de palabras clave ``**init_kwargs``.\n        Estos argumentos se pasan directamente a WebDriver sin ningún\n        procesamiento. Consulte [https://seleniumhq.github.io/selenium/docs/api/py/api.html|\n        Documentación de Selenium API] para obtener detalles sobre los argumentos admitidos.\n\n        Ejemplos:\n        | # Usar proxy con Firefox |                |                              |                                      |\n        | ${proxy}= | `Evaluate` | selenium.webdriver.Proxy() | modules=selenium, selenium.webdriver |\n        | ${proxy.http_proxy}= | `Set Variable` | localhost:8888 |                                      |\n        | `Crear Webdriver` | Firefox | proxy=${proxy} |                                      |\n\n        Devuelve el índice de esta instancia del navegador que se puede utilizar más adelante para\n        volver a él. El índice comienza desde 1 y se restablece cuando\n        Se utiliza la palabra clave `Cerrar Todos Los Navegadores`. Consulte `Cambiar Navegador` para obtener una\n        ejemplo.\n        ",
-        "sha256": "3087dbe7f9bf0348aa9d44f9ef0df12666d3d8be2a0c771cd74e7cdd2076daf9"
+        "sha256": "dc90e0ec6bda75a3bdaab9b3590f52ea94f848440e3fb11f35175e777eb82c87"
     },
     "get_action_chain_delay": {
         "name": "obtener_retraso_de_cadena_de_acciones",
@@ -42,12 +42,12 @@
     "get_browser_aliases": {
         "name": "obtener_alias_de_navegadores",
         "doc": "Devuelve alias de todos los navegadores activos que tienen un alias como NormalizedDict.\n        El diccionario contiene los alias como claves y el índice como valor.\n        Se puede acceder a él como diccionario ``${aliases.key}`` o como lista ``@{aliases}[0]``.\n\n        Ejemplo:\n        | `Abrir Navegador` | https://example.com | alias=BrowserA | |\n        | `Abrir Navegador` | https://example.com | alias=BrowserB | |\n        | &{aliases} | `Obtener Alias De Navegadores` |                | # &{aliases} = { BrowserA=1|BrowserB=2 } |\n        | `Log` | ${aliases.BrowserA} |                | # registros ``1`` |\n        | FOR | ${alias} | IN | @{aliases} |\n        |                | `Log` | ${alias} | # registros ``BrowserA`` y ``BrowserB`` |\n        | END |                       |                | |\n\n        Consulte `Cambiar Navegador` para obtener más información y ejemplos.\n\n        Nuevo en SeleniumLibrary 4.0\n        ",
-        "sha256": "defef82080de396568467a48c850a3db67484a7b786d8ebd76a3f3ba02c71dff"
+        "sha256": "53fcb834c1eadb914f808936b47cde8fb2ab068960674c04d76f60b185a5c270"
     },
     "get_browser_ids": {
         "name": "obtener_ids_de_navegadores",
         "doc": "Devuelve el índice de todos los navegadores activos como lista.\n\n                Ejemplo:\n        | @{browser_ids}= | `Obtener Ids De Navegadores` |                   |                |\n        | FOR | ${id} | IN | @{browser_ids} |\n        |                 | @{window_titles}= | `Obtener Titulos De Ventana` | browser=${id} |\n        |                 | Log | Browser ${id} has these windows: ${window_titles} | |\n        | END |                   |                   |                |\n\n        Consulte `Cambiar Navegador` para obtener más información y ejemplos.\n\n        Nuevo en SeleniumLibrary 4.0\n        ",
-        "sha256": "c320152b2a66ba066b100fb8c729f3d36c04a5b72ed753b09d29b6e13613a004"
+        "sha256": "6e41113cb91b5e90ec967564da245c26c4f2a435effdcf3cc94fef6580b6eb44"
     },
     "get_location": {
         "name": "obtener_ubicacion",
@@ -57,27 +57,27 @@
     "get_selenium_implicit_wait": {
         "name": "obtener_espera_implicita_de_selenium",
         "doc": "Obtiene el valor de espera implícito utilizado por Selenium.\n\n        El valor se devuelve como una cadena legible por humanos como ``1 second``.\n\n        Consulte la sección `Espera implícita` anterior para obtener más información.\n        ",
-        "sha256": "f506381005ec3abf34b359df073e602f6589fac8d030a5369156016bbfacfde2"
+        "sha256": "1edbc13389648910f2f8956a82f4692806fafa704cd0c921beef7d8763446f62"
     },
     "get_selenium_page_load_timeout": {
         "name": "obtener_tiempo_de_espera_de_carga_de_pagina_de_selenium",
         "doc": "Obtiene el tiempo para esperar a que se complete la carga de una página.\n        antes de generar una excepción de tiempo de espera.\n\n        El valor se devuelve como una cadena legible por humanos como ``1 second``.\n\n        Consulte la sección `Carga de página` anterior para obtener más información.\n\n        Nuevo en SeleniumLibrary 6.1\n        ",
-        "sha256": "18d82c9e55e7d06156a7fcccd2f96ddd6185a4c3625c344073a3f3e33d6e1e72"
+        "sha256": "a6cd8aecaf2593b41f8602f03b183c5865985c5a69961f425240de03367cb8a7"
     },
     "get_selenium_speed": {
         "name": "obtener_velocidad_de_selenium",
         "doc": "Obtiene el retraso que se espera después de cada comando de Selenium.\n\n        El valor se devuelve como una cadena legible por humanos como ``1 second``.\n\n        Consulte la sección `Velocidad de Selenium` anterior para obtener más información.\n        ",
-        "sha256": "e310cfaddced1d3088b673df4c7c469f10d3992116e2fabe048be986462febc5"
+        "sha256": "c1f10eb92c36a6440b1875e311fb391caa541b83fd3f9ffe4e21ad3f3c233cd4"
     },
     "get_selenium_timeout": {
         "name": "obtener_tiempo_de_espera_de_selenium",
         "doc": "Obtiene el tiempo de espera que utilizan varias palabras clave.\n\n        El valor se devuelve como una cadena legible por humanos como ``1 second``.\n\n        Consulte la sección `Timeout` anterior para obtener más información.\n        ",
-        "sha256": "9ebe70c2d1751c70d0f646c8c0e91e3c924ae6062c4c961432405b1fa2e0efe3"
+        "sha256": "5474d5de2dcb974ecda0594b096b375f3a595551a2737fcc33bd1425b5a745cf"
     },
     "get_session_id": {
         "name": "obtener_id_de_sesion",
         "doc": "Devuelve la identificación de la sesión del navegador actualmente activa.\n\n        Nuevo en SeleniumLibrary 3.2\n        ",
-        "sha256": "26f4581c49c3930c0bbc7ff188330eff3bdb9822556ed029c8b47e5cb75949d2"
+        "sha256": "9e0ee7c49ba316185c9365fd92f5287be89557785baa89451ebb7f2a252bc18a"
     },
     "get_source": {
         "name": "obtener_codigo_fuente",
@@ -102,12 +102,12 @@
     "location_should_be": {
         "name": "la_ubicacion_debe_ser",
         "doc": "Verifica que la URL actual sea exactamente ``url``.\n\n        El argumento ``url`` contiene la URL exacta que debería existir en el navegador.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``message`` es nuevo en SeleniumLibrary 3.2.0.\n        ",
-        "sha256": "ea4b77e8386a52d7881a76cc42cf6c7754da4c44f1b54aa8d71467770a919839"
+        "sha256": "b9065da8bccd313ad644a512bfc0b72a80b8c7d38f44fc0cc6dc3e6ab71ade56"
     },
     "location_should_contain": {
         "name": "la_ubicacion_debe_contener",
         "doc": "Verifica que la URL actual contenga ``expected``.\n\n        El argumento ``expected`` contiene el valor esperado en la URL.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``message`` es nuevo en SeleniumLibrary 3.2.0.\n        ",
-        "sha256": "be7e648ca2a1f5a7d83f5fe99d0e9aef696f0c645b57985059179476c4d1d0ed"
+        "sha256": "f90c8a5089c842ffb063bc2798775437b285166b990f992b7b0193bf8630997f"
     },
     "log_location": {
         "name": "registrar_ubicacion",
@@ -117,7 +117,7 @@
     "log_source": {
         "name": "registrar_codigo_fuente",
         "doc": "Registra y devuelve la fuente HTML de la página o frame actual.\n\n        El argumento ``loglevel`` define el nivel de registro utilizado. Registro válido\n        Los niveles son ``WARN``, ``INFO`` (predeterminado), ``DEBUG``, ``TRACE``.\n        y ``NONE`` (sin registro).\n        ",
-        "sha256": "ccfb24c918224eb021f3f020cd9dd1375b128835d8295fc0a40d7f76c628d0b7"
+        "sha256": "4571f51d8315e295923746827ac7905c196a80e2e2ecea6e448763e91e8f62c2"
     },
     "log_title": {
         "name": "registrar_titulo",
@@ -127,7 +127,7 @@
     "open_browser": {
         "name": "abrir_navegador",
         "doc": "Abre una nueva instancia del navegador en el ``url`` opcional.\n\n        El argumento ``browser`` especifica qué navegador utilizar. \n        Los navegadores compatibles se enumeran en la siguiente tabla. Los nombres del navegador\n        no distinguen entre mayúsculas y minúsculas y algunos navegadores tienen varios nombres compatibles.\n\n        |    = Navegador =    |        = Nombre(s) =       |\n        | Firefox           | firefox, ff              |\n        | Google Chrome     | googlechrome, chrome, gc |\n        | Headless Firefox  | headlessfirefox          |\n        | Headless Chrome   | headlesschrome           |\n        | Internet Explorer | internetexplorer, ie     |\n        | Edge              | edge                     |\n        | Safari            | safari                   |\n\n        Para poder utilizar uno de estos navegadores, es necesario tener\n        un controlador de navegador Selenium compatible disponible. Ver el\n        [https://github.com/robotframework/SeleniumLibrary#browser-drivers|\n        documentación del proyecto] para más detalles.\n\n        Después de abrir el navegador, es posible utilizar opciones opcionales.\n        ``url`` para navegar en el navegador hasta la dirección deseada.\n\n        Ejemplos:\n        | `Abrir Navegador` | http://example.com | Chrome |                                         |\n        | `Abrir Navegador` | http://example.com | Firefox | alias=Firefox |\n        | `Abrir Navegador` | http://example.com | Edge | remote_url=http://127.0.0.1:4444/wd/hub |\n        | `Abrir Navegador` | about:blank |         |                                         |\n        | `Abrir Navegador` | browser=Chrome |         |                                         |\n\n        Opcional ``alias`` es un alias proporcionado para esta instancia del navegador y\n        se puede utilizar para cambiar entre navegadores. Cuando mismo ``alias``\n        se proporciona con dos palabras clave `Abrir Navegador`, la primera palabra clave\n        abra un nuevo navegador, pero el segundo cambiará al ya\n        Abrí el navegador y no abriré un nuevo navegador. El ``alias``\n        La definición anula la definición ``browser``. Cuando mismo ``alias``\n        se utiliza pero se define un ``browser`` diferente, luego cambie a\n        Se crea un navegador con el mismo alias y no se abre un nuevo navegador.\n        Un enfoque alternativo para cambiar es utilizar un índice devuelto\n        por esta palabra clave. Estos índices comienzan desde 1, se incrementan cuando son nuevos.\n        Los navegadores se abren y se restablecen a 1 cuando `Cerrar Todos Los Navegadores`\n        se llama. Consulte `Cambiar Navegador` para obtener más información y ejemplos.\n\n        Ejemplos de alias:\n        | ${1_index} = | `Abrir Navegador` | http://example.com | Chrome | alias=Chrome | # Abre un nuevo navegador porque el alias es nuevo.         |\n        | ${2_index} = | `Abrir Navegador` | http://example.com | Firefox |                  | # Abre un nuevo navegador porque el alias no está definido. |\n        | ${3_index} = | `Abrir Navegador` | http://example.com | Chrome | alias=Chrome | # Cambia al navegador con alias de Chrome.      |\n        | ${4_index} = | `Abrir Navegador` | http://example.com | Chrome | alias=${1_index} | # Cambia al navegador con alias de Chrome.      |\n        | Should Be Equal | ${1_index} | ${3_index} |         |                  |                                                   |\n        | Should Be Equal | ${1_index} | ${4_index} |         |                  |                                                   |\n        | Should Be Equal | ${2_index} | ${2} |         |                  |                                                   |\n\n        Opcional ``remote_url`` es la URL de un\n        [https://github.com/SeleniumHQ/selenium/wiki/Grid2|Cuadrícula de Selenium].\n\n        El ``desired_capabilities`` opcional está obsoleto y se eliminará.\n        en la próxima versión. Las capacidades de cada navegador individual ahora son\n        realizarse a través de opciones o servicios. Consulte esos argumentos.\n        para configurar navegadores específicos.\n\n        Opcional ``ff_profile_dir`` es la ruta al perfil de Firefox\n        directorio si desea sobrescribir el perfil predeterminado Selenium\n        usos. ``ff_profile_dir`` también puede ser una instancia del\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver_firefox/selenium.webdriver.firefox.firefox_profile.html|selenium.webdriver.FirefoxProfile]\n        . Como tercera opción, es posible utilizar los métodos `FirefoxProfile`\n        y atributos para definir el perfil usando métodos y atributos\n        de la misma manera que con el argumento ``options``. Ejemplo: es posible\n        utilizar FirefoxProfile `set_preference` para definir diferentes\n        configuración del perfil. Consulte la documentación del argumento ``options`` a continuación.\n        cómo manejar el escape de la barra invertida.\n\n        Ejemplo de perfil de Firefox\n        | `Abrir Navegador` | http://example.com | Firefox | ff_profile_dir=/path/to/profile | # Usando el perfil del disco.                       |\n        | `Abrir Navegador` | http://example.com | Firefox | ff_profile_dir=${FirefoxProfile_instance} | # Usando la instancia de FirefoxProfile.              |\n        | `Abrir Navegador` | http://example.com | Firefox | ff_profile_dir=set_preference(\"key\", \"value\");set_preference(\"other\", \"setting\") | # Definición de perfil utilizando los métodos FirefoxProfile. |\n\n        El argumento opcional ``options`` permite definir parámetros específicos del navegador.\n        Opciones de Selenium. Ejemplo para Chrome, el argumento ``options``\n        permite definir lo siguiente\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver_chrome/selenium.webdriver.chrome.options.html#selenium.webdriver.chrome.options.Options|métodos y atributos]\n        y para Firefox estos\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver_firefox/selenium.webdriver.firefox.options.html?highlight=firefox#selenium.webdriver.firefox.options.Options|métodos y atributos]\n        están disponibles. Las opciones de Selenium también son compatibles cuando ``remote_url``\n        Se utiliza el argumento.\n\n        El argumento SeleniumLibrary ``options`` acepta Selenium\n        opciones en dos formatos diferentes: como cadena y como objeto Python\n        que es una instancia de la clase de opciones de Selenium.\n\n        El formato de cadena utiliza una sintaxis similar a Python para definir las opciones de Selenium.\n        métodos o atributos.\n\n        Ejemplo al usar\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver_chrome/selenium.webdriver.chrome.options.html#selenium.webdriver.chrome.options.Options|Opciones de Chrome]\n        método:\n        | `Abrir Navegador` | http://example.com | Chrome | options=add_argument(\"--disable-popup-blocking\"); add_argument(\"--ignore-certificate-errors\") | # Formato de picadura.                    |\n        | `Abrir Navegador` | None | Chrome | options=binary_location=\"/path/to/binary\";add_argument(\"remote-debugging-port=port\") | # Inicie la aplicación basada en Chomium. |\n        | `Abrir Navegador` | None | Chrome | options=binary_location=r\"C:\\\\path\\\\to\\\\binary\" | # Se escapa la ruta del sistema operativo Windows.        |\n\n        El argumento ``options`` también admite la recepción de Selenium.\n        opciones como instancia de clase Python.\n\n        Consulte la sección `Opciones de navegador y controlador` para obtener más detalles sobre cómo utilizar\n        el formato de cadena o la sintaxis del objeto Python con el argumento ``options``.\n\n        El ``service_log_path`` opcional quedará obsoleto en la próxima versión. por favor\n        utilice en su lugar el atributo ``service`` específico del navegador. El ``service_log_path``\n        El argumento define el nombre del archivo donde escribir los registros del controlador del navegador.\n        Si el argumento ``service_log_path`` contiene un marcador ``{index}``,\n        será reemplazado automáticamente con ejecución única\n        índice que evita que los archivos se sobrescriban. Los índices comienzan desde 1,\n        y la forma en que se representan se puede personalizar usando Python\n        [https://docs.python.org/3/library/string.html#format-string-syntax|\n        sintaxis de cadena de formato].\n\n        El ``executable_path`` opcional quedará obsoleto en la próxima versión. por favor\n        utilice el atributo `executable_path` y, si es necesario, `port` en ``service``\n        argumento en su lugar. El argumento ``executable_path`` define la ruta al controlador.\n        ejecutable, por ejemplo para un chromedriver o un geckodriver. Si no está definido\n        se supone que el ejecutable está en el\n        [https://en.wikipedia.org/wiki/PATH_(variable)|$RUTA].\n\n        El argumento opcional ``service`` permite administrar los controladores locales.\n        además de establecer algunas configuraciones específicas del navegador, como el registro. Servicio\n        Las clases no se admiten cuando se utiliza el argumento ``remote_url``. Ver el\n        Sección `Opciones de navegador y controlador` para obtener más detalles sobre cómo utilizar\n        el argumento ``service``.\n\n        Si las opciones de configuración proporcionadas no son suficientes, es posible\n        utilizar `Crear Webdriver` para personalizar la inicialización del navegador incluso\n        más.\n\n        El argumento ``service`` es nuevo en SeleniumLibrary 6.4.\n        ",
-        "sha256": "865d97523ccc52459ce2110a90b05b5c4bbb48f46131ca02385d11102e750835"
+        "sha256": "033b69d7f2bd9077eea544bd0fbcb8585f3e82a5f713c00bf93f0ec8386c8c4b"
     },
     "reload_page": {
         "name": "recargar_pagina",
@@ -137,47 +137,47 @@
     "set_action_chain_delay": {
         "name": "establecer_retraso_de_cadena_de_acciones",
         "doc": "Establece la duración del retraso en ActionChains() utilizado por SeleniumLibrary.\n\n        El valor se puede dar como un número que se considera\n        segundos o como una cadena legible por humanos como ``1 second``.\n\n        El valor siempre se almacena internamente en milisegundos.\n\n        El valor anterior se devuelve y se puede utilizar para restaurar.\n        el valor original más tarde si es necesario.\n        ",
-        "sha256": "30a861e88589e077326d025611cd558432a5426b6b002aface8b8367286eca24"
+        "sha256": "a059249e0cdbeacd88db3e3a1e4befed3106c64a9f7f8918819fad34c202cf90"
     },
     "set_browser_implicit_wait": {
         "name": "establecer_espera_implicita_del_navegador",
         "doc": "Establece el valor de espera implícito utilizado por Selenium.\n\n        Igual que `Establecer Espera Implicita De Selenium` pero solo afecta la corriente\n        navegador.\n        ",
-        "sha256": "a5097a7357967bebd69e46c700917daaa41994d0235b77da90ce0b88d1bd3518"
+        "sha256": "fbd1df745afb65983fb2fd92a6b417463178dd72d5376a0a8ec40f625e551210"
     },
     "set_selenium_implicit_wait": {
         "name": "establecer_espera_implicita_de_selenium",
         "doc": "Establece el valor de espera implícito utilizado por Selenium.\n\n        El valor se puede dar como un número que se considera\n        segundos o como una cadena legible por humanos como ``1 second``.\n        El valor anterior se devuelve y se puede utilizar para restaurar.\n        el valor original más tarde si es necesario.\n\n        Esta palabra clave establece la espera implícita para todos los navegadores abiertos.\n        Utilice `Establecer Espera Implicita Del Navegador` para configurarlo solo en el actual\n        navegador.\n\n        Consulte la sección `Espera implícita` anterior para obtener más información.\n\n        Ejemplo:\n        | ${orig wait} = | `Establecer Espera Implicita De Selenium` | 10 seconds |\n        | `Perform AJAX call that is slow` |\n        | `Establecer Espera Implicita De Selenium` | ${orig wait} |\n        ",
-        "sha256": "1df9421daaba885bd06552d7b62030b285ac8472b98e09e0719554fd2448547c"
+        "sha256": "af4e999244ea7b965268eb7d761c93776eda4d46fcb16af9026fabb0426def6a"
     },
     "set_selenium_page_load_timeout": {
         "name": "establecer_tiempo_de_espera_de_carga_de_pagina_de_selenium",
         "doc": "Establece el valor de tiempo de espera de carga de la página utilizado por Selenium.\n\n        El valor se puede dar como un número que se considera\n        segundos o como una cadena legible por humanos como ``1 second``.\n        El valor anterior se devuelve y se puede utilizar para restaurar.\n        el valor original más tarde si es necesario.\n\n        A diferencia de `Establecer Tiempo De Espera De Selenium` y `Establecer Espera Implicita De Selenium`,\n        Esta palabra clave establece el tiempo que el Webdriver esperará hasta que la página\n        se carga antes de generar una excepción de tiempo de espera.\n\n        Consulte la sección `Carga de página` anterior para obtener más información.\n\n        Ejemplo:\n        | ${orig page load timeout} = | `Establecer Tiempo De Espera De Carga De Pagina De Selenium` | 30 seconds |\n        | `Open page that loads slowly` |\n        | `Establecer Tiempo De Espera De Carga De Pagina De Selenium` | ${orig page load timeout} |\n\n        Nuevo en SeleniumLibrary 6.1\n        ",
-        "sha256": "37e2b5f6af58ce3b2e1d520c0c2d56b99cadf175dd31f1ccfb05de36c8cfdab0"
+        "sha256": "fe19f678f8f4cf48a5285f410562da6eb4005432197941c6f89b4f04624e0025"
     },
     "set_selenium_speed": {
         "name": "establecer_velocidad_de_selenium",
         "doc": "Establece el retraso que se espera después de cada comando de Selenium.\n\n        El valor se puede dar como un número que se considera\n        segundos o como una cadena legible por humanos como ``1 second``.\n        El valor anterior se devuelve y se puede utilizar para restaurar.\n        el valor original más tarde si es necesario.\n\n        Consulte la sección `Velocidad de Selenium` anterior para obtener más información.\n\n        Ejemplo:\n        | `Establecer Velocidad De Selenium` | 0.5 seconds |\n        ",
-        "sha256": "143bd7c58689c676a711dcf2571cfdd8ee609325264bd632db2945dce3300ae5"
+        "sha256": "e38c25c7d6ad85988582b0cac0720067a9eaa5b1755c26146e90689866f3f4d0"
     },
     "set_selenium_timeout": {
         "name": "establecer_tiempo_de_espera_de_selenium",
         "doc": "Establece el tiempo de espera que utilizan varias palabras clave.\n\n        El valor se puede dar como un número que se considera\n        segundos o como una cadena legible por humanos como ``1 second``.\n        El valor anterior se devuelve y se puede utilizar para restaurar.\n        el valor original más tarde si es necesario.\n\n        Consulte la sección `Timeout` anterior para obtener más información.\n\n        Ejemplo:\n        | ${orig timeout} = | `Establecer Tiempo De Espera De Selenium` | 15 seconds |\n        | `Open page that loads slowly` |\n        | `Establecer Tiempo De Espera De Selenium` | ${orig timeout} |\n        ",
-        "sha256": "6e78114e0e60f0148629589b897d6a67b1c492317eb883b2ca4f3c6457a5d01b"
+        "sha256": "644cfd498f18cf18125006e0fd1626fb774cf3eb75a20691988cb23ba59c9e55"
     },
     "switch_browser": {
         "name": "cambiar_navegador",
         "doc": "Cambia entre navegadores activos usando ``index_or_alias``.\n\n        Los índices se devuelven mediante la palabra clave `Abrir Navegador` y los alias pueden\n        dársele expresamente. Los índices comienzan desde 1.\n\n        Ejemplo:\n        | `Abrir Navegador` | http://google.com | ff |\n        | `La Ubicacion Debe Ser` | http://google.com |          |\n        | `Abrir Navegador` | http://yahoo.com | ie | alias=second |\n        | `La Ubicacion Debe Ser` | http://yahoo.com |          |\n        | `Cambiar Navegador` | 1 | # índice |\n        | `La Pagina Debe Contener` | Me siento afortunado |          |\n        | `Cambiar Navegador` | second | # alias |\n        | `La Pagina Debe Contener` | Más Yahoo!       |          |\n        | `Cerrar Todos Los Navegadores` |                   |          |\n\n        El ejemplo anterior espera que no haya otros navegadores abiertos cuando\n        abriendo el primero porque usó el índice ``1`` al cambiar a\n        más tarde. Si no está seguro de eso, puede almacenar el índice.\n        en una variable como se muestra a continuación.\n\n        | ${index} = | `Abrir Navegador` | http://google.com |\n        | # Haz algo... |                |                   |\n        | `Cambiar Navegador` | ${index} |                   |\n        ",
-        "sha256": "de918f9e83ebecafb37ba3704649efb39dfbf405960597e1e99dddffdf69c1fb"
+        "sha256": "b8f41164656b51ba74c5bd6f96ff13fd8ac63d32563eb52cc86f3e5b914412ad"
     },
     "title_should_be": {
         "name": "el_titulo_debe_ser",
         "doc": "Verifica que el título de la página actual sea igual a ``title``.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``message`` es nuevo en SeleniumLibrary 3.1.\n        ",
-        "sha256": "f3ed755ed3bdbb8e7b334bce951620ceb83c3aca1cad51a31b2eea42260e1199"
+        "sha256": "eb3ab6a70c8f6637e3a0d9a7e648122b7b42aa6f64035a76261d183c73000900"
     },
     "add_cookie": {
         "name": "agregar_cookie",
         "doc": "Agrega una cookie a su sesión actual.\n\n        Se requieren ``name`` y ``value``, ``path``, ``domain``, ``secure``\n        y ``expiry`` son opcionales.  Expiry admite los mismos formatos que\n        el [http://robotframework.org/robotframework/latest/libraries/DateTime.html|DateTime]\n        biblioteca o una marca de tiempo de época.\n\n        Ejemplo:\n        | `Agregar Cookie` | foo | bar |                            |\n        | `Agregar Cookie` | foo | bar | domain=ejemplo.com |\n        | `Agregar Cookie` | foo | bar | expiry=2027-09-28 16:21:35 | # Caducidad como marca de tiempo.     |\n        | `Agregar Cookie` | foo | bar | expiry=1822137695 | # Caducidad como segundos de época. |\n\n        Antes de la caducidad de la configuración de SeleniumLibrary 3.0 no funcionaba.\n        ",
-        "sha256": "4824fdf8e69148f3f74ed2a177fc4417caa1b7d24b5fd55378e8cdbd3ace04a5"
+        "sha256": "c8c97ca14368e4d59d9367c7310e8ec9888575fa7f2143a623fddbbb3332866a"
     },
     "delete_all_cookies": {
         "name": "eliminar_todas_las_cookies",
@@ -187,227 +187,227 @@
     "delete_cookie": {
         "name": "eliminar_cookie",
         "doc": "Elimina la cookie que coincide con ``name``.\n\n        Si no se encuentra la cookie, no pasa nada.\n        ",
-        "sha256": "9f69becc9575a4dc10a09bebdcb7405fbfba883c8268c889baca4659ba549d04"
+        "sha256": "654baddc4cbc534e183af1c78711d16986cf24dad7a19e2475045aa6698a28e4"
     },
     "get_cookie": {
         "name": "obtener_cookie",
         "doc": "Devuelve información de la cookie con ``name`` como objeto.\n\n        Si no se encuentra ninguna cookie con ``name``, la palabra clave falla. El objeto cookie\n        contiene detalles sobre la cookie. Atributos disponibles en el objeto\n        están documentados en la siguiente tabla.\n\n        | = Atributo = |             = Explicación =                                |\n        | name          | El nombre de una cookie.                                      |\n        | value         | Valor de la cookie.                                       |\n        | path          | Indica una ruta URL, por ejemplo ``/``.                   |\n        | domain        | El dominio para el que la cookie es visible.                      |\n        | secure        | Cuando es verdadero, la cookie solo se usa con conexiones HTTPS. |\n        | httpOnly      | Cuando es verdadero, no se puede acceder a la cookie a través de JavaScript.    |\n        | expiry        | Objeto datetime de Python que indica cuándo caduca la cookie. |\n        | extra         | Posibles atributos fuera de la especificación WebDriver |\n\n        Ver el\n        [https://w3c.github.io/webdriver/#cookies|WebDriver specification]\n        para obtener detalles sobre la información de las cookies.\n        Observe que ``expiry`` se especifica como un\n        [https://docs.python.org/3/library/datetime.html#datetime.datetime|objeto de fecha y hora],\n        no tan segundos desde Unix Epoch como lo hace WebDriver de forma nativa.\n\n        En algunos casos, por ejemplo cuando se ejecuta un navegador en la nube, es posible que\n        la cookie contiene otros atributos que los definidos en el\n        [https://w3c.github.io/webdriver/#cookies|WebDriver specification].\n        Estos otros atributos están disponibles en un atributo ``extra`` en la cookie.\n        objeto y contiene un diccionario de los demás atributos. El ``extra``\n        El atributo es nuevo en SeleniumLibrary 4.0.\n\n        Ejemplo:\n        | `Agregar Cookie` | foo | bar |\n        | ${cookie} = | `Obtener Cookie` | foo |\n        | `Should Be Equal` | ${cookie.name} | foo |\n        | `Should Be Equal` | ${cookie.value} | bar |\n        | `Should Be True` | ${cookie.expiry.year} > 2017 |\n\n        Nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "747951f772be34600739a36f99d276499abc5137ddb8994e1773b68cc7c2e05b"
+        "sha256": "bd5649a12719fd70d6956427a7993aa968d28360ec2e21098503de6c97b57628"
     },
     "get_cookies": {
         "name": "obtener_cookies",
         "doc": "Devuelve todas las cookies de la página actual.\n\n        Si el argumento ``as_dict`` se evalúa como falso, consulte `Argumentos booleanos`\n        para obtener más detalles, la información de las cookies se devuelve como\n        una sola cadena en formato ``name1=value1; name2=value2; name3=value3``.\n        Cuando el argumento ``as_dict`` se evalúa como verdadero, la información de la cookie\n        se devuelve como formato de diccionario de Robot Framework. El formato de cadena\n        se puede utilizar, por ejemplo, para fines de registro o en encabezados cuando\n        enviar solicitudes HTTP. El formato de diccionario es útil cuando\n        el resultado se puede pasar a la sesión de creación de la biblioteca de solicitudes\n        Parámetro de cookies opcional de la palabra clave.\n\n        El argumento `` as_dict`` es nuevo en SeleniumLibrary 3.3\n        ",
-        "sha256": "7a9bda6590cdb1aa8825e385ffefc087a7ca087936dd11350d6234e6e2c05e6c"
+        "sha256": "ffc5fe8a97d4edb27fc94766a5471fc0d77663be89042b84262740e8a03f8d4f"
     },
     "add_location_strategy": {
         "name": "agregar_estrategia_de_localizacion",
         "doc": "Agrega una estrategia de ubicación personalizada.\n\n        Consulte `Localizadores personalizados` para obtener información sobre cómo crear y utilizar\n        estrategias personalizadas. `Eliminar Estrategia De Localizacion` se puede utilizar para\n        eliminar una estrategia registrada.\n\n        Las estrategias de ubicación se eliminan automáticamente después de salir del\n        alcance actual por defecto. Establecer ``persist`` en un valor verdadero (consulte\n        `Argumentos booleanos`) hará que la estrategia de ubicación permanezca\n        registrados durante toda la vida de la prueba.\n        ",
-        "sha256": "046e816fd4d028592aaa9146fd815aec20809f88d4160fdf166fb19d5fdcfa0c"
+        "sha256": "1886276c8de941af8956bd5a0876656d8b144c0378666c521cc186c4b3aedbc2"
     },
     "assign_id_to_element": {
         "name": "asignar_id_al_elemento",
         "doc": "Asigna un ``id`` temporal al elemento especificado por ``locator``.\n\n        Esto es principalmente útil si el localizador es XPath complicado y/o lento.\n        expresión y es necesaria varias veces. El identificador caduca cuando\n        la página se recarga.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplo:\n        | `Asignar Id Al Elemento` | //ul[@class='example' and ./li[contains(., 'Stuff')]] | my id |\n        | `La Pagina Debe Contener El Elemento` | my id |\n        ",
-        "sha256": "2ce9ab7a44154be53f32d6d6e8b1b6e9dd8bbff880048c99ed4b62763a0b522c"
+        "sha256": "940a086dd9f6b80076b0b88e9d92a7b79ea1f7550c37401d5db4d15e281ea8e3"
     },
     "clear_element_text": {
         "name": "limpiar_texto_del_elemento",
         "doc": "Borra el valor del elemento de entrada de texto identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "31d7803b76e63ff90ff333f06e323aba4f820632b8795d51d24242fb65f4e7d2"
+        "sha256": "12d6ea6f782c06d03c3c2b0067416638bc8f52304675ebb0888bd3e85da8c746"
     },
     "click_button": {
         "name": "hacer_clic_en_boton",
         "doc": "Hace clic en el botón identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, los botones están\n        buscado utilizando ``id``, ``name`` y ``value``.\n\n        Consulte la palabra clave `Hacer Clic En Elemento` para obtener detalles sobre la\n        argumento ``modifier``.\n\n        El argumento ``modifier`` es nuevo en SeleniumLibrary 3.3\n        ",
-        "sha256": "72dcaeaa3bc1a4e14c596d72a19cbd82e0881732440153cbfb27272b2066dd77"
+        "sha256": "de98c9d868835ae5e9ba3501423df3e2525da8fb6800be03d9925391ba3ca7aa"
     },
     "click_element": {
         "name": "hacer_clic_en_elemento",
         "doc": "Hace clic en el elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``modifier`` se puede utilizar para pasar\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys|Teclas de Selenium]\n        al hacer clic en el elemento. El `+` se puede utilizar como separador.\n        para diferentes teclas de Selenium. El `CTRL` se traduce internamente a\n        la clave `CONTROL`. ``modifier`` no distingue entre mayúsculas y espacios, ejemplo\n        \"alt\" y \" alt \" son formatos compatibles para\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys.ALT|tecla ALT]\n        . Si ``modifier`` no coincide con Selenium Keys, la palabra clave falla.\n\n        Si el argumento ``action_chain`` es verdadero, consulte `Argumentos booleanos` para obtener más información.\n        detalles sobre cómo configurar el argumento booleano, luego la palabra clave usa ActionChain\n        clic basado en en lugar de la función <web_element>.click(). si ambos\n        ``action_chain`` y ``modifier`` están definidos, el clic será\n        realizadas utilizando ``modifier`` y ``action_chain`` se ignorarán.\n\n        Ejemplo:\n        | `Hacer Clic En Elemento` | id:button |                   | # Haría clic en el elemento sin ningún modificador.               |\n        | `Hacer Clic En Elemento` | id:button | CTRL | # Haría clic en el elemento con la tecla CTLR presionada.          |\n        | `Hacer Clic En Elemento` | id:button | CTRL+ALT | # Haría clic en el elemento con las teclas CTLR y ALT presionadas. |\n        | `Hacer Clic En Elemento` | id:button | action_chain=True | # Hace clic en el botón usando Selenium ActionChains |\n\n        El argumento ``modifier`` es nuevo en SeleniumLibrary 3.2\n        El argumento ``action_chain`` es nuevo en SeleniumLibrary 4.1\n        ",
-        "sha256": "6190a4d5a08c14715db4a9ea1e307819f9f465015325cbb1d8454fa6d01298de"
+        "sha256": "2f0acceaf7503ef5ee22a2ad34f87cd092d52dcc28478bdcd77262df8adff56a"
     },
     "click_element_at_coordinates": {
         "name": "hacer_clic_en_elemento_en_coordenadas",
         "doc": "Hace clic en el elemento ``locator`` en ``xoffset/yoffset``.\n\n        El cursor se mueve y el centro del elemento y las coordenadas x/y son\n        calculado a partir de ese punto.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "6c9be5ef41acf068a8ecf3972fe88f5f9c5257cf843d014dd9a76f7b4a3719c7"
+        "sha256": "49368f04a8aaf89e414d97954fe630864353cb2c7f735eb00a1b0244e0fdfdda"
     },
     "click_image": {
         "name": "hacer_clic_en_imagen",
         "doc": "Hace clic en una imagen identificada por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan imágenes\n        utilizando ``id``, ``name``, ``src`` y ``alt``.\n\n        Consulte la palabra clave `Hacer Clic En Elemento` para obtener detalles sobre la\n        argumento ``modifier``.\n\n        El argumento ``modifier`` es nuevo en SeleniumLibrary 3.3\n        ",
-        "sha256": "a83623f5affb23d6a089b6cab14e9983dd55eba3b11deedf672c6d2c3d387cf4"
+        "sha256": "ed0b5967fda933ffb099cd405c782780f8f7aef42fe2023d0e97b61553c72ea6"
     },
     "click_link": {
         "name": "hacer_clic_en_enlace",
         "doc": "Hace clic en un enlace identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan enlaces\n        usando ``id``, ``name``, ``href`` y el texto del enlace.\n\n        Consulte la palabra clave `Hacer Clic En Elemento` para obtener detalles sobre la\n        argumento ``modifier``.\n\n        El argumento ``modifier`` es nuevo en SeleniumLibrary 3.3\n        ",
-        "sha256": "d8c5ec4c5359fed7c6a5094f5d18e8766b4dfb6f4e4d5ea1d61d50b7b09e7c31"
+        "sha256": "a5dc0035ee9cf1e78e3e0b7393adbcb0114075b22f6639c37d3efd324bdb369f"
     },
     "cover_element": {
         "name": "cubrir_elemento",
         "doc": "Cubrirá los elementos identificados por ``locator`` con un div azul sin romper el diseño de la página.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Nuevo en SeleniumLibrary 3.3.0\n\n        Ejemplo:\n        |`Cubrir Elemento` | css:div#container |\n        ",
-        "sha256": "0dd30bea744e70b71f3e5fc5358833c291d404cdfa23970d09ece25f2380fb28"
+        "sha256": "7d0f323aab8c23e1bde0ad005cc5d7c0cced8ba517ff605a08cc9635c81f2456"
     },
     "double_click_element": {
         "name": "hacer_doble_clic_en_elemento",
         "doc": "Hace doble clic en el elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "c7b11722014178d683d80e276fcea367307d1d4cbe3b93b17cbbbe30b35b7174"
+        "sha256": "73f0a99a0496f29d8c545e057195536ee6b42fb300943f61d760d8baf94f993a"
     },
     "drag_and_drop": {
         "name": "arrastrar_y_soltar",
         "doc": "Arrastra el elemento identificado por ``locator`` al elemento ``target``.\n\n        El argumento ``locator`` es el localizador del elemento arrastrado.\n        y ``target`` es el localizador del objetivo. Ver el\n        Sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplo:\n        | `Arrastrar Y Soltar` | css:div#element | css:div.target |\n        ",
-        "sha256": "af13a511a462a2540dc93baf3bc42d05143aaf0de6ce9771029044a25b40bd64"
+        "sha256": "0aee793dc65605bc08d38e0bed42b03879430333a0ea742d6af3a2508d69133d"
     },
     "drag_and_drop_across_frames": {
         "name": "arrastrar_y_soltar_entre_frames",
         "doc": "Arrastra un elemento y lo suelta en un elemento destino atravesando límites de frames.\n\n        El argumento ``locator`` es el localizador del elemento a arrastrar. El argumento ``target``\n        es el localizador del destino donde soltar. El argumento ``target_frame`` es\n        el localizador del iframe que contiene el destino. El argumento opcional ``source_frame``\n        es el localizador del iframe que contiene el origen. Si\n        ``source_frame`` no se proporciona, el elemento origen se localiza en el contenido predeterminado.\n\n        Después de ejecutar esta palabra clave, el contexto del navegador siempre se restablece al contenido predeterminado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplos:\n        | `Arrastrar Y Soltar Entre Frames` | id:source | id:target | id:target-frame |\n        | `Arrastrar Y Soltar Entre Frames` | id:source | id:target | id:target-frame | id:source-frame |\n        ",
-        "sha256": "41a4a9814a2a6e3e64744759ed4727bd331b3f65b17e5098ef790ff909e5b630"
+        "sha256": "ea4e838b2ca64b6a5c433c81fef2ae08d59b34eae7d08dc2fdcd2879f846582a"
     },
     "drag_and_drop_by_offset": {
         "name": "arrastrar_y_soltar_por_desplazamiento",
         "doc": "Arrastra el elemento identificado con ``locator`` por ``xoffset/yoffset``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El elemento será movido por ``xoffset`` y ``yoffset``, cada uno de los cuales\n        es un número negativo o positivo que especifica el desplazamiento.\n\n        Ejemplo:\n        | `Arrastrar Y Soltar Por Desplazamiento` | miElem | 50 | -35 | # Mueve myElem 50px hacia la derecha y 35px hacia abajo |\n        ",
-        "sha256": "89750f538dc14ca0c04fbe1a3aba732352f9723d658bbd971905003ee9c351f6"
+        "sha256": "eb954a0a65f964fb36ccc2189b75bf58703e91330fb18a28c8c0647d2b16a254"
     },
     "element_attribute_value_should_be": {
         "name": "el_valor_del_atributo_del_elemento_debe_ser",
         "doc": "Verifica que el elemento identificado por ``locator`` contenga el valor de atributo esperado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplo:\n        `El Valor Del Atributo Del Elemento Debe Ser` | css:img | href | valor\n\n        Nuevo en SeleniumLibrary 3.2.\n        ",
-        "sha256": "330701ee8d3307c6543bdfeafa649d14689f639f2e139e499aae8ec495d7d015"
+        "sha256": "c36474ba18997d27d3d05cae0a333f6f1ea6d57bf704c07c100eff7dfb07cc68"
     },
     "element_should_be_disabled": {
         "name": "el_elemento_debe_estar_deshabilitado",
         "doc": "Verifica que el elemento identificado por ``locator`` esté deshabilitado.\n\n        Esta palabra clave también considera elementos que son de sólo lectura como\n        discapacitado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "6f34019f6e68805c2b73ef5207b424743c9461dfd30061f163d21948304bb012"
+        "sha256": "b456e0a14d2ddfbfbd5bd31f8d49ace68bdd93ce003dfb6357e748862445ae41"
     },
     "element_should_be_enabled": {
         "name": "el_elemento_debe_estar_habilitado",
         "doc": "Verifica que el elemento identificado por ``locator`` esté habilitado.\n\n        Esta palabra clave también considera elementos que son de sólo lectura como\n        discapacitado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "014f8538093bdcef0ed8c7a13020ae513a4a14bd2d0b71f1843de951f5c7b5d3"
+        "sha256": "ae64ed2f401ce4998da61ea8ff177aeb2e937ae91a5731de0049f6fdcef83b8d"
     },
     "element_should_be_focused": {
         "name": "el_elemento_debe_estar_enfocado",
         "doc": "Verifica que el elemento identificado por ``locator`` esté enfocado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "f327420520f06421e0a11062af115eaa7bb3eaf97a0ae4b6f02c0c82c9fa1f73"
+        "sha256": "5368aefa76f284c64c0a26d6e8d8040738a513525b6cf91e1048c4c44c6c6b86"
     },
     "element_should_be_visible": {
         "name": "el_elemento_debe_estar_visible",
         "doc": "Verifica que el elemento identificado por ``locator`` sea visible.\n\n        Aquí, visible significa que el elemento es lógicamente visible, no\n        visible ópticamente en la ventana gráfica actual del navegador. Por ejemplo,\n        un elemento que lleva ``display:none`` no es lógicamente visible,\n        por lo que el uso de esta palabra clave en ese elemento fallaría.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n        ",
-        "sha256": "98c4fb9d0b90e73c3d702b553aa6a30f027320463eb18e298cd5b9133f1cc36a"
+        "sha256": "3085b4e105402863bf6cddd88cdf7fcd8451d6e3ee5a9c89d9a16677ad02bec3"
     },
     "element_should_contain": {
         "name": "el_elemento_debe_contener",
         "doc": "Verifica que el elemento ``locator`` contenga el texto ``expected``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``ignore_case`` se puede establecer en ``True`` para comparar casos.\n        insensible, el valor predeterminado es ``False``. Nuevo en SeleniumLibrary 3.1.\n\n        El argumento ``ignore_case`` es nuevo en SeleniumLibrary 3.1.\n\n        Utilice `El Texto Del Elemento Debe Ser` si desea hacer coincidir el texto exacto,\n        no una subcadena.\n        ",
-        "sha256": "998a924785fef84597b5e5fc866f4c5d7e4b0a753cba68d15be0f3b44588c06d"
+        "sha256": "8a78d84035c80815be96666bab19e006631f83e5da020429088fbbfb81e53c7d"
     },
     "element_should_not_be_visible": {
         "name": "el_elemento_no_debe_estar_visible",
         "doc": "Verifica que el elemento identificado por ``locator`` NO sea visible.\n\n        Pasa si el elemento no existe. Ver `El Elemento Debe Estar Visible`\n        para obtener más información sobre visibilidad y argumentos respaldados.\n        ",
-        "sha256": "811779774da3cf876101661d4c15a6e89ea0568493be61b19fded7a0bd40f0c4"
+        "sha256": "894956eccf689d6cb31a87d891402c8fdaa0dff331d867f4712b67a34bf260bb"
     },
     "element_should_not_contain": {
         "name": "el_elemento_no_debe_contener",
         "doc": "Verifica que el elemento ``locator`` no contenga el texto ``expected``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``ignore_case`` se puede establecer en ``True`` para comparar casos.\n        insensible, el valor predeterminado es ``False``.\n\n        ``ignore_case`` argumento nuevo en SeleniumLibrary 3.1.\n        ",
-        "sha256": "ef9492bae813b1597fabc9d6f02a21c05ff736a18fb6eb20fb81e6ca40011437"
+        "sha256": "f3a8a365f18c8d020f9523faadc110c0951cfcb61692102714b60255716cd8bc"
     },
     "element_text_should_be": {
         "name": "el_texto_del_elemento_debe_ser",
         "doc": "Verifica que el elemento ``locator`` contenga exactamente el texto ``expected``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``ignore_case`` se puede establecer en ``True`` para comparar casos.\n        insensible, el valor predeterminado es ``False``.\n\n        El argumento ``ignore_case`` es nuevo en SeleniumLibrary 3.1.\n\n        Utilice `El Elemento Debe Contener` si desea una coincidencia de subcadena.\n        ",
-        "sha256": "4036c0bb4fe36085fcab4421f3ffb65265d70d8cb852106ea13a983438a77723"
+        "sha256": "007e21279b673271c74df58dab83c7858ca0a98646a256295656c8a7554f7930"
     },
     "element_text_should_not_be": {
         "name": "el_texto_del_elemento_no_debe_ser",
         "doc": "Verifica que el elemento ``locator`` no contenga exactamente el texto ``not_expected``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``ignore_case`` se puede establecer en ``True`` para comparar casos.\n        insensible, el valor predeterminado es ``False``.\n\n        Nuevo en SeleniumLibrary 3.1.1\n        ",
-        "sha256": "67821af845f34ba19ebffb38fa558c375f7261e3d9c9f04cb653bad828e99cf4"
+        "sha256": "e37b536c624e933d62cd34ff10cf95388ca35bd23964afddd9c685c0eea2821d"
     },
     "get_all_links": {
         "name": "obtener_todos_los_enlaces",
         "doc": "Devuelve una lista que contiene los identificadores de todos los enlaces encontrados en la página actual.\n\n        Si un enlace no tiene identificación, aparecerá una cadena vacía en la lista.\n        ",
-        "sha256": "f17319af1acc205f3ee5fe01b5e8960bba45ff05629b4b1d2e4fdec770163c1a"
+        "sha256": "1f6ed94c1739dd553882b81ff8a59cbd4b8c7b9caaf6a679dbeebe51a760ceee"
     },
     "get_css_property_value": {
         "name": "obtener_valor_de_propiedad_css",
         "doc": "Devuelve el valor calculado de ``css_property`` del elemento ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El valor devuelto es el valor CSS calculado por el navegador.\n        Por ejemplo, los colores suelen devolverse en formato ``rgba(...)`` y los tamaños\n        normalmente se devuelven en píxeles.\n\n        Ejemplo:\n        | ${color}= | `Obtener Valor De Propiedad Css` | css:button.submit | background-color |\n        | ${size}=  | `Obtener Valor De Propiedad Css` | id:username       | font-size        |\n        ",
-        "sha256": "801e9a607b7a79bbd7814b79e8a6ec9be327a2b507f6c4bf17a82af6c4965401"
+        "sha256": "5540fabf66316ca3ffc8ef323c402a36df545f3cc30a80a128a022acbcdd7261"
     },
     "get_dom_attribute": {
         "name": "obtener_atributo_dom",
         "doc": "Devuelve el valor de ``attribute`` del elemento ``locator``. `Obtener Atributo Dom` palabra clave\n        sólo devuelve atributos declarados dentro del marcado HTML del elemento.  Si el atributo solicitado\n        no está allí, la palabra clave devuelve ${None}.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplo:\n        | ${id}= | `Obtener Atributo Dom` | css:h1 | id |\n\n        ",
-        "sha256": "1337e3b21fae3759b85da9dba5fda08378fd8ea4ff16b9d9a03fa54f1d75853f"
+        "sha256": "387392cf0337556ba23f398f8e06cbc8bc22c36aae1cc223109e6e039555439c"
     },
     "get_element_attribute": {
         "name": "obtener_atributo_del_elemento",
         "doc": "Devuelve el valor de ``attribute`` del elemento ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplo:\n        | ${id}= | `Obtener Atributo Del Elemento` | css:h1 | id |\n\n        Se eliminó el paso del nombre del atributo como parte de ``locator``.\n        en SeleniumLibrary 3.2. El argumento explícito ``attribute``\n        debería usarse en su lugar.\n        ",
-        "sha256": "3325a9affcfb67bbb11b250a7479d125f3a7c0ca3e6b4772b35f873c6942a300"
+        "sha256": "9e2edb8159aab54e57075b52bc249781627e89159a187602671ec66a1ada0bca"
     },
     "get_element_count": {
         "name": "obtener_numero_de_elementos",
         "doc": "Devuelve el número de elementos que coinciden con ``locator``.\n\n        Si desea afirmar el número de elementos coincidentes, utilice\n        `La Pagina Debe Contener El Elemento` con argumento ``limit``. La palabra clave será\n        siempre devuelve un número entero.\n\n        Ejemplo:\n        | ${count} = | `Obtener Numero De Elementos` | name:div_name |\n        | `Should Be True` | ${count} > 2 |                |\n\n        Nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "edc00542de29af7b4b11d459c21c6a8f87fd21233f49c1b9a5b4d8e06d0128f8"
+        "sha256": "f335c2cd2c536b6048e076a9bcdd593124915e05798b6fab430ecfe0a9ca359a"
     },
     "get_element_size": {
         "name": "obtener_tamano_del_elemento",
         "doc": "Devuelve el ancho y alto del elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Tanto el ancho como el alto se devuelven como números enteros.\n\n        Ejemplo:\n        | ${width} | ${height} = | `Obtener Tamano Del Elemento` | css:div#container |\n        ",
-        "sha256": "d1dc235938760fc871c68838032587be56a8ebb13dc295f68e9df6a03c72d266"
+        "sha256": "cab9cbae9b7ba0b00af31cbe9be7682da7dfaebfbcad752a6c98db8d7022ab2d"
     },
     "get_horizontal_position": {
         "name": "obtener_posicion_horizontal",
         "doc": "Devuelve la posición horizontal del elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        La posición se devuelve en píxeles en el lado izquierdo de la página,\n        como un número entero.\n\n        Véase también `Obtener Posicion Vertical`.\n        ",
-        "sha256": "7b81ffe406d7708e72861971ec879a7cdb3adff3cf3a6ad4c816c0b36de84a79"
+        "sha256": "ab76190b8d5fadb396916c24d4abc021d5ac55bbc31d2c7be7a301a0ddddb1a9"
     },
     "get_property": {
         "name": "obtener_propiedad",
         "doc": "Devuelve el valor de ``property`` del elemento ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplo:\n        | ${text_length}= | `Obtener Propiedad` | css:h1 | longitud_texto |\n\n        ",
-        "sha256": "6335a05f73d42212f78d4285872595fec96dbb4e669b8026b2e9bdab4f3284eb"
+        "sha256": "7d564a81037654a7cddf9830f003b68eb558cc6565468cdabbf1aec050fa5591"
     },
     "get_text": {
         "name": "obtener_texto",
         "doc": "Devuelve el valor de texto del elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "c5df21cb13fca76338626c63ce4e0e83be2e5563eb296833f55678c3424ad333"
+        "sha256": "5956e42b341046efc718007385a152a5fd4ecbc5a33f3624356ba6739702cccb"
     },
     "get_value": {
         "name": "obtener_valor",
         "doc": "Devuelve el atributo de valor del elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "5856fe53c0581268a5a395418f08aedb118762d5ec8fbd553cf2d44b82aa27c6"
+        "sha256": "e5c267065b96fe8590e9adb54c85413ecce95354d993b204c1b15ff03c3db6f7"
     },
     "get_vertical_position": {
         "name": "obtener_posicion_vertical",
         "doc": "Devuelve la posición vertical del elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        La posición se devuelve en píxeles desde la parte superior de la página,\n        como un número entero.\n\n        Véase también `Obtener Posicion Horizontal`.\n        ",
-        "sha256": "a1f1cc8075b6323bf4b900ea52357586f28721239e45ec11fb1a130faa9246c0"
+        "sha256": "170900864fc6a0c0d5d31f8004931d63b045f91b4831dcf13a968a6b4478dc60"
     },
     "get_webelement": {
         "name": "obtener_webelement",
         "doc": "Devuelve el primer WebElement que coincide con el ``locator`` proporcionado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "5deaaabc9162680121dbe744d4e476e40c7eacba17922459c209f211ba74b5cd"
+        "sha256": "a599d3454be124e915b34c874af99ddfea17daa5884aefa4082e77985eba00a4"
     },
     "get_webelements": {
         "name": "obtener_webelements",
         "doc": "Devuelve una lista de objetos WebElement que coinciden con ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        A partir de SeleniumLibrary 3.0, la palabra clave devuelve un valor vacío\n        lista si no hay elementos coincidentes. En versiones anteriores, el\n        La palabra clave falló en este caso.\n        ",
-        "sha256": "ab7b4634b7c54b2b17daf4c290704fe45af948eeff41f9dbc1c01fab33273496"
+        "sha256": "8ff70a0c61ffa33b1217060d11257ff38675156262b36a71314aedcc8f9e1406"
     },
     "mouse_down": {
         "name": "presionar_boton_del_raton",
         "doc": "Simula presionar el botón izquierdo del mouse sobre el elemento ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El elemento se presiona sin soltar el botón del mouse.\n\n        Consulte también las palabras clave más específicas `Presionar Boton Del Raton En Imagen` y\n        `Presionar Boton Del Raton En Enlace`.\n        ",
-        "sha256": "c0e5431b9b9eb6875830eadccc1ed0f9a9d34781ecef40ab059194054eeae9e4"
+        "sha256": "1a6d7b470c7bde3430841e22573f92781454f3c4a3cad559844f4728e1a47c18"
     },
     "mouse_down_on_image": {
         "name": "presionar_boton_del_raton_en_imagen",
         "doc": "Simula un evento de mouse down sobre una imagen identificada por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan imágenes\n        utilizando ``id``, ``name``, ``src`` y ``alt``.\n        ",
-        "sha256": "3b7c0b9a83908e60012f095acc71305c853dd07864497077420f1a3930ea144c"
+        "sha256": "2ba6a30738ae71b83a52f8de505a6f0e18558c01f3ba7be108c8ac855c86ce0f"
     },
     "mouse_down_on_link": {
         "name": "presionar_boton_del_raton_en_enlace",
         "doc": "Simula un evento de mouse down en un enlace identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan enlaces\n        usando ``id``, ``name``, ``href`` y el texto del enlace.\n        ",
-        "sha256": "8ef3134ef374ebc89f76985b09abd2caac10f603e8db38cf78dcbac9c826cc3e"
+        "sha256": "bd4051adf1dd68e64366f3235899f8d6f92db87d7564551156bd7d8d94d20c1f"
     },
     "mouse_out": {
         "name": "mover_raton_fuera_del_elemento",
         "doc": "Simula alejar el ratón del elemento ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "835368b635d5d1c5c50250595a8e7cb2feb9eb4af4fa14753c561a9c35894db1"
+        "sha256": "a0b7a80bdbc673086c0dbda7da3313aafab58beb797c315bc54907e76271e373"
     },
     "mouse_over": {
         "name": "pasar_raton_por_encima",
         "doc": "Simula pasar el ratón sobre el elemento ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "b4c14a2a10cfddb07d7748630ba6546991d3da2311a20aa146685a0f78e41241"
+        "sha256": "e16ae9208f174b75066bc65a92e04e465f2fc7422105844dbdc1166d203d662c"
     },
     "mouse_up": {
         "name": "soltar_boton_del_raton",
         "doc": "Simula soltar el botón izquierdo del ratón sobre el elemento ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "47c3666126bc84aa9104f6137fd51817efcd1804aaf7c965df143a6aad71895a"
+        "sha256": "b6eb68f531e01641644a55dc935cf4056b9ca858eedf27c4744af6d218423ea0"
     },
     "open_context_menu": {
         "name": "abrir_menu_contextual",
@@ -417,442 +417,442 @@
     "page_should_contain": {
         "name": "la_pagina_debe_contener",
         "doc": "Verifica que la página actual contenga ``text``.\n\n        Si esta palabra clave falla, registra automáticamente la fuente de la página.\n        utilizando el nivel de registro especificado con el ``loglevel`` opcional\n        argumento. Los niveles de registro válidos son ``TRACE`` (predeterminado), ``DEBUG``,\n        ``INFO``, ``WARN`` y ``NONE``. Si el nivel de registro es ``NONE``\n        o por debajo del nivel de registro activo actual, la fuente no se registrará.\n\n        !! ADVERTENCIA !! Si tiene un iframe seleccionado, `La Pagina Debe Contener`\n        restablecerá la referencia del cuadro al cuadro principal. esto se debe\n        al hecho de que busca ``text`` en todos los frames. para localizar\n        un elemento en un iframe después de llamar a `La Pagina Debe Contener` uno necesita\n        para (re)seleccionar el frame.\n        ",
-        "sha256": "bb1186dbfae09e52cad4cad8def5bf2980085e48f75b6af2330bcd4da67477af"
+        "sha256": "3202eb7405a61e168e957f536d83a9b54195d14c35be585fb320cc2f5302e4af"
     },
     "page_should_contain_element": {
         "name": "la_pagina_debe_contener_el_elemento",
         "doc": "Verifica que el elemento ``locator`` se encuentre en la página actual.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        El argumento ``limit`` se puede utilizar para definir cuántos elementos\n        La página debe contener. Cuando ``limit`` es ``None`` (predeterminado), la página puede\n        contener uno o más elementos. Cuando el límite es un número, la página debe\n        contienen el mismo número de elementos.\n\n        Consulte `La Pagina Debe Contener` para obtener una explicación sobre ``loglevel``.\n        argumento.\n\n        Los ejemplos suponen que el localizador coincide con dos elementos.\n        | `La Pagina Debe Contener El Elemento` | nombre_div | limit=1 | # La palabra clave falla.                  |\n        | `La Pagina Debe Contener El Elemento` | nombre_div | limit=2 | # Pases de palabras clave.                 |\n        | `La Pagina Debe Contener El Elemento` | nombre_div | limit=None | # None se considera uno o más. |\n        | `La Pagina Debe Contener El Elemento` | nombre_div |            | # Igual que el anterior.                  |\n\n        El argumento ``limit`` es nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "d2c24d9ce997c94b3cd391306893b9d864c389a047c274ca1ab323e51f960f8e"
+        "sha256": "727336e1c1bcf5e2dcfa8747a36bafc489b8da6cceeb71a073fbb13bd347280a"
     },
     "page_should_contain_image": {
         "name": "la_pagina_debe_contener_la_imagen",
         "doc": "Verifica que la imagen identificada por ``locator`` se encuentre en la página actual.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan imágenes\n        utilizando ``id``, ``name``, ``src`` y ``alt``.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n        ",
-        "sha256": "84ab3a648d3b18c5e266ba075408f3cb2ac3b736e1e2009a6cca125de5d07a50"
+        "sha256": "4f20fd08be99088ce12b7f4c9e294238d6139f24620366e60bd9e00f33ed6079"
     },
     "page_should_contain_link": {
         "name": "la_pagina_debe_contener_el_enlace",
         "doc": "Verifica que el enlace identificado por ``locator`` se encuentre en la página actual.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan enlaces\n        usando ``id``, ``name``, ``href`` y el texto del enlace.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n        ",
-        "sha256": "005f6565f4fcd9b91f87a2274c32fae7545619549be26f23b2cc06856e44ecba"
+        "sha256": "a747e2751926939d4cdf45bf4f2d6143eb6e36c0b4d1ac96e3199a373886fad1"
     },
     "page_should_not_contain": {
         "name": "la_pagina_no_debe_contener",
         "doc": "Verifica que la página actual no contenga ``text``.\n\n        Consulte `La Pagina Debe Contener` para obtener una explicación sobre ``loglevel``.\n        argumento.\n        ",
-        "sha256": "72389be32f084ed5a3716a32e833e117c419bc2c6ebfa525a79e69054bb2a8cc"
+        "sha256": "5c1ebb9af9573798d9e4d71c3bf5bd5ce31d56476669e85d20ec2ba37357026f"
     },
     "page_should_not_contain_element": {
         "name": "la_pagina_no_debe_contener_el_elemento",
         "doc": "Verifica que el elemento ``locator`` no se encuentre en la página actual.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Consulte `La Pagina Debe Contener` para obtener una explicación sobre ``message`` y\n        ``loglevel`` argumentos.\n        ",
-        "sha256": "3939f5d1fce87d85f013ae3e4327b50404cf832231d4ca2e677013808ee8ff92"
+        "sha256": "376a2831038b7104bdc9d237915db26b464a1351763aa18f232649c3e8498f5e"
     },
     "page_should_not_contain_image": {
         "name": "la_pagina_no_debe_contener_la_imagen",
         "doc": "Verifica que la imagen identificada por ``locator`` no se encuentre en la página actual.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan imágenes\n        utilizando ``id``, ``name``, ``src`` y ``alt``.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n        ",
-        "sha256": "7367c4581992c47a2fbd74fd0beccc254e883879f6b93f206242d0ecb6397448"
+        "sha256": "da94eea5499a4a0a1b686e1d950593f2a43c57be7b43ea34ff1973b1d229518b"
     },
     "page_should_not_contain_link": {
         "name": "la_pagina_no_debe_contener_el_enlace",
         "doc": "Verifica que el enlace identificado por ``locator`` no se encuentre en la página actual.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, se buscan enlaces\n        usando ``id``, ``name``, ``href`` y el texto del enlace.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n        ",
-        "sha256": "61fca3076c7b671f21528f5d141ee7b43ecc1acada608b4157d08ecb38fae0e1"
+        "sha256": "c41ad11e94a23b52bc7dc6b6685b1c02948f27554f4c40ed83605c3ed911f766"
     },
     "press_key": {
         "name": "presionar_tecla",
         "doc": "Simula que el usuario presiona una tecla en el elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        ``key`` es un solo carácter, una cadena o un código ASCII numérico\n        código de la clave encabezado por '\\'.\n\n        Ejemplos:\n        | `Presionar Tecla` | text_field | q |\n        | `Presionar Tecla` | text_field | abcde |\n        | `Presionar Tecla` | login_button | \\13 | # Código ASCII para tecla Intro |\n\n        `Presionar Tecla` y `Presionar Teclas` difieren en los métodos para simular clave\n        prensas. `Presionar Tecla` utiliza el comando WebDriver `SEND_KEYS_TO_ELEMENT`\n        utilizando el método Selenium send_keys. Aunque no es recomendable\n        sobre el otro si `Presionar Tecla` no funciona recomendamos probar\n        `Presionar Teclas`.\n        ",
-        "sha256": "b86c54e3fbbe94d4ea6a3a800f73fd52bf7ab3210c91061be10fa10a58cc41cc"
+        "sha256": "adcf6b8424070c1f80c6b3ba18ce37f5efd68d630b9cf5fc7a37a323494ebe53"
     },
     "press_keys": {
         "name": "presionar_teclas",
         "doc": "Simula que el usuario presiona una o varias teclas en un elemento o en el navegador activo.\n\n        Si ``locator`` se evalúa como falso, consulte `Argumentos booleanos` para más\n        detalles, entonces las ``keys`` se envían al navegador activo actualmente.\n        En caso contrario, se busca el elemento y las ``keys`` se envían al elemento\n        identificado por ``locator``. En este último caso, la palabra clave falla si\n        no se encuentra el elemento. Consulte la sección `Localización de elementos`\n        para obtener detalles sobre la sintaxis del localizador.\n\n        El argumento ``keys`` puede contener una o varias cadenas, pero no puede\n        estar vacío. ``keys`` también puede ser una combinación de\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html|Teclas de Selenium]\n        y cadenas, o una sola tecla de Selenium. Si una tecla de Selenium se combina\n        con cadenas, la tecla de Selenium y las cadenas deben separarse con el\n        carácter `+`, como en `CONTROL+c`. Las teclas de Selenium\n        distinguen mayúsculas/minúsculas y espacios, y no se interpretan\n        dentro de una cadena. Por ejemplo, AALTO enviaría la cadena `AALTO`\n        y no se interpretaría `ALT` dentro de la cadena. Pero `A+ALT+O`\n        encontraría la tecla ALT de Selenium en el argumento ``keys``. También es\n        posible mantener pulsadas varias teclas de Selenium a la vez, por ejemplo\n        'ALT+ARROW_DOWN`.\n\n        Si se detectan teclas de Selenium en el argumento ``keys``, la palabra clave\n        mantendrá pulsada la tecla de Selenium, enviará las cadenas y\n        luego soltará la tecla de Selenium. Si la palabra clave necesita enviar una\n        tecla de Selenium como cadena, cada carácter debe separarse con el\n        carácter `+`, por ejemplo `E+N+D`.\n\n        `CTRL` es un alias de\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys.CONTROL|Selenium CONTROL]\n        y ESC es un alias de\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.keys.html#selenium.webdriver.common.keys.Keys.ESCAPE|Selenium ESCAPE]\n\n        Nuevo en SeleniumLibrary 3.3\n\n        Ejemplos:\n        | `Presionar Teclas` | text_field | AAAAA          |            | # Envía la cadena \"AAAAA\" al elemento.                                                |\n        | `Presionar Teclas` | None       | BBBBB          |            | # Envía la cadena \"BBBBB\" al navegador activo actualmente.                               |\n        | `Presionar Teclas` | text_field | E+N+D          |            | # Envía la cadena \"END\" al elemento.                                                  |\n        | `Presionar Teclas` | text_field | XXX            | YY         | # Envía las cadenas \"XXX\" y \"YY\" al elemento.                                        |\n        | `Presionar Teclas` | text_field | XXX+YY         |            | # Igual que el anterior.                                                                  |\n        | `Presionar Teclas` | text_field | ALT+ARROW_DOWN |            | # Mantiene pulsada ALT, luego ARROW_DOWN y después suelta ambas teclas. |\n        | `Presionar Teclas` | text_field | ALT            | ARROW_DOWN | # Pulsa ALT y luego ARROW_DOWN.                                |\n        | `Presionar Teclas` | text_field | CTRL+c         |            | # Mantiene pulsada CTRL, envía la cadena \"c\" y luego suelta CTRL.            |\n        | `Presionar Teclas` | button     | RETURN         |            | # Pulsa la tecla \"ENTER\" en el elemento.                                                |\n\n        `Presionar Tecla` y `Presionar Teclas` difieren en el método para simular\n        pulsaciones. `Presionar Teclas` usa las Actions de Selenium/WebDriver.\n        `Presionar Teclas` también tiene una sintaxis más amplia para describir teclas,\n        combinaciones y acciones. Aunque no se recomienda una por encima de la otra,\n        si `Presionar Teclas` no funciona, recomendamos probar\n        `Presionar Tecla`.\n        ",
-        "sha256": "1eebcaa27254937dfdc58414ab3455d82ed85382b848eb96f27c25d9a68c6fe8"
+        "sha256": "5174d309e558c7b9a099465aaabb0f653615bc83ffb98eeeb250fca283d5ace2"
     },
     "remove_location_strategy": {
         "name": "eliminar_estrategia_de_localizacion",
         "doc": "Elimina una estrategia de ubicación personalizada agregada previamente.\n\n        Consulte `Localizadores personalizados` para obtener información sobre cómo crear y utilizar\n        estrategias personalizadas.\n        ",
-        "sha256": "827184ef194cec97d793297edbc6544d2e6774a80a14136ccfa0d5cc04fbc09e"
+        "sha256": "6c2453f10562a92b8c079e4fb9dd425ac35e4dc51bfdf70d02b1773fed231cbd"
     },
     "scroll_element_into_view": {
         "name": "desplazar_elemento_a_la_vista",
         "doc": "Desplaza el elemento identificado por ``locator`` a la vista.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Nuevo en SeleniumLibrary 3.2.0\n        ",
-        "sha256": "0d567a31d5b64fcfb38b47c2f5f452de4fbe3d08aa0c0547644d4c59b243ef60"
+        "sha256": "a0e03a31ef0a5606839cd0c592a3c0e87318eeee9722ac97e417d320f846ea2a"
     },
     "set_focus_to_element": {
         "name": "establecer_foco_en_elemento",
         "doc": "Establece el foco en el elemento identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Antes de SeleniumLibrary 3.0, esta palabra clave se denominaba `Foco`.\n        ",
-        "sha256": "0b02399995113cd6ac38557106b4697e4d86f9874173ed593a8853e63362c74f"
+        "sha256": "c42389bd7afd73e86c3e0f725f90a2408ee9d4cbbf3a77c917806b478a5de0db"
     },
     "simulate_event": {
         "name": "simular_evento",
         "doc": "Simula ``event`` en el elemento identificado por ``locator``.\n\n        Esta palabra clave es útil si el elemento tiene un controlador ``OnEvent`` que\n        necesita ser invocado explícitamente.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Antes de SeleniumLibrary 3.0, esta palabra clave se denominaba `Simulate`.\n        ",
-        "sha256": "49cd268150ae4f3170f13d6b5a25809f41080efa3f3b5ca0fa2e2d8cd3ea7795"
+        "sha256": "84c3d689e8af211b1cd18ef2f687a000618f6af54b4c74304960e0d23449a356"
     },
     "wait_for_expected_condition": {
         "name": "esperar_hasta_la_condicion",
         "doc": "Espera hasta que ``condition`` sea verdadero o ``timeout`` caduque.\n\n        La condición debe ser una de las condiciones esperadas del Selenium que\n        se puede encontrar dentro del Selenium\n        [https://www.selenium.dev/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html#module-selenium.webdriver.support.expected_conditions|API de Python]\n        documentación. La condición esperada puede escribirse como Snake_case\n        (ex: ``title_is``) o puede estar delimitado por espacios (ex: Title Is). Algunas\n        condiciones requieren argumentos adicionales o ``args`` que deberían\n        transmitirse después de la condición esperada.\n\n        Falla si el tiempo de espera expira antes de que la condición se cumpla.\n        El valor predeterminado es 10 segundos.\n\n        Ejemplos:\n        | `Esperar Hasta La Condicion` | alert_is_present |\n        | `Esperar Hasta La Condicion` | Title Is | New Title |\n\n        Si la condición esperada espera un localizador, entonces se puede pasar\n        como argumentos una tupla que contiene las estrategias del localizador de Selenium\n        y el localizador.\n\n        Ejemplo de condición esperada esperando localizador:\n        | ${byElem}= | Evaluate (\"id\",\"added_btn\")\n        | `Esperar Hasta La Condicion` | Presence Of Element Located | ${byElem}\n        ",
-        "sha256": "7e512f1e3c97525aa828d624627aaf3f8b76ac0ec1aaa507b36ff9c8fff34d5a"
+        "sha256": "dd06ffed5a295135608f7c1dcba7ae2592f703d0a76f9419b7216726289668d2"
     },
     "checkbox_should_be_selected": {
         "name": "la_casilla_debe_estar_seleccionada",
         "doc": "Verifica que la casilla de verificación ``locator`` esté seleccionada/marcada.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "e50bf6856c0f0c3f373adb3bcc3b7d677738088632055f507797887c9f822136"
+        "sha256": "63dd0e20af5b27aeef00701debe788a39fec87405b50fc32581d23fa3e50eefa"
     },
     "checkbox_should_not_be_selected": {
         "name": "la_casilla_no_debe_estar_seleccionada",
         "doc": "Verifica que la casilla de verificación ``locator`` no esté seleccionada/marcada.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "8488752a0365d5c94b3a7885d53b67f99d92ccc5687fdc59411b42a40fa95443"
+        "sha256": "a4cf8148d19bc315fe9c31be12f99f523c93ad2e4e441bb82f28f7685bb3b23e"
     },
     "choose_file": {
         "name": "elegir_archivo",
         "doc": "Ingresa ``file_path`` en el campo de entrada del archivo ``locator``.\n\n        Esta palabra clave se utiliza con mayor frecuencia para ingresar archivos en formularios de carga.\n        La palabra clave no verifica ``file_path`` es el archivo o carpeta\n        disponible en la máquina donde se ejecutan las pruebas. Si el ``file_path``\n        apunta a un archivo y cuando se utiliza Selenium Grid, Selenium\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver_remote/selenium.webdriver.remote.command.html?highlight=upload#selenium.webdriver.remote.command.Command.UPLOAD_FILE|mágicamente],\n        transferir el archivo desde la máquina donde se ejecutan las pruebas\n        al nodo Selenium Grid donde se ejecuta el navegador.\n        Luego Selenium enviará la ruta del archivo, desde el archivo de nodos.\n        sistema, al navegador.\n\n        Ese ``file_path`` no está marcado, es nuevo en SeleniumLibrary 4.0.\n\n        Ejemplo:\n        | `Elegir Archivo` | mi_campo_de_carga | ${CURDIR}/trades.csv |\n        ",
-        "sha256": "99647574949bbf743e468bc05e87c551f2286c70b811d3b8d45a884da4ea06e5"
+        "sha256": "7eb75defef0c8743155263541841f34ef4b3c5e8cbf0505e3f06ed0c5debbad7"
     },
     "input_password": {
         "name": "escribir_contrasena",
         "doc": "Escribe la contraseña proporcionada en el campo de texto identificado por ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Consulte `Escribir Texto` para obtener detalles del argumento ``clear``.\n\n        La diferencia en comparación con `Escribir Texto` es que esta palabra clave no\n        registre la contraseña proporcionada en el nivel INFO. Tenga en cuenta que si utiliza\n        la palabra clave como\n\n        | `Escribir Contrasena` | password_field | password |\n\n        la contraseña se muestra como un argumento de palabra clave normal. Una manera de evitar\n        eso es usar variables como\n\n        | `Escribir Contrasena` | password_field | ${PASSWORD} |\n\n        Tenga en cuenta que Robot Framework registra todos los argumentos utilizando\n        el nivel TRACE y las pruebas no deben ejecutarse utilizando el nivel inferior\n        DEBUG si la contraseña no debe registrarse en ningún formato.\n\n        El argumento `clear` es nuevo en SeleniumLibrary 4.0. Ocultar contraseña\n        El registro desde registros de Selenium es nuevo en SeleniumLibrary 4.2.\n        ",
-        "sha256": "38df5156c1b9d081d04992a202db1e7e35e5af5adcd307a6b5f45051d8f55a2f"
+        "sha256": "7323e8ecf4a96ab5ce9f14612b16b9b251d32d707c3a6a5bb1cbb7757c4f6a04"
     },
     "input_text": {
         "name": "escribir_texto",
         "doc": "Escribe el ``text`` dado en el campo de texto identificado por ``locator``.\n\n        Cuando ``clear`` es verdadero, el elemento de entrada se borra antes\n        el texto se escribe en el elemento. Cuando es falso, el texto anterior\n        no se elimina del elemento. Utilice `Escribir Contrasena` si\n        no desea que se registre el ``text`` proporcionado.\n\n        Si [https://github.com/SeleniumHQ/selenium/wiki/Grid2|Cuadrícula de Selenium]\n        se utiliza y el argumento ``text`` apunta a un archivo en el sistema de archivos,\n        entonces esta palabra clave evita que Selenium transfiera el archivo al\n        Centro de red de Selenium. En su lugar, esta palabra clave enviará la cadena ``text``\n        como es al elemento. Si un archivo debe transferirse al hub y\n        debe realizarse la carga, utilice la palabra clave `Elegir Archivo`.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Consulte la sección `Argumentos booleanos` sobre cómo se procesan los valores booleanos.\n        manejado.\n\n        Al deshabilitar la carga del archivo, el nodo Selenium Grid y `clear`\n        Los argumentos son nuevos en SeleniumLibrary 4.0.\n        ",
-        "sha256": "ee1560f4dca793042f28082707cf5cdac34239fee0227a961bc41ea9052d88c5"
+        "sha256": "10509611f018adb7d9362f04d0cdbd9cc659dd55cfb259d5fe96fa05d98d5ce8"
     },
     "page_should_contain_button": {
         "name": "la_pagina_debe_contener_el_boton",
         "doc": "Verifica que el botón ``locator`` se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, los botones están\n        buscado utilizando ``id``, ``name`` y ``value``.\n        ",
-        "sha256": "f5fdc2763607b8a19e0dcbc2c8bc0512959193b4312232d89bdf5e3c1287ee25"
+        "sha256": "81f61503389a7f40e36d1abcca77c224ec067f973304e67bf07915886badc276"
     },
     "page_should_contain_checkbox": {
         "name": "la_pagina_debe_contener_la_casilla",
         "doc": "Verifica que la casilla de verificación ``locator`` se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "827b0517772c7f3d0a8c9c41a1557892b98f0c9ee7228aa80a17df7d1766b338"
+        "sha256": "28f884739324277d4a6dd3ddbf2075c771110fea88a2f44c5d7fda0bcfdcc4e8"
     },
     "page_should_contain_radio_button": {
         "name": "la_pagina_debe_contener_el_boton_radio",
         "doc": "Verifica que el botón radio ``locator`` se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, los botones radio están\n        buscado utilizando ``id``, ``name`` y ``value``.\n        ",
-        "sha256": "a1bd5c4a731ebb21b599006d59a7c7d163da5fb64ca87ac20d853559ff948a95"
+        "sha256": "8b6ee8be469236fca57f35de6f9b898fa357a38d538cc1b2e216bd7e5c8bf68a"
     },
     "page_should_contain_textfield": {
         "name": "la_pagina_debe_contener_el_campo_de_texto",
         "doc": "Verifica que el campo de texto ``locator`` se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "7b7414371c1321271f8616d6668e9b94001ab4443df27f26fe10c5e968be00c5"
+        "sha256": "5a161483a1bb131e0de95a72b040ee81efc20123145d84f0f8b8c541c7e13604"
     },
     "page_should_not_contain_button": {
         "name": "la_pagina_no_debe_contener_el_boton",
         "doc": "Verifica que el botón ``locator`` no se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, los botones están\n        buscado utilizando ``id``, ``name`` y ``value``.\n        ",
-        "sha256": "c8b007d236e708e3d637b414d88b333f31bc64f396fe9034bc79be14288666ed"
+        "sha256": "34aad79a68b74f466958198cd1fec50a48b6c6f021f6646bbf2b8b86173298bf"
     },
     "page_should_not_contain_checkbox": {
         "name": "la_pagina_no_debe_contener_la_casilla",
         "doc": "Verifica que la casilla de verificación ``locator`` no se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "88204d5dcc80e3fed6bfc74f5b2e02a3507d9ac290faf29c5818f54fc7c7109d"
+        "sha256": "26c9da500ce73a582b21224633b8bc8ce87079239029b3ed7e25e5284704a1fc"
     },
     "page_should_not_contain_radio_button": {
         "name": "la_pagina_no_debe_contener_el_boton_radio",
         "doc": "Verifica que el botón radio ``locator`` no se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador. Cuando se utiliza la estrategia de localización predeterminada, los botones radio están\n        buscado utilizando ``id``, ``name`` y ``value``.\n        ",
-        "sha256": "f2310d4b57e4303ef5f38cc2cdc705ca95582a56ced04899d806beab1a63cef0"
+        "sha256": "0ab06150c914fd9e1c494c0e6b2c80707c31cbe607d9112e81b049ff11d68a4a"
     },
     "page_should_not_contain_textfield": {
         "name": "la_pagina_no_debe_contener_el_campo_de_texto",
         "doc": "Verifica que el campo de texto ``locator`` no se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "2d91d04a7f6bb6ffd6fb86459718e337880326ddbba3a1631de12737ecab5339"
+        "sha256": "59ec5dd73f6108895c9cb9978c51d8c360e3d59d9567e5795bfdffa6d6758221"
     },
     "radio_button_should_be_set_to": {
         "name": "el_boton_radio_debe_estar_en",
         "doc": "Verifica que el grupo de botones radio ``group_name`` esté configurado en ``value``.\n\n        ``group_name`` es el ``name`` del grupo de botones radio.\n        ",
-        "sha256": "baedeb274f24cfa1951591b65fd654551c128c26db397414fce039f3c2ef68cc"
+        "sha256": "f02f4e66123e85fe08b422f5933ec0d0d707b669bbdff5929ca96bda48422006"
     },
     "radio_button_should_not_be_selected": {
         "name": "el_boton_radio_no_debe_estar_seleccionado",
         "doc": "Verifica que el grupo de botones radio ``group_name`` no tenga selección.\n\n        ``group_name`` es el ``name`` del grupo de botones radio.\n        ",
-        "sha256": "552945bd4776a7545990b26941784cf5a8bd5d1725fb1ccd6241d7f4404dea0e"
+        "sha256": "14cf70d4e67197e108718331a19503766b4230c3b111f816ac3fbe4b0b7e2bc3"
     },
     "select_checkbox": {
         "name": "seleccionar_casilla",
         "doc": "Selecciona la casilla identificada por ``locator``.\n\n        No hace nada si la casilla de verificación ya está seleccionada.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "a864b4289721b7356ee6cc8f51612cdb5b91f5e439a264380665dd3c359cf09a"
+        "sha256": "870246b8b1fa3ee95b66e149c46e3e6a28b933f2f7e597cc51ba0047ec1081ee"
     },
     "select_radio_button": {
         "name": "seleccionar_boton_radio",
         "doc": "Establece el grupo de botones radio ``group_name`` en ``value``.\n\n        El botón radio a seleccionar se ubica mediante dos argumentos:\n        - ``group_name`` es el nombre del grupo de botones radio.\n        - ``value`` es el atributo ``id`` o ``value`` del archivo real\n          botón radio.\n\n        Ejemplos:\n        | `Seleccionar Boton Radio` | tamaño | XL |\n        | `Seleccionar Boton Radio` | contacto | correo electrónico |\n        ",
-        "sha256": "ffbddc133ea67fa89fc81c47e311a5c1c0d17de62b307fb25cb0811ebf995909"
+        "sha256": "be9a98d8f26edec5fb60c490d42be82f85036b6ef76d87b1672fc55a178a94e7"
     },
     "submit_form": {
         "name": "enviar_formulario",
         "doc": "Envía un formulario identificado por ``locator``.\n\n        Si no se proporciona ``locator``, se envía el primer formulario de la página.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "19787cfd196cb398177f114d219b7047839b1b875ad44e4741c02be1f2219fb7"
+        "sha256": "f54b6c25dad17d3196daf2857bd18c0081c4bd7445116b437b52026fc9d713bc"
     },
     "textarea_should_contain": {
         "name": "el_area_de_texto_debe_contener",
         "doc": "Verifica que el área de texto ``locator`` contenga el texto ``expected``.\n\n        ``message`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "1f0212530a7318d4b84aab2f76e6a786698c18553eb45f6d7b5ce1526aa8806a"
+        "sha256": "f2dd9b1dc4690c2c183c9fa1bb3b963020ee36d822833f3803c4e5a04f0ccd6a"
     },
     "textarea_value_should_be": {
         "name": "el_valor_del_area_de_texto_debe_ser",
         "doc": "Verifica que el área de texto ``locator`` tenga exactamente el texto ``expected``.\n\n        ``message`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "351e1fbde625caa68c16d8203c380853b86f12203e2a58fe32fed5154779df55"
+        "sha256": "f28f7b524c3826e5ce1bf77335b373618ef4932b4e763bc8a80fb21858df84b9"
     },
     "textfield_should_contain": {
         "name": "el_campo_de_texto_debe_contener",
         "doc": "Verifica que el campo de texto ``locator`` contenga el texto ``expected``.\n\n        ``message`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "8d542b446cce4ae3a59f57d2492144fa0264dc10bcc29a7a75e210368e7b24a9"
+        "sha256": "3f65625c43979015b45b455006d03c18cf1f303d66d5aebb790e47b3fc42e379"
     },
     "textfield_value_should_be": {
         "name": "el_valor_del_campo_de_texto_debe_ser",
         "doc": "Verifica que el campo de texto ``locator`` tenga exactamente el texto ``expected``.\n\n        ``message`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "bf88210c7d1673f6f28e6a5af94ecca2f23d655f0da09f31557b5d619ca4bb83"
+        "sha256": "45f13088c92990cca4672644c384df239129ff896676489a031a540bba779e27"
     },
     "unselect_checkbox": {
         "name": "deseleccionar_casilla",
         "doc": "Elimina la selección de la casilla de verificación identificada por ``locator``.\n\n        No hace nada si la casilla de verificación no está seleccionada.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "73e850a91f88669d5f169f1da487263b966b34b9d5979fa7eacc353b9af6d3ad"
+        "sha256": "7551f1da46871dc6b911b93fd2088f6af4f821a6680beec96b81ef4cda824d9e"
     },
     "current_frame_should_contain": {
         "name": "el_frame_actual_debe_contener",
         "doc": "Verifica que el frame actual contenga ``text``.\n\n        Consulte `La Pagina Debe Contener` para obtener una explicación sobre ``loglevel``.\n        argumento.\n\n        Antes de SeleniumLibrary 3.0, esta palabra clave se llamaba\n        `El Frame Actual Debe Contener`.\n        ",
-        "sha256": "d42932ad52a7f5a80466c5fc70cde1994b5dc91e42d5a92d5a4c84c5952106bc"
+        "sha256": "d623bdcf3585836bc1203f3ac4c5d431a6b2f2fa3ad07b5fa47679a5576fa6b4"
     },
     "current_frame_should_not_contain": {
         "name": "el_frame_actual_no_debe_contener",
         "doc": "Verifica que el frame actual no contenga ``text``.\n\n        Consulte `La Pagina Debe Contener` para obtener una explicación sobre ``loglevel``.\n        argumento.\n        ",
-        "sha256": "39c919106caf859d8c436e8334ba7dbfbaaadc761810034f9c24433ef930029d"
+        "sha256": "6dd64d8cba7bf4287af78da4659b0478b60c2ea7abbdf83881cf3c48e6d18f10"
     },
     "frame_should_contain": {
         "name": "el_frame_debe_contener",
         "doc": "Verifica que el frame identificado por ``locator`` contenga ``text``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Consulte `La Pagina Debe Contener` para obtener una explicación sobre ``loglevel``.\n        argumento.\n        ",
-        "sha256": "e7cf02e4cd77e7196d87f875db7285146a629fe895b3576c9dbd33ae4ab362fd"
+        "sha256": "19de4a66ad2eb387183eeeeaeaa6496864fb1313e7d0e65c4346e56b49248c2e"
     },
     "select_frame": {
         "name": "seleccionar_frame",
         "doc": "Establece el frame identificado por ``locator`` como el frame actual.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Funciona tanto con frames como con iframes. Utilice `Deseleccionar Frame` para cancelar\n        la selección del cuadro y regresar al cuadro principal.\n\n        Ejemplo:\n        | `Seleccionar Frame` | frame superior | # Seleccionar frame con id o nombre 'top-frame' |\n        | `Hacer Clic En Enlace` | ejemplo | # Hace clic en el enlace 'ejemplo' en el frame seleccionado |\n        | `Deseleccionar Frame` |           | # Volver al frame principal.                        |\n        | `Seleccionar Frame` | //iframe[@name='xxx'] | # Seleccionar frame usando xpath |\n        ",
-        "sha256": "c2c67edf46d18644488c6395a750e293ab150011cdcdfe0741481328e01163f6"
+        "sha256": "14c68d54c7432db50e4b0aa7888e5866a6594882ce2f461e823d3a41ad80d114"
     },
     "unselect_frame": {
         "name": "deseleccionar_frame",
         "doc": "Establece el frame principal como el frame actual.\n\n        En la práctica cancela la llamada `Seleccionar Frame` anterior.\n        ",
-        "sha256": "9fc68af60f0d437e37ccc1fccb858b2c6554427f3f269518d4e7f849df3c43ec"
+        "sha256": "d2174349824d3dc803a0a1a8cfb8903a447b7a29ea25be9ae428f9b63821a324"
     },
     "execute_async_javascript": {
         "name": "ejecutar_javascript_asincrono",
         "doc": "Ejecuta código JavaScript asincrónico con posibles argumentos.\n\n        Similar a `Ejecutar Javascript` excepto que los scripts ejecutados con\n        esta palabra clave debe indicar explícitamente que han terminado invocando el\n        devolución de llamada proporcionada. Esta devolución de llamada siempre se inyecta en el ejecutado.\n        funciona como último argumento.\n\n        Los scripts deben completarse dentro del tiempo de espera del script o esta palabra clave\n        fallar. Consulte la sección `Timeout` para obtener más información.\n\n        A partir de SeleniumLibrary 3.2 es posible proporcionar JavaScript\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver_remote/selenium.webdriver.remote.webdriver.html#selenium.webdriver.remote.webdriver.WebDriver.execute_async_script|\n        argumentos] como parte del argumento ``code``. Consulte `Ejecutar Javascript` para\n        más detalles.\n\n                Ejemplos:\n        | `Ejecutar Javascript Asincrono` | var callback = arguments[arguments.length - 1]; window.setTimeout(callback, 2000); |\n        | `Ejecutar Javascript Asincrono` | ${CURDIR}/async_js_to_execute.js |\n        | ${result} = | `Ejecutar Javascript Asincrono`                      |\n        | ...         | var callback = arguments[arguments.length - 1]; |\n        | ...         | function answer(){callback(\"text\");};           |\n        | ...         | window.setTimeout(answer, 2000);                |\n        | `Should Be Equal` | ${result} | text |\n        ",
-        "sha256": "9c1802715ea496c4cfe2f77e77c0a41012e6b606bc3a19314fc6c57695b813d2"
+        "sha256": "1149d4855754aea0c7729bfed6b39942ec831b7c7d8e7e46f21c580248db6f37"
     },
     "execute_javascript": {
         "name": "ejecutar_javascript",
         "doc": "Ejecuta el código JavaScript proporcionado con posibles argumentos.\n\n        ``code`` se puede dividir en varias celdas en los datos de prueba y\n        ``code`` puede contener varias líneas de código y argumentos. En ese caso,\n        las partes del código JavaScript se concatenan sin agregar\n        los espacios y los argumentos opcionales están separados de ``code``.\n\n        Si ``code`` es una ruta a un archivo existente, el archivo JavaScript\n        a ejecutar se leerá desde ese archivo. Las barras diagonales funcionan como\n        un separador de ruta en todos los sistemas operativos.\n\n        El JavaScript se ejecuta en el contexto del seleccionado actualmente.\n        frame o ventana como cuerpo de una función anónima. Utilice ``window``\n        para hacer referencia a la ventana de su aplicación y ``document`` para hacer referencia\n        al objeto del documento del frame o ventana actual, p.e.\n        ``document.getElementById('example')``.\n\n        Esta palabra clave devuelve lo que devuelve el código JavaScript ejecutado.\n        Los valores de retorno se convierten a los tipos de Python apropiados.\n\n        A partir de SeleniumLibrary 3.2 es posible proporcionar JavaScript\n        [https://seleniumhq.github.io/selenium/docs/api/py/webdriver_remote/selenium.webdriver.remote.webdriver.html#selenium.webdriver.remote.webdriver.WebDriver.execute_script|\n        argumentos] como parte del argumento ``code``. El código JavaScript y\n        Los argumentos deben estar separados con marcadores `JAVASCRIPT` y `ARGUMENTS`.\n        y debe usarse exactamente con este formato. Si el código Javascript es\n        primero, luego el marcador `JAVASCRIPT` es opcional. el orden de\n        Los marcadores `JAVASCRIPT` y `ARGUMENTS` se pueden intercambiar, pero si `ARGUMENTS`\n        es el primer marcador, entonces el marcador `JAVASCRIPT` es obligatorio. es solo\n        permitido utilizar los marcadores `JAVASCRIPT` y `ARGUMENTS` solo una vez en el\n        argumento ``code``.\n\n        Ejemplos:\n        | `Ejecutar Javascript` | window.myFunc('arg1', 'arg2') |\n        | `Ejecutar Javascript` | ${CURDIR}/js_to_execute.js |\n        | `Ejecutar Javascript` | alert(arguments[0]); | ARGUMENTS | 123 |\n        | `Ejecutar Javascript` | ARGUMENTS | 123 | JAVASCRIPT | alert(arguments[0]); |\n        ",
-        "sha256": "7a8072d075a8d6eea9b6dc7128e20cee87c6f4fd26354f2954140eb6025eb02d"
+        "sha256": "980aec1882785d9d69a91d5c9373eaa327be961c380bea1d78490ebbdbd5cd24"
     },
     "register_keyword_to_run_on_failure": {
         "name": "definir_la_palabra_clave_a_ejecutar_en_caso_de_fallo",
         "doc": "Establece la palabra clave que se ejecutará cuando falla una palabra clave de SeleniumLibrary.\n\n        ``keyword`` es el nombre de una palabra clave que se ejecutará si\n        La palabra clave SeleniumLibrary falla. Es posible utilizar cualquier disponible.\n        palabra clave, incluidas palabras clave de usuario o palabras clave de otras bibliotecas,\n        pero la palabra clave no debe aceptar ningún argumento.\n\n        La palabra clave inicial a utilizar se establece cuando `importar` la biblioteca, y\n        la palabra clave que se utiliza por defecto es `Capturar Pantalla De La Pagina`.\n        Tomar una captura de pantalla cuando algo falla es muy útil\n        función, pero tenga en cuenta que puede ralentizar la ejecución.\n\n        Es posible utilizar la cadena ``NOTHING`` o ``NONE``,\n        sin distinguir entre mayúsculas y minúsculas, así como Python ``None`` para desactivar esto\n        característica en su totalidad.\n\n        Esta palabra clave devuelve el nombre del usuario registrado previamente.\n        palabra clave de error o Python ``None`` si esta funcionalidad era\n        previamente inhabilitado. El valor de retorno siempre se puede utilizar para\n        restaurar el valor original más tarde.\n\n        Ejemplo:\n        | `Definir La Palabra Clave A Ejecutar En Caso De Fallo` | Log Source |\n        | ${previous kw}= | `Definir La Palabra Clave A Ejecutar En Caso De Fallo` | NONE |\n        | `Definir La Palabra Clave A Ejecutar En Caso De Fallo` | ${previous kw} |\n\n        Cambios en SeleniumLibrary 3.0:\n        - Es posible utilizar la cadena ``NONE`` o Python ``None`` para desactivar el\n          funcionalidad.\n        - Devuelve Python ``None`` cuando la funcionalidad se deshabilitó anteriormente.\n          En versiones anteriores se devolvía el valor especial ``No Keyword`` y\n          no se pudo utilizar para restaurar el estado original.\n        ",
-        "sha256": "9eaadf25a89adfb670897301330147203808d9cec135d82015215fe7a14c7313"
+        "sha256": "fac5e5ff5b4e0fb4e86a164e128274568a8422bee4d37c1154d6b773ec414d9d"
     },
     "capture_element_screenshot": {
         "name": "capturar_pantalla_del_elemento",
         "doc": "Captura una captura de pantalla del elemento identificado por ``locator`` y la incrusta en el archivo de registro.\n\n        Consulte `Capturar Pantalla De La Pagina` para obtener detalles sobre el argumento ``filename``.\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Se devuelve una ruta absoluta a la captura de pantalla del elemento creado. Si el ``filename``\n        es igual a BASE64 (no distingue entre mayúsculas y minúsculas), luego se devuelve la cadena base64 además\n        a la captura de pantalla incrustada en el registro. Consulte ``Capture Page Screenshot`` para obtener más información.\n        información.\n\n        El soporte para capturar la captura de pantalla de un elemento tiene soporte limitado\n        entre los proveedores de navegadores. Consulte la documentación del controlador del proveedor del navegador.\n        ¿El navegador admite la captura de una captura de pantalla de un elemento?\n\n        Nuevo en SeleniumLibrary 3.3. La compatibilidad con EMBED es nueva en SeleniumLibrary 4.2.\n        La compatibilidad con BASE64 es nueva en SeleniumLibrary 6.8.\n\n        Ejemplos:\n        | `Capturar Pantalla Del Elemento` | id:image_id |                                |\n        | `Capturar Pantalla Del Elemento` | id:image_id | ${OUTPUTDIR}/id_image_id-1.png |\n        | `Capturar Pantalla Del Elemento` | id:image_id | EMBED |\n        | ${ess}= | `Capturar Pantalla Del Elemento` | id:image_id | BASE64 |\n\n        ",
-        "sha256": "793c7e666d8b8f061e161234efe5f45de9d00dbffc4ed94fa97a00f7bf10968a"
+        "sha256": "954a1641aa55c1392ad108fd050e31a54277b234baf71c8c959fcece48b8ba35"
     },
     "capture_page_screenshot": {
         "name": "capturar_pantalla_de_la_pagina",
         "doc": "Toma una captura de pantalla de la página actual y la incrusta en un archivo de registro.\n\n        El argumento ``filename`` especifica el nombre del archivo para escribir el\n        captura de pantalla en. El directorio donde se guardan las capturas de pantalla puede ser\n        establezca cuando `importar` la biblioteca o utilizando la palabra clave `Establecer Directorio De Capturas`. Si el directorio no está configurado, capturas de pantalla\n        se guardan en el mismo directorio donde está el archivo de registro de Robot Framework\n        escrito.\n\n        Si ``filename`` es igual a EMBED (no distingue entre mayúsculas y minúsculas), entonces captura de pantalla\n        está incrustado como imagen Base64 en log.html. En este caso el archivo no es\n        creado en el sistema de archivos. Si ``filename`` es igual a BASE64 (caso\n        insensible), luego se devuelve la cadena base64 y la captura de pantalla\n        está incrustado en el registro. Esto permite reutilizar la imagen en otro lugar.\n        en el informe.\n\n        Ejemplo:\n        | ${ss}= | `Capturar Pantalla De La Pagina` | BASE64 |\n        | Set Test Message |   *HTML*Test Success<p><img src=\"data:image/png;base64,${ss}\" width=\"256px\"> |\n\n        A partir de SeleniumLibrary 1.8, si ``filename`` contiene un marcador\n        ``{index}``, se reemplazará automáticamente con un código de ejecución único.\n        índice, evitando que los archivos se sobrescriban. Los índices comienzan desde 1,\n        y la forma en que se representan se puede personalizar usando Python\n        [https://docs.python.org/3/library/string.html#format-string-syntax|\n        sintaxis de cadena de formato].\n\n        Se devuelve una ruta absoluta al archivo de captura de pantalla creado o si\n        ``filename`` es igual a EMBED, se devuelve la palabra `EMBED`. Si ``filename``\n        es igual a BASE64, se devuelve la cadena base64 que contiene la captura de pantalla.\n\n        La compatibilidad con BASE64 es nueva en SeleniumLibrary 6.8\n\n        Ejemplos:\n        | `Capturar Pantalla De La Pagina` |                                        |\n        | `File Should Exist` | ${OUTPUTDIR}/selenium-screenshot-1.png |\n        | ${path} = | `Capturar Pantalla De La Pagina` |\n        | `File Should Exist` | ${OUTPUTDIR}/selenium-screenshot-2.png |\n        | `File Should Exist` | ${path} |\n        | `Capturar Pantalla De La Pagina` | custom_name.png |\n        | `File Should Exist` | ${OUTPUTDIR}/custom_name.png |\n        | `Capturar Pantalla De La Pagina` | custom_with_index_{index}.png |\n        | `File Should Exist` | ${OUTPUTDIR}/custom_with_index_1.png |\n        | `Capturar Pantalla De La Pagina` | formatted_index_{index:03}.png |\n        | `File Should Exist` | ${OUTPUTDIR}/formatted_index_001.png |\n        | `Capturar Pantalla De La Pagina` | EMBED |\n        | `File Should Not Exist` | EMBED |\n        ",
-        "sha256": "79d9730933ebf76db8c41e1aec0d35f97790d59cbc15caf3d571cebde5094304"
+        "sha256": "240099c38c3c6c06fd816d0f02a6ab616dd79c2e189b9a7dc2833894608f86b1"
     },
     "print_page_as_pdf": {
         "name": "imprimir_pagina_como_pdf",
         "doc": " Imprima la página actual como PDF\n\n        ``page_ranges`` tiene como valor predeterminado `['-']` o \"todas\" las páginas. ``page_ranges`` toma una lista de\n        cadenas que indican los rangos.\n\n        El tamaño de página predeterminado es 21,59 para ``page_width`` y 27,94 para ``page_height``.\n        Este es el tamaño equivalente de una carta estadounidense. Las unidades asumidas en estos parámetros.\n        son centímetros.\n\n        El margen predeterminado para arriba, izquierda, abajo y derecha es `1`. Las unidades asumidas en\n        Estos parámetros son centímetros.\n\n        El ``orientation`` predeterminado es `portrait`. ``orientation`` puede ser `portrait`\n        o `landscape`.\n\n        El ``scale`` predeterminado es `1`. ``scale`` debe ser mayor o igual a `0.1` y\n        menor o igual a `2`.\n\n        ``background`` y ``scale_to_fit`` pueden ser `${True}` o `${False}`.\n\n        Si todas las opciones de impresión son Ninguna, el PDF no se imprimirá de forma silenciosa.\n        ",
-        "sha256": "dabc1ee3b82a59f90e8313ed82eae11b01365387a8c7c2ac715d4f22ae4bacb2"
+        "sha256": "339103fcf9d63bc44b0b4b616501469af247497b3429d9bfaf512fbc723aacbc"
     },
     "set_screenshot_directory": {
         "name": "establecer_directorio_de_capturas",
         "doc": "Establece el directorio para capturas de pantalla.\n\n        El argumento ``path`` especifica la ruta absoluta a un directorio donde\n        se deben escribir las capturas de pantalla. Si el directorio no\n        existe, será creado. El directorio también se puede configurar cuando\n        `importar` la biblioteca. Si no está configurado en ningún lado,\n        Las capturas de pantalla se guardan en el mismo directorio donde se encuentra Robot Framework.\n        Se escribe el archivo de registro.\n\n        Si ``path`` es igual a EMBED (no distingue entre mayúsculas y minúsculas) y\n        Palabras clave `Capturar Pantalla De La Pagina` o `Capturar Pantalla Del Elemento`\n        El argumento del nombre de archivo no cambia del valor predeterminado, entonces\n        la captura de pantalla de la página o elemento está incrustada como imagen Base64 para\n        el log.html.\n\n        El valor anterior se devuelve y se puede utilizar para restaurar.\n        el valor original más tarde si es necesario.\n\n        Devolver el valor anterior es nuevo en SeleniumLibrary 3.0.\n        El argumento persist se eliminó en SeleniumLibrary 3.2 y\n        EMBED es nuevo en SeleniumLibrary 4.2.\n        ",
-        "sha256": "c8241dd4f1113b3db620de1f45f2390c227b081400b04e0178561dde2c38748e"
+        "sha256": "e3c1bf89f84e7084a42efc84b78ac05829dbe6381c0e6b65aaf231eaa6756d5d"
     },
     "get_list_items": {
         "name": "obtener_elementos_de_lista",
         "doc": "Devuelve todas las etiquetas o valores de la lista de selección ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Devuelve etiquetas visibles por defecto, pero los valores pueden ser devueltos por\n        estableciendo el argumento ``values`` en un valor verdadero (consulte `Argumentos booleanos`).\n\n        Ejemplo:\n        | ${labels} = | `Obtener Elementos De Lista` | mi lista |             |\n        | ${values} = | `Obtener Elementos De Lista` | css:#example select | values=True |\n\n        La compatibilidad con valores devueltos es nueva en SeleniumLibrary 3.0.\n        ",
-        "sha256": "60f7293239f288f08276b8fa63d98a6be52ff42a0627b9b0da14ba6dab51bd94"
+        "sha256": "e6c900eb6ca8c0a882882a7f0110c6a728ad1d5be0960addc9cb50648d0bdf4a"
     },
     "get_selected_list_label": {
         "name": "obtener_etiqueta_seleccionada_de_lista",
         "doc": "Devuelve la etiqueta de la opción seleccionada de la lista de selección ``locator``.\n\n        Si hay varias opciones seleccionadas, la etiqueta de la primera opción\n        es devuelto.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "f9281509d3c4ac39f4b98d9d9d4f0f2dd6b579c37204b33ec7d47b6bef999672"
+        "sha256": "9f5f6e484b777c8fdf02cf67dd01446bc3bcf295cde6e006df349506376f0a11"
     },
     "get_selected_list_labels": {
         "name": "obtener_etiquetas_seleccionadas_de_lista",
         "doc": "Devuelve etiquetas de opciones seleccionadas de la lista de selección ``locator``.\n\n        A partir de SeleniumLibrary 3.0, devuelve una lista vacía si hay\n        No hay selecciones. En versiones anteriores, esto provocaba un error.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "e3bf2c1db04dbb52c99c7397065da52699bb4b7bdc5ceaeb45d525e8176acb48"
+        "sha256": "67dd2b33704574b11c2226177e50f6f8947c6a85f395c40bd3f5fe59e0f1fd9e"
     },
     "get_selected_list_value": {
         "name": "obtener_valor_seleccionado_de_lista",
         "doc": "Devuelve el valor de la opción seleccionada de la lista de selección ``locator``.\n\n        Si hay varias opciones seleccionadas, el valor de la primera opción\n        es devuelto.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "2b935dd4627ca62d92a311569036b2978032aa67e542f5b7ef91a514f01f323d"
+        "sha256": "3152e584f6e11d68d809920202e08844ce53fdf83cacaa94cfe4571a9638cf35"
     },
     "get_selected_list_values": {
         "name": "obtener_valores_seleccionados_de_lista",
         "doc": "Devuelve valores de las opciones seleccionadas de la lista de selección ``locator``.\n\n        A partir de SeleniumLibrary 3.0, devuelve una lista vacía si hay\n        No hay selecciones. En versiones anteriores, esto provocaba un error.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "83b79c56056a6d51529e36a093ba14ec0b805a96bdb9e6870214eb4de987bea6"
+        "sha256": "4c2ca1254255bf84fc678b46de91c2ae5dac9b4326309359ebeadf54e37e30c5"
     },
     "list_selection_should_be": {
         "name": "la_lista_debe_tener_las_opciones_seleccionadas",
         "doc": "Verifica que la lista de selección ``locator`` tenga las opciones ``expected`` seleccionadas.\n\n        Es posible ofrecer opciones esperadas tanto como etiquetas visibles como\n        como valores. A partir de SeleniumLibrary 3.0, mezclando etiquetas y\n        valores no es posible. El orden de las opciones seleccionadas no es\n        validado.\n\n        Si no se dan las opciones esperadas, valida que la lista tenga\n        sin selecciones. Una alternativa más explícita es utilizar `La Lista No Debe Tener Opciones Seleccionadas`.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Ejemplos:\n        | `La Lista Debe Tener Las Opciones Seleccionadas` | género | Mujer |        |\n        | `La Lista Debe Tener Las Opciones Seleccionadas` | intereses | Automatización de pruebas | Python |\n        ",
-        "sha256": "1d70ccc8a2dc868e265fc29e9cbc2317799eb12d0dd3f21d61fa4ffea7a7e4c2"
+        "sha256": "f8af4aa917b456f78fd60318df7c55cfd63707c30f1b1b2d690f4f1dcae0a9dd"
     },
     "list_should_have_no_selections": {
         "name": "la_lista_no_debe_tener_opciones_seleccionadas",
         "doc": "Verifica que la lista de selección ``locator`` no tenga opciones seleccionadas.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "429fc50c47319d8267bc5c2306a7d1d191a124d457a6f6655bb4ff5d64d71def"
+        "sha256": "0551f8b293b8abd01494c044709e095a7707625d1ee4f1d5249fd2a2f8bee3d2"
     },
     "page_should_contain_list": {
         "name": "la_pagina_debe_contener_la_lista",
         "doc": "Verifica que la lista de selección ``locator`` se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "9ad2d87bd51bee3365d5ca32153adae2ea4b137f916f07fc39416a54aa117bf6"
+        "sha256": "c6508b09b6d9fed157871d2ee5d695cefb7e4bd4846ffc4e00eb74e9067cae89"
     },
     "page_should_not_contain_list": {
         "name": "la_pagina_no_debe_contener_la_lista",
         "doc": "Verifica que la lista de selección ``locator`` no se encuentre en la página actual.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre ``message``.\n        y argumentos ``loglevel``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "2f2e58b399f73b2ab4dc795368b0b18b9a63c37e2764de722d897039d6e7881c"
+        "sha256": "3fa7e7482293d0140174e82739b4b2a994dc55ad5da2458b8f831bb2390a62eb"
     },
     "select_all_from_list": {
         "name": "seleccionar_todo_de_la_lista",
         "doc": "Selecciona todas las opciones de la lista de selección múltiple ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "7113bdf3faec639e3bdb3b1beb09c526dec522a0181ae11fd94398fdfb3f6fd2"
+        "sha256": "a5364ecf7ad9f9b845dceb47ff0b4e1277cb1164863006a6823213cdd254a73d"
     },
     "select_from_list_by_index": {
         "name": "seleccionar_opcion_de_lista_por_indice",
         "doc": "Selecciona opciones de la lista de selección ``locator`` por ``indexes``.\n\n        Los índices de opciones de lista comienzan desde 0.\n\n        Si se da más de una opción para una lista de selección única,\n        se seleccionará el último valor. Con listas de selección múltiple todos\n        Se seleccionan las opciones especificadas, pero se muestran posibles selecciones antiguas.\n        no aclarado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "220f77e512662cfff307efa29f5b46dba2e0d1b04760707cface96f63ff87e7c"
+        "sha256": "fa386a54bb6f356be51ce5c347638ac65cbf6cb70d480299fb5124e74e9da9a3"
     },
     "select_from_list_by_label": {
         "name": "seleccionar_opcion_de_lista_por_etiqueta",
         "doc": "Selecciona opciones de la lista de selección ``locator`` por ``labels``.\n\n        Si se da más de una opción para una lista de selección única,\n        se seleccionará el último valor. Con listas de selección múltiple todos\n        Se seleccionan las opciones especificadas, pero se muestran posibles selecciones antiguas.\n        no aclarado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "12c2af99cb8c78b6edd06ee17d902a575d1a2a4932d21bb67b040233a5a80318"
+        "sha256": "e100b91ecd091697eeb11fdb0d6f0b1ed6926fe4507df4ce984371c8eb5f1cc5"
     },
     "select_from_list_by_value": {
         "name": "seleccionar_opcion_de_lista_por_valor",
         "doc": "Selecciona opciones de la lista de selección ``locator`` por ``values``.\n\n        Si se da más de una opción para una lista de selección única,\n        se seleccionará el último valor. Con listas de selección múltiple todos\n        Se seleccionan las opciones especificadas, pero se muestran posibles selecciones antiguas.\n        no aclarado.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "9989cd962aeddb746a6ac8c632023bb9fbbe1ae832ae618635fb1c072049d7ab"
+        "sha256": "54236431182e3e72113181373e3594817356c98123c995857b2e7abb49b28be9"
     },
     "unselect_all_from_list": {
         "name": "deseleccionar_todo_de_la_lista",
         "doc": "Deselecciona todas las opciones de la lista de selección múltiple ``locator``.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Nuevo en SeleniumLibrary 3.0.\n        ",
-        "sha256": "e273c674b217707452b897e66ccfa2ff12ef2279198364b4f95350b0cc557c4c"
+        "sha256": "bb62f148338921e02c6a1ff95c8d09a12bd2dc7c3f8ce5a57dd5b4989fe642a8"
     },
     "unselect_from_list_by_index": {
         "name": "deseleccionar_opcion_de_lista_por_indice",
         "doc": "Anula la selección de opciones de la lista de selección ``locator`` por ``indexes``.\n\n        Los índices de opciones de lista comienzan desde 0. Esta palabra clave solo funciona con\n        listas de selección múltiple.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "5aac4cc2fa0bec90621d29b2eac7064d18510c447b7357d8eb5948d2cd459cef"
+        "sha256": "f92d00285222a9c3ff8a34a325fbca1d87bf206ea483978bfe6cb3d47a6ce342"
     },
     "unselect_from_list_by_label": {
         "name": "deseleccionar_opcion_de_lista_por_etiqueta",
         "doc": "Anula la selección de opciones de la lista de selección ``locator`` por ``labels``.\n\n        Esta palabra clave sólo funciona con listas de selección múltiple.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "3dfe87450d9a1a8cad3f8cad3e159b8bd4c3e25f25f91dd747aeb23403b18ab5"
+        "sha256": "62795c18c2cc818a95641c48c5a74a48f58442867347296cb14143375844f0b6"
     },
     "unselect_from_list_by_value": {
         "name": "deseleccionar_opcion_de_lista_por_valor",
         "doc": "Anula la selección de opciones de la lista de selección ``locator`` por ``values``.\n\n        Esta palabra clave sólo funciona con listas de selección múltiple.\n\n        Consulte la sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n        ",
-        "sha256": "7ee06a01319ea95e02d4ba34cfbc0d845cf5dbaf58244d93338760609a67ec02"
+        "sha256": "02e1430806ea81208dfa03ff5a69108e3cadce1ec5b481fd99affdbd2941cd05"
     },
     "get_table_cell": {
         "name": "obtener_celda_de_tabla",
         "doc": "Devuelve el contenido de una celda de la tabla.\n\n        La tabla se ubica usando el argumento ``locator`` y su celda.\n        encontrado usando ``row`` y ``column``. Ver el `Localización de elementos`\n        sección para obtener detalles sobre la sintaxis del localizador.\n\n        Tanto los índices de filas como de columnas comienzan desde 1, y el encabezado y pie de página\n        Las filas se incluyen en el recuento. Es posible hacer referencia a filas.\n        y columnas desde el final usando índices negativos para que -1\n        es la última fila/columna, -2 es la penúltima, y así sucesivamente.\n\n        Todos los elementos ``<th>`` y ``<td>`` en cualquier lugar de la tabla son\n        consideradas células.\n\n        Consulte `La Pagina Debe Contener` para obtener una explicación sobre ``loglevel``.\n        argumento.\n        ",
-        "sha256": "616f2d925fbd431f1cdde9427ff865b4f402806b2f15b99dfd033a96e0d0a42e"
+        "sha256": "2bab3b3d86717f629733195f8a967527a459604ed3575d91f678250cd7aa30d6"
     },
     "table_cell_should_contain": {
         "name": "la_celda_de_tabla_debe_contener",
         "doc": "Verifica que la celda de la tabla contenga el texto ``expected``.\n\n        Consulte `Obtener Celda De Tabla` que esta palabra clave utiliza internamente para\n        una explicación sobre los argumentos aceptados.\n        ",
-        "sha256": "628c09aa35b649beda7c500e914fa906cf91f9eb30afad19973809784ee1f8d6"
+        "sha256": "a709687de5e282a86d61c38cf332c4be43daf125f64b70cceeb2a73144820e64"
     },
     "table_column_should_contain": {
         "name": "la_columna_de_tabla_debe_contener",
         "doc": "Verifica que la columna de la tabla contenga el texto ``expected``.\n\n        La tabla se ubica usando el argumento ``locator`` y su columna.\n        encontrado usando ``column``. Consulte la sección `Localización de elementos` para\n        detalles sobre la sintaxis del localizador.\n\n        Los índices de columnas comienzan desde 1. Es posible hacer referencia a columnas\n        desde el final usando índices negativos para que -1 sea la última columna,\n        -2 es el penúltimo, y así sucesivamente.\n\n        Si una tabla contiene celdas que abarcan varias columnas, las fusionadas\n        las celdas cuentan como una sola columna.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre el\n        argumento ``loglevel``.\n        ",
-        "sha256": "e0f898ce00b22cd66e2f4c5ab1cdcbea733f294d53bc210ec33667dfcd1963de"
+        "sha256": "c778b15130d519c4092e789f616b827547f27eadfcbf1cbba156949b7b8b882c"
     },
     "table_footer_should_contain": {
         "name": "el_pie_de_tabla_debe_contener",
         "doc": "Verifica que el pie de página de la tabla contenga el texto ``expected``.\n\n        Cualquier elemento ``<td>`` dentro del elemento ``<tfoot>`` se considera\n        ser parte del pie de página.\n\n        La tabla se ubica utilizando el argumento ``locator``. Ver el\n        Sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre el\n        argumento ``loglevel``.\n        ",
-        "sha256": "454fb3be070acb378460038572ed4268de8b18b96b3aaa903d3a1f0093147691"
+        "sha256": "e076ec6973af1dcbb2eb7a2eca54a36afcd0df5155504bb7987025b0a5dd2e94"
     },
     "table_header_should_contain": {
         "name": "el_encabezado_de_tabla_debe_contener",
         "doc": "Verifica que el encabezado de la tabla contenga el texto ``expected``.\n\n        Cualquier elemento ``<th>`` en cualquier lugar de la tabla se considera\n        parte del encabezado.\n\n        La tabla se ubica utilizando el argumento ``locator``. Ver el\n        Sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre el\n        argumento ``loglevel``.\n        ",
-        "sha256": "66208e9741c9d18d1c09645bfcb9b54b4ffe2c104e5402c86f2cf54feb02de79"
+        "sha256": "608370874518390cb6df5827a487ce1fff003e24ddd014d2bb01fbf47f92042e"
     },
     "table_row_should_contain": {
         "name": "la_fila_de_tabla_debe_contener",
         "doc": "Verifica que la fila de la tabla contenga el texto ``expected``.\n\n        La tabla se ubica usando el argumento ``locator`` y su columna.\n        encontrado usando ``column``. Consulte la sección `Localización de elementos` para\n        detalles sobre la sintaxis del localizador.\n\n        Los índices de filas comienzan desde 1. Es posible hacer referencia a filas\n        desde el final usando índices negativos para que -1 sea la última fila,\n        -2 es el penúltimo, y así sucesivamente.\n\n        Si una tabla contiene celdas que abarcan varias filas, una coincidencia\n        solo ocurre para la fila superior de esas celdas fusionadas.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre el\n        argumento ``loglevel``.\n        ",
-        "sha256": "2ad4f79443748abaa86e768fb0994f32a2d1386c435688727093fb0c1034d23f"
+        "sha256": "86c5c7b1e05e08c3e7be1cbe4ac87b17ce9db402425781cea44e5b4c6dd50bd7"
     },
     "table_should_contain": {
         "name": "la_tabla_debe_contener",
         "doc": "Verifica que la tabla contenga el texto ``expected``.\n\n        La tabla se ubica utilizando el argumento ``locator``. Ver el\n        Sección `Localización de elementos` para obtener detalles sobre la sintaxis del localizador.\n\n        Consulte `La Pagina Debe Contener El Elemento` para obtener una explicación sobre el\n        argumento ``loglevel``.\n        ",
-        "sha256": "ea4dc362f588ab33332b985ea6ff059499de1e4c25bdbfceb6e6517cd36b24fc"
+        "sha256": "457f72c7693b088b2e33c3b3e493fe1e38d65ed56d283074eff350f4f4e994cf"
     },
     "wait_for_condition": {
         "name": "esperar_condicion",
         "doc": "Espera hasta que ``condition`` sea verdadero o ``timeout`` caduque.\n\n        La condición puede ser una expresión JavaScript arbitraria, pero\n        debe devolver un valor para ser evaluado. Consulte `Ejecutar Javascript` para\n        información sobre el acceso al contenido de las páginas.\n\n        Falla si el tiempo de espera expira antes de que la condición se cumpla. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera\n        y su valor predeterminado.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        Ejemplos:\n        | `Esperar Condicion` | return document.title == \"New Title\" |\n        | `Esperar Condicion` | return jQuery.active == 0            |\n        | `Esperar Condicion` | style = document.querySelector('h1').style; return style.background == \"red\" && style.color == \"white\" |\n        ",
-        "sha256": "4998ab3cee46a578df2b064d390401d2ec0268454607ef194db5c0d3d73c81db"
+        "sha256": "075bde5946d7fa082d63fb338e000245020d6093983906be5fdb62b530ad3d2a"
     },
     "wait_until_element_contains": {
         "name": "esperar_hasta_que_el_elemento_contenga",
         "doc": "Espera hasta que el elemento ``locator`` contenga ``text``.\n\n        Falla si ``timeout`` caduca antes de que aparezca el texto. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera y\n        su valor predeterminado y la sección `Localización de elementos` para más detalles\n        sobre la sintaxis del localizador.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n        ",
-        "sha256": "982c68220bb622a3d985c04b39ea3bc11b20437e73bcf8e38d51ed7e2032852c"
+        "sha256": "33b3ccb2efa88cdd2102dfed47bdd7cb40be6c0e5e271ea9cf1fe50bd50b339c"
     },
     "wait_until_element_does_not_contain": {
         "name": "esperar_hasta_que_el_elemento_no_contenga",
         "doc": "Espera hasta que el elemento ``locator`` no contenga ``text``.\n\n        Falla si ``timeout`` caduca antes de que desaparezca el texto. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera y\n        su valor predeterminado y la sección `Localización de elementos` para más detalles\n        sobre la sintaxis del localizador.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n        ",
-        "sha256": "a2b8bc5ee7de21f06e79317935026beddee2105ae645c22b322446dd5a8be0ad"
+        "sha256": "453bdbaacaae0cdccd9b0a73eedad68cd0f2d828d5988219e84039e9841a4db6"
     },
     "wait_until_element_is_enabled": {
         "name": "esperar_hasta_que_el_elemento_este_habilitado",
         "doc": "Espera hasta que se habilite el elemento ``locator``.\n\n        El elemento se considera habilitado si no está deshabilitado ni es de solo lectura.\n\n        Falla si ``timeout`` caduca antes de que se habilite el elemento. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera y\n        su valor predeterminado y la sección `Localización de elementos` para más detalles\n        sobre la sintaxis del localizador.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        Considerar que los elementos de solo lectura estén deshabilitados es una característica nueva\n        en SeleniumLibrary 3.0.\n        ",
-        "sha256": "6202e0635b377e2e7d5eaa091eb6a582b64bc49f9d5edf6ddeb7754723015543"
+        "sha256": "27f2f9e9eb65dfdade445abfabcf8b4a4363e728b287c20038618d63c819555e"
     },
     "wait_until_element_is_not_visible": {
         "name": "esperar_hasta_que_el_elemento_no_este_visible",
         "doc": "Espera hasta que el elemento ``locator`` no esté visible.\n\n        Falla si ``timeout`` caduca antes de que el elemento no sea visible. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera y\n        su valor predeterminado y la sección `Localización de elementos` para más detalles\n        sobre la sintaxis del localizador.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n        ",
-        "sha256": "e112e160d739b0cd0f8730703738cc0692e1c0d57e42308b6d50206db23e6d52"
+        "sha256": "db6744953c2881a0c08b13ed023d532cddad7b5b14a8394db8ab5432b2ea2da5"
     },
     "wait_until_element_is_visible": {
         "name": "esperar_hasta_que_el_elemento_este_visible",
         "doc": "Espera hasta que el elemento ``locator`` esté visible.\n\n        Falla si ``timeout`` caduca antes de que el elemento sea visible. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera y\n        su valor predeterminado y la sección `Localización de elementos` para más detalles\n        sobre la sintaxis del localizador.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n        ",
-        "sha256": "90878c583a727db5da943e7f532efa4e73c59a525a0107233fd59740bb9dd116"
+        "sha256": "58ae76b8a3955cb903d4af4fec510ff022456a74ce270da10815d9b92660a5e0"
     },
     "wait_until_location_contains": {
         "name": "esperar_hasta_que_la_ubicacion_contenga",
         "doc": "Espera hasta que la URL actual contenga ``expected``.\n\n        El argumento ``expected`` contiene el valor esperado en la URL.\n\n        Falla si ``timeout`` caduca antes de que la ubicación lo contenga. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera\n        y su valor predeterminado.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        Nuevo en SeleniumLibrary 4.0\n        ",
-        "sha256": "33b91c79fe956c37284bccdb56d318e679ec774ca1565db5e2140250b6b46fb5"
+        "sha256": "6a7378693919644b807e275be107350648bc07f99c87931f62b6abf6936fce38"
     },
     "wait_until_location_does_not_contain": {
         "name": "esperar_hasta_que_la_ubicacion_no_contenga",
         "doc": "Espera hasta que la URL actual no contenga ``location``.\n\n        El argumento ``location`` contiene un valor no esperado en la URL.\n\n        Falla si ``timeout`` caduca antes de que la ubicación no contenga. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera\n        y su valor predeterminado.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        Nuevo en SeleniumLibrary 4.3\n        ",
-        "sha256": "5ea0b9da22370c90d509d3e4a8aad47b69652b2bd0ce5b29a9264508d4bea432"
+        "sha256": "c6b5ecb42d51cdbe229549dc0e69889f75dfbd9d06186ea9470091149e24806d"
     },
     "wait_until_location_is": {
         "name": "esperar_hasta_que_la_ubicacion_sea",
         "doc": "Espera hasta que la URL actual sea ``expected``.\n\n        El argumento ``expected`` es el valor esperado en la URL.\n\n        Falla si ``timeout`` caduca antes de que lo haga la ubicación. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera\n        y su valor predeterminado.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        Nuevo en SeleniumLibrary 4.0\n        ",
-        "sha256": "2a0604e9e096908cda4caef1486d56310d6f10d0d974804c96a32a0492eb1f82"
+        "sha256": "0c1363e0e6e3241d42c873c3e3ec3a6135dcadd5a56e57b39d97bb414c965017"
     },
     "wait_until_location_is_not": {
         "name": "esperar_hasta_que_la_ubicacion_no_sea",
         "doc": "Espera hasta que la URL actual no sea ``location``.\n\n        El argumento ``location`` es el valor inesperado en la URL.\n\n        Falla si ``timeout`` caduca antes de que la ubicación desaparezca. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera\n        y su valor predeterminado.\n\n        El argumento ``message`` se puede utilizar para anular el error predeterminado.\n        mensaje.\n\n        Nuevo en SeleniumLibrary 4.3\n        ",
-        "sha256": "96f19cceb6f263cde977b3dfd4b90d06691a1533ebef77c9c5ef1f0e0925e228"
+        "sha256": "2309e3e566556d0ccc27d6c08ff7858d9012c92a0887c1a33daf00d88b8e9219"
     },
     "wait_until_page_contains": {
         "name": "esperar_hasta_que_la_pagina_contenga",
         "doc": "Espera hasta que aparezca ``text`` en la página actual.\n\n        Falla si ``timeout`` caduca antes de que aparezca el texto. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera\n        y su valor predeterminado.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n        ",
-        "sha256": "2e6b9f7e424ed5ba676c82ce9b6ae964050a5fb7b47baa35a3f94125107d9e57"
+        "sha256": "f2aa516079475111cf3bd6808fb99a081519d49e7b2549fafd19ca455baa4701"
     },
     "wait_until_page_contains_element": {
         "name": "esperar_hasta_que_la_pagina_contenga_el_elemento",
         "doc": "Espera hasta que aparezca el elemento ``locator`` en la página actual.\n\n        Falla si ``timeout`` caduca antes de que aparezca el elemento. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera y\n        su valor predeterminado y la sección `Localización de elementos` para más detalles\n        sobre la sintaxis del localizador.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        El argumento ``limit`` se puede utilizar para definir cuántos elementos\n        La página debe contener. Cuando ``limit`` es `None` (predeterminado), la página puede\n        contener uno o más elementos. Cuando el límite es un número, la página debe\n        contienen el mismo número de elementos.\n\n        ``limit`` es nuevo en SeleniumLibrary 4.4\n        ",
-        "sha256": "712da49e8aff630cb2843522331935693ce334aea9ccb2aacb6c015af9c921b5"
+        "sha256": "4b85d30ba39b634eb49b313ac06a813b92f4b81a18f3c16d585e3c1a9ed2f6e7"
     },
     "wait_until_page_does_not_contain": {
         "name": "esperar_hasta_que_la_pagina_no_contenga",
         "doc": "Espera hasta que ``text`` desaparezca de la página actual.\n\n        Falla si ``timeout`` caduca antes de que desaparezca el texto. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera\n        y su valor predeterminado.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n        ",
-        "sha256": "96c2f8840c677afdb9f207107bf3f7bbdfb9d1b56e3ce887cf34a88e3e273974"
+        "sha256": "f415ef486e889658bef35afa9ddd6f16ff0cfc9bc3e1ca97471eb32e74db194d"
     },
     "wait_until_page_does_not_contain_element": {
         "name": "esperar_hasta_que_la_pagina_no_contenga_el_elemento",
         "doc": "Espera hasta que el elemento ``locator`` desaparezca de la página actual.\n\n        Falla si ``timeout`` caduca antes de que desaparezca el elemento. Ver\n        la sección `Tiempos de espera` para obtener más información sobre el uso de tiempos de espera y\n        su valor predeterminado y la sección `Localización de elementos` para más detalles\n        sobre la sintaxis del localizador.\n\n        ``error`` se puede utilizar para anular el mensaje de error predeterminado.\n\n        El argumento ``limit`` se puede utilizar para definir cuántos elementos\n        La página no debe contener. Cuando ``limit`` es `None` (predeterminado) la página no puede\n        contener cualquier elemento. Cuando el límite es un número, la página no debe\n        contienen el mismo número de elementos.\n\n        ``limit`` es nuevo en SeleniumLibrary 4.4\n        ",
-        "sha256": "081d0393a8d8f100d9db65f81170222f4a6678fcc2703a3e123c907ef5ade430"
+        "sha256": "76391735917b147597bdd11d29deb3f3db7df84dd2526916e4318a80f28e15e3"
     },
     "close_window": {
         "name": "cerrar_ventana",
@@ -862,37 +862,37 @@
     "get_locations": {
         "name": "obtener_ubicaciones",
         "doc": "Devuelve y registra las URL de todas las ventanas del navegador seleccionado.\n\n        *Alcance del navegador:*\n\n        El argumento ``browser`` especifica el navegador que devolverá\n        su información de Windows.\n\n        - ``browser`` puede ser ``index_or_alias`` como en `Cambiar Navegador`.\n\n        - Si ``browser`` es ``CURRENT`` (predeterminado, no distingue entre mayúsculas y minúsculas)\n          se selecciona el navegador actualmente activo.\n\n        - Si ``browser`` es ``ALL`` (no distingue entre mayúsculas y minúsculas)\n          Se devuelve la información de todas las ventanas de todos los navegadores abiertos.",
-        "sha256": "3e73811fa673371891cffa16aa99f24fa6dbc87ff826d0d84be6d54fc937163c"
+        "sha256": "4dc142cb8f29a1bfa6eb2545c9d078ea43395b9a916fab56b7e3bcca8756d9af"
     },
     "get_window_handles": {
         "name": "obtener_manejadores_de_ventana",
         "doc": "Devuelve todos los identificadores de ventanas secundarias del navegador seleccionado como una lista.\n\n        Se puede utilizar como una lista de ventanas para excluir con `Cambiar Ventana`.\n\n        Cómo seleccionar el alcance ``browser`` de esta palabra clave, consulte `Obtener Ubicaciones`.\n\n        Antes de SeleniumLibrary 3.0, esta palabra clave se denominaba `List Windows`.\n        ",
-        "sha256": "b051b51a36766e2a3c748a2ecbb76ed6516a20cec807a38d29a96f95c5ea7efa"
+        "sha256": "0daa2613b0c4f7b096cd70bbdb1fc3425b6f18a3aeb37ff473220dfe037cf58e"
     },
     "get_window_identifiers": {
         "name": "obtener_identificadores_de_ventana",
         "doc": "Devuelve y registra los atributos de identificación de todas las ventanas del navegador seleccionado.\n\n        Cómo seleccionar el alcance ``browser`` de esta palabra clave, consulte `Obtener Ubicaciones`.",
-        "sha256": "9342df3471d9923e299c60511d11006762b1797802153c97ac0451adcdd5e0bf"
+        "sha256": "936e3212b268c135789f98aa411356a61fd8e09af2cab0f0b1771b2081443465"
     },
     "get_window_names": {
         "name": "obtener_nombres_de_ventana",
         "doc": "Devuelve y registra los nombres de todas las ventanas del navegador seleccionado.\n\n        Cómo seleccionar el alcance ``browser`` de esta palabra clave, consulte `Obtener Ubicaciones`.",
-        "sha256": "557778bcbb2b4be2e575416f5422c8077397f2e7d7614e3b064fe3f222bf3225"
+        "sha256": "f8c71f5069d90c88034596369760e164292be52b3afe4d89da8e12a1a1329233"
     },
     "get_window_position": {
         "name": "obtener_posicion_de_ventana",
         "doc": "Devuelve la posición actual de la ventana.\n\n        La posición es relativa a la esquina superior izquierda de la pantalla. Devuelto\n        los valores son números enteros. Véase también `Establecer Posicion De Ventana`.\n\n        Ejemplo:\n        | ${x} | ${y}= | `Obtener Posicion De Ventana` |\n        ",
-        "sha256": "c9f1ab8ee31517bc91a6ae9f3dd3782c695f0c3c64adf1639fc3e34ea85e7d9c"
+        "sha256": "846a195f38dac67bcd473063bb63ad6307dea5db994541d7cd8428fccc516b97"
     },
     "get_window_size": {
         "name": "obtener_tamano_de_ventana",
         "doc": "Devuelve el ancho y alto de la ventana actual como números enteros.\n\n        Véase también `Establecer Tamano De Ventana`.\n\n        Si el parámetro ``inner`` se establece en ``True``, la palabra clave devuelve\n        Propiedades HTML DOM window.innerWidth y window.innerHeight.\n        Consulte `Argumentos booleanos` para obtener más detalles sobre cómo configurar valores booleanos.\n        argumentos. ``inner`` es nuevo en SeleniumLibrary 4.0.\n\n        Ejemplo:\n        | ${width} | ${height}= | `Obtener Tamano De Ventana` |      |\n        | ${width} | ${height}= | `Obtener Tamano De Ventana` | True |\n        ",
-        "sha256": "d9fc8a6bc4dd38749c761722027b783dfd74ff3c69d16ad3e4ceceb162f2ed64"
+        "sha256": "32860328777739b319893fd665dead7ba5ab0287b10939dc5bfa936ddfea4951"
     },
     "get_window_titles": {
         "name": "obtener_titulos_de_ventana",
         "doc": "Devuelve y registra títulos de todas las ventanas del navegador seleccionado.\n\n        Cómo seleccionar el alcance ``browser`` de esta palabra clave, consulte `Obtener Ubicaciones`.",
-        "sha256": "7b2a62a9e808f584ec9674faae954855135aec5ac168ec0b929b11ac73f7fcec"
+        "sha256": "49f580b34b15d54a4e5d557a8630641ce07f159939a4e5025c4e1bef7839147d"
     },
     "maximize_browser_window": {
         "name": "maximizar_ventana_del_navegador",
@@ -907,17 +907,17 @@
     "set_window_position": {
         "name": "establecer_posicion_de_ventana",
         "doc": "Establece la posición de la ventana usando las coordenadas ``x`` y ``y``.\n\n        La posición es relativa a la esquina superior izquierda de la pantalla,\n        pero algunos navegadores excluyen la posible barra de tareas configurada por el operador\n        sistema a partir del cálculo. Por lo tanto, la posición real puede ser\n        diferente con diferentes navegadores.\n\n        Los valores se pueden dar usando cadenas que contengan números o usando\n        números reales. Véase también `Obtener Posicion De Ventana`.\n\n        Ejemplo:\n        | `Establecer Posicion De Ventana` | 100 | 200 |\n        ",
-        "sha256": "d9c3d6dc138cd350941a1660e5601dbc4441ee6c0a7df08902c76dd15953017c"
+        "sha256": "37bd6ff1aed231a7325002a7fc06d7a585831ccd764c272b3b6127b189cbf4ad"
     },
     "set_window_size": {
         "name": "establecer_tamano_de_ventana",
         "doc": "Establece el tamaño actual de Windows en ``width`` y ``height``.\n\n        Los valores se pueden dar usando cadenas que contengan números o usando\n        números reales. Véase también `Obtener Tamano De Ventana`.\n\n        Los navegadores tienen un límite en su tamaño mínimo. Tratando de configurarlos\n        más pequeño hará que el tamaño real sea mayor que el solicitado\n        tamaño.\n\n        Si el parámetro ``inner`` se establece en ``True``, la palabra clave establece los valores necesarios\n        ancho y alto de la ventana para tener el DOM HTML deseado _window.innerWidth_\n        y _ventana.innerHeight_. Consulte `Argumentos booleanos` para obtener más detalles sobre cómo configurar valores booleanos.\n        argumentos.\n\n        El argumento ``inner`` es nuevo desde SeleniumLibrary 4.0.\n\n        Este argumento ``inner`` no admite frames. Si se selecciona un frame,\n        cambie al valor predeterminado antes de ejecutar esto.\n\n        Ejemplo:\n        | `Establecer Tamano De Ventana` | 800 | 600 |      |\n        | `Establecer Tamano De Ventana` | 800 | 600 | True |\n        ",
-        "sha256": "31b5febddcb935b20320728accc28a892b8a0956301646827aa8c7c74e1cdfec"
+        "sha256": "a60ea67527f4a52fdc0d99d24da3aaef834ef2beaace0f078c56d22cbfe4841f"
     },
     "switch_window": {
         "name": "cambiar_ventana",
         "doc": "Cambia a la ventana del navegador que coincide con ``locator``.\n\n        Si se encuentra la ventana, todos los comandos posteriores utilizan el seleccionado\n        ventana, hasta que esta palabra clave se utilice nuevamente. Si la ventana no está\n        encontrada, esta palabra clave falla. Se devuelve el identificador de ventana anterior.\n        y se puede utilizar para volver a él más tarde.\n\n        Tenga en cuenta que las alertas deben manejarse con\n        `Manejar Alerta` u otras palabras clave relacionadas con alertas.\n\n        El ``locator`` se puede especificar usando diferentes estrategias algo\n        de manera similar a cuando `Localización de elementos` en las páginas.\n\n        - Por defecto, ``locator`` coincide con el identificador de ventana, nombre,\n          título y URL. El emparejamiento se realiza en ese orden y el primero\n          Se selecciona la ventana correspondiente.\n\n        - ``locator`` puede especificar una estrategia explícita utilizando el formato\n          ``strategy:value`` (recomendado) o ``strategy=value``. Apoyado\n          Las estrategias son ``name``, ``title`` y ``url``. Estas ventanas coinciden\n          utilizando su nombre, título o URL, respectivamente. Además, ``default``\n          se puede utilizar para utilizar explícitamente la estrategia predeterminada explicada anteriormente.\n\n        - Si ``locator`` es ``NEW`` (no distingue entre mayúsculas y minúsculas), la última\n          Se selecciona la ventana abierta. Es un error si esto es lo mismo.\n          como ventana actual.\n\n        - Si ``locator`` es ``MAIN`` (predeterminado, no distingue entre mayúsculas y minúsculas),\n          La ventana principal está seleccionada.\n\n        - Si ``locator`` es ``CURRENT`` (no distingue entre mayúsculas y minúsculas), no se\n          hecho. Esto efectivamente simplemente devuelve el identificador de la ventana actual.\n\n        - Si ``locator`` no es una cadena, se espera que sea una lista.\n          de identificadores de ventana _para excluir_. Tal lista de ventanas excluidas.\n          se puede obtener de `Obtener Manejadores De Ventana` antes de realizar una acción que\n          abre una nueva ventana.\n\n        ``timeout`` se utiliza para especificar durante cuánto tiempo se sondeará la palabra clave para seleccionar\n        la nueva ventana. ``timeout`` es nuevo en SeleniumLibrary 3.2.\n\n        Ejemplo:\n        | `Hacer Clic En Enlace` | ventana emergente1 |      | # Abrir nueva ventana |\n        | `Cambiar Ventana` | ejemplo |      | # Seleccionar ventana usando la estrategia predeterminada |\n        | `El Titulo Debe Ser` | Ventana emergente 1 |      |\n        | `Hacer Clic En Boton` | ventana emergente2 |      | # Abrir otra ventana |\n        | ${handle} = | `Cambiar Ventana` | NUEVO | # Seleccionar la última ventana abierta |\n        | `El Titulo Debe Ser` | Ventana emergente 2 |      |\n        | `Cambiar Ventana` | ${handle} |      | # Seleccionar ventana usando el identificador |\n        | `El Titulo Debe Ser` | Ventana emergente 1 |      |\n        | `Cambiar Ventana` | PRINCIPAL |      | # Seleccione la ventana principal |\n        | `El Titulo Debe Ser` | Principal |      |\n        | ${excludes} = | `Obtener Manejadores De Ventana` | | # Obtener lista de ventanas actuales |\n        | `Hacer Clic En Enlace` | ventana emergente3 |      | # Abrir una ventana más |\n        | `Cambiar Ventana` | ${excludes} |      | # Seleccionar ventana usando exclusiones |\n        | `El Titulo Debe Ser` | Ventana emergente 3 |      |\n\n        El argumento ``browser`` permite con ``index_or_alias`` cambiar implícitamente a\n        un navegador específico al cambiar a una ventana. Ver `Cambiar Navegador`\n\n        - Si ``browser`` es ``CURRENT`` (no distingue entre mayúsculas y minúsculas), no se admite ningún otro navegador.\n          seleccionado.\n\n        *NOTA:*\n\n        - La sintaxis ``strategy:value`` solo es compatible con SeleniumLibrary\n          3.0 y más reciente.\n        - Antes de SeleniumLibrary 3.0, comparar ventanas por nombre y título\n          y la URL no distinguía entre mayúsculas y minúsculas.\n        - Las versiones anteriores admitían los alias ``None``, ``null`` y el\n          cadena vacía para seleccionar la ventana principal y alias ``self``\n          para seleccionar la ventana actual. El soporte para estos alias fue\n          eliminado en SeleniumLibrary 3.2.\n        ",
-        "sha256": "2ae583a5179810f31a4f7ae665918443d1f068c53e255c552b51bd1f5205c608"
+        "sha256": "cb0fb6385cfd1f1531a0fca31db8fbf11a66ab46d23e2c84cf824cbc686ae270"
     },
     "__init__": {
         "name": "__init__",
@@ -927,6 +927,6 @@
     "__intro__": {
         "name": "__intro__",
         "doc": "SeleniumLibrary es una biblioteca de pruebas web para Robot Framework.\n\n    Este documento explica cómo utilizar las palabras clave proporcionadas por SeleniumLibrary.\n    Para obtener información sobre instalación, soporte y más, visite el\n    [https://github.com/robotframework/SeleniumLibrary|página del proyecto].\n    Para obtener más información sobre Robot Framework, consulte http://robotframework.org.\n\n    SeleniumLibrary utiliza los módulos Selenium WebDriver internamente para\n    controlar un navegador web. Consulte http://seleniumhq.org para obtener más información\n    sobre Selenium en general y SeleniumLibrary README.rst\n    [https://github.com/robotframework/SeleniumLibrary#browser-drivers|Capítulo controladores del navegador]\n    para obtener más detalles sobre la instalación binaria de WebDriver.\n\n    %TOC%\n\n    = Localización de elementos =\n\n    Todas las palabras clave en SeleniumLibrary que necesitan interactuar con un elemento\n    en una página web, tome un argumento normalmente llamado ``locator`` que especifique\n    cómo encontrar el elemento. La mayoría de las veces, el localizador se proporciona como una cadena.\n    Usando la sintaxis del localizador que se describe a continuación, pero \"usar WebElements\" es\n    posible también.\n\n    == Sintaxis del localizador ==\n\n    SeleniumLibrary admite la búsqueda de elementos basados en diferentes estrategias\n    como la identificación del elemento, expresiones XPath o selectores CSS. La estrategia\n    puede especificarse explícitamente con un prefijo o la estrategia puede\n    implícito.\n\n    === Estrategia de localización predeterminada ===\n\n    De forma predeterminada, se considera que los localizadores utilizan la palabra clave predeterminada específica.\n    Estrategia localizadora. Todas las palabras clave admiten la búsqueda de elementos basados en ``id``\n    y ``name`` atributos, pero algunas palabras clave admiten atributos adicionales\n    u otros valores que tengan sentido en su contexto. Por ejemplo, `Hacer Clic En Enlace` admite el atributo ``href`` y el texto y la adición del enlace\n    a los normales ``id`` y ``name``.\n\n    Ejemplos:\n\n    | `Hacer Clic En Elemento` | ejemplo | # Coincidencia basada en ``id`` o ``name``.            |\n    | `Hacer Clic En Enlace` | ejemplo | # Coincidencia también basada en el texto del enlace y ``href``.   |\n    | `Hacer Clic En Boton` | ejemplo | # Coincidencia basada en ``id``, ``name`` o ``value``. |\n\n    Si un localizador comienza accidentalmente con un prefijo reconocido como `Estrategia de localización explícita` o `Estrategia XPath implícita`, es posible utilizar\n    el prefijo ``default`` explícito para habilitar la estrategia predeterminada.\n\n    Ejemplos:\n\n    | `Hacer Clic En Elemento` | name: foo | # Encuentra elemento con nombre ``foo``.               |\n    | `Hacer Clic En Elemento` | default:name:foo | # Utilice la estrategia predeterminada con valor ``name:foo``. |\n    | `Hacer Clic En Elemento` | //foo | # Buscar elemento usando XPath ``//foo``.           |\n    | `Hacer Clic En Elemento` | default: //foo | # Utilice la estrategia predeterminada con valor ``//foo``.    |\n\n    === Estrategia de localización explícita ===\n\n    La estrategia de localizador explícito se especifica con un prefijo usando\n    sintaxis ``strategy:value`` o ``strategy=value``. La sintaxis anterior\n    Se prefiere porque este último es idéntico al de Robot Framework.\n    [http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#named-argument-syntax|\n    sintaxis de argumento con nombre] y eso puede causar problemas. Espacios alrededor\n    el separador se ignora, por lo que ``id:foo``, ``id: foo`` y ``id : foo``\n    son todos equivalentes.\n\n    Las estrategias de localización que se admiten de forma predeterminada se enumeran en la tabla\n    abajo. Además de ellos, es posible registrar `Localizadores personalizados`.\n\n    | = Estrategia = |          = Coincidencia basada en = |         = Ejemplo = |\n    | id | Elemento ``id``.                     | ``id:example`` |\n    | name | ``name`` atributo.                 | ``name:example`` |\n    | identifier | Ya sea ``id`` o ``name``.          | ``identifier:example`` |\n    | class | Elemento ``class``.                  | ``class:example`` |\n    | tag | Nombre de la etiqueta.                           | ``tag:div`` |\n    | xpath | Expresión XPath.                   | ``xpath://div[@id=\"example\"]`` |\n    | css | Selector CSS.                       | ``css:div#example`` |\n    | dom | Expresión DOM.                     | ``dom:document.images[5]`` |\n    | link | Texto exacto que tiene un enlace.              | ``link:The example`` |\n    | partial link | Texto de enlace parcial.                  | ``partial link:he ex`` |\n    | sizzle | Selector Sizzle obsoleto.         | ``sizzle:div.example`` |\n    | data | Elemento ``data-*`` atributo | ``data:id:my_id`` |\n    | jquery | Expresión jQuery.                  | ``jquery:div.example`` |\n    | default | Comportamiento predeterminado específico de palabras clave.  | ``default:example`` |\n\n    Consulte la sección `Estrategia de localización predeterminada` a continuación para obtener más información.\n    Sobre cómo funciona la estrategia predeterminada. Usando el ``default`` explícito\n    El prefijo sólo es necesario si el valor del localizador se modifica accidentalmente.\n    Coincide con algunas de las estrategias explícitas.\n\n    Las diferentes estrategias de localización tienen diferentes pros y contras. Usando identificadores,\n    ya sea explícitamente como ``id:foo`` o usando el `estrategia de localización predeterminada` simplemente como ``foo``, cuando sea posible, porque\n    la sintaxis es simple y localizar elementos por identificación es rápido para los navegadores.\n    Si un elemento no tiene una identificación o la identificación no es estable, otros\n    Es necesario utilizar soluciones. Si un elemento tiene un nombre de etiqueta o clase únicos,\n    usando estrategias ``tag``, ``class`` o ``css`` como ``tag:h1``,\n    ``class:example`` o ``css:h1.example`` suele ser una solución fácil.\n    En los casos más complejos que utilizan expresiones XPath suelen ser los mejores.\n    Enfoque. Son muy poderosos pero una desventaja es que también pueden\n    volverse complejo.\n\n    Ejemplos:\n\n    | `Hacer Clic En Elemento` | id:foo | # Elemento con id 'foo'. |\n    | `Hacer Clic En Elemento` | css:div#foo h1 | # elemento h1 bajo div con id 'foo'. |\n    | `Hacer Clic En Elemento` | xpath: //div[@id=\"foo\"]//h1 | # Igual que el anterior usando XPath, no CSS. |\n    | `Hacer Clic En Elemento` | xpath: //*[contains(text(), \"example\")] | # Elemento que contiene el texto 'ejemplo'. |\n\n    *NOTA:*\n\n    - La sintaxis ``strategy:value`` solo es compatible con SeleniumLibrary 3.0\n      y más nuevo.\n    - Usar la estrategia ``sizzle`` o su alias ``jquery`` requiere que\n      el sistema bajo prueba contiene la biblioteca jQuery.\n    - Antes de SeleniumLibrary 3.0, solo se admitían palabras clave relacionadas con tablas\n      Estrategias ``xpath``, ``css`` y ``sizzle/jquery``.\n    - ``data`` la estrategia es un localizador de conveniencia que construirá xpath a partir de los parámetros.\n      Si tiene un elemento como `<div data-automation=\"automation-id-2\">`, localice el elemento a través de\n      ``data:automation:automation-id-2``. Esta característica se agregó en SeleniumLibrary 5.2.0\n\n    === Estrategia XPath implícita ===\n\n    Si el localizador comienza con ``//`` o varios paréntesis de apertura delante\n    del ``//``, el localizador se considera una expresión XPath. En otros\n    palabras, usar ``//div`` es equivalente a usar ``xpath://div`` explícito y\n    ``((//div))`` equivale a usar ``xpath:((//div))`` explícito\n\n    Ejemplos:\n\n    | `Hacer Clic En Elemento` | //div[@id=\"foo\"]//h1 |\n    | `Hacer Clic En Elemento` | (//div)[2] |\n\n    La compatibilidad con el prefijo ``(//`` es nueva en SeleniumLibrary 3.0.\n    La compatibilidad con múltiples paréntesis de apertura es una novedad en SeleniumLibrary 5.0.\n\n    === Encadenamiento de localizadores ===\n\n    Es posible encadenar varios localizadores como un solo localizador. Cada localizador encadenado debe comenzar con localizador\n    estrategia. Los localizadores encadenados deben estar separados por un solo espacio, dos caracteres mayores que y seguidos de\n    espacio. También es posible combinar diferentes estrategias de localización, por ejemplo css o xpath. También se puede hacer una lista\n    Se utiliza para especificar múltiples localizadores. Esto es útil, ya que alguna parte del localizador coincidiría con el separador del localizador.\n    Pero no debería ser así. O si es necesario existir WebElement como localizador.\n\n    Aunque todos los localizadores admiten el encadenamiento, algunas estrategias de localizador no obedecen al encadenamiento. Esto es porque\n    Algunas estrategias de localización utilizan JavaScript para buscar elementos y JavaScript se ejecuta para todo el contexto del navegador.\n    Y no para que el elemento encontrado sea el localizador anterior. El encadenamiento se apoya en estrategias de localización que\n    se basan en la API de Selenium, como `xpath` o `css`, pero el encadenamiento de ejemplos no es compatible con `sizzle` o `jquery`.\n\n    Ejemplos:\n    | `Hacer Clic En Elemento` | css:.bar >> xpath://a | # Encontrar un enlace presente después de un elemento con clase \"bar\" |\n\n    Ejemplos con lista:\n    | ${locator_list} =             | `Create List`   | css:div#div_id            | xpath://*[text(), \" >> \"] |\n    | `La Pagina Debe Contener El Elemento` | ${locator_list} |                           |                           |\n    | ${element} =                  | `Obtener Webelement`  | xpath://*[text(), \" >> \"] |                           |\n    | ${locator_list} =             | `Create List`   | css:div#div_id            | ${element}                |\n    | `La Pagina Debe Contener El Elemento` | ${locator_list} |                           |                           |\n\n    El encadenamiento de localizadores es nuevo en SeleniumLibrary 5.0\n\n    == Usando elementos web ==\n\n    Además de especificar un localizador como una cadena, es posible utilizar\n    objetos WebElement de Selenium. Esto requiere primero obtener un WebElement,\n    por ejemplo, utilizando la palabra clave `Obtener Webelement`.\n\n    | ${elem} =            | `Obtener Webelement`    | id:example |\n    | `Hacer Clic En Elemento` | ${elem}            |            |\n\n    == Localizadores personalizados ==\n\n    Si se requieren búsquedas más complejas que las que se proporcionan a través del\n    Localizadores predeterminados, se pueden crear estrategias de búsqueda personalizadas. Usando personalizado\n    localizadores es un proceso de dos partes. Primero, cree una palabra clave que devuelva\n    un WebElement sobre el que se debe actuar:\n\n    | Estrategia de localización personalizada | [Argumentos] | ${browser} | ${locator} | ${tag} | ${constraints} |\n    |   | ${element}= | `Ejecutar Javascript` | return window.document.getElementById('${locator}'); |\n    |   | RETURN | ${element} |\n\n    Esta palabra clave es una reimplementación de la funcionalidad básica del\n    ``id`` localizador donde ``${browser}`` es una referencia a un WebDriver\n    instancia y ``${locator}`` es el nombre de la estrategia del localizador. Para usar\n    este localizador, primero debe registrarse utilizando el\n    Palabra clave `Agregar Estrategia De Localizacion`:\n\n    | `Agregar Estrategia De Localizacion` | personalizado | Estrategia de localización personalizada |\n\n    El primer argumento de `Agregar Estrategia De Localizacion` especifica el nombre de\n    la estrategia y debe ser única. Después de registrar la estrategia,\n    el uso es el mismo que con otros localizadores:\n\n    | `Hacer Clic En Elemento` | personalizado:ejemplo |\n\n    Consulte la palabra clave `Agregar Estrategia De Localizacion` para obtener más detalles.\n\n    = Navegador y ventana =\n\n    Hay un significado conceptual diferente cuando SeleniumLibrary habla\n    sobre Windows o navegadores. Este capítulo explica esas diferencias.\n\n    == Navegador ==\n\n    Cuando se llama a la palabra clave `Abrir Navegador` o `Crear Webdriver`,\n    creará una nueva instancia de Selenium WebDriver utilizando el\n    [https://www.seleniumhq.org/docs/03_webdriver.jsp|Selenium WebDriver]\n    API. En términos de SeleniumLibrary, se crea un nuevo navegador. Es posible iniciar varios navegadores independientes (Selenium Webdriver).\n    Instancias) al mismo tiempo, llamando a `Abrir Navegador` o\n    `Crear Webdriver` varias veces. Estos navegadores suelen ser\n    independientes entre sí y no comparten datos como cookies,\n    sesiones o perfiles. Normalmente, cuando se inicia el navegador,\n    crea una única ventana que se muestra al usuario.\n\n    == Ventana ==\n\n    Windows es la parte de un navegador que carga el sitio web y presenta\n    al usuario. Todo el contenido del sitio es el contenido de la ventana.\n    Windows son hijos de un navegador. En el navegador SeleniumLibrary hay un\n    sinónimo de instancia de WebDriver. Un navegador puede tener múltiples\n    ventanas. Las ventanas pueden aparecer como pestañas, ventanas separadas o ventanas emergentes con\n    diferente posición y tamaño. Windows perteneciente al mismo navegador\n    normalmente comparten los detalles de las sesiones, como cookies. Si es necesario separar los detalles de las sesiones, por ejemplo, iniciar sesión con dos sesiones diferentes.\n    Usuarios, se deben crear dos navegadores (instancias de Selenium WebDriver).\n    Se pueden abrir nuevas ventanas, por ejemplo, mediante la aplicación bajo prueba o\n    por ejemplo la palabra clave `Ejecutar Javascript`:\n\n    | `Ejecutar Javascript` window.open() # Abre una nueva ventana con la ubicación about:blank\n\n    El siguiente ejemplo abre varios navegadores y ventanas,\n    para demostrar cómo se pueden utilizar las diferentes palabras clave para interactuar\n    con navegadores y ventanas adjuntas a estos navegadores.\n\n    Estructura:\n    | NavegadorA\n    |            Ventana 1 (location=https://robotframework.org/)\n    |            Ventana 2 (location=https://robocon.io/)\n    |            Ventana 3 (location=https://github.com/robotframework/)\n    |\n    | NavegadorB\n    |            Ventana 1 (location=https://github.com/)\n\n    Ejemplo:\n    | `Abrir Navegador` | https://robotframework.org | ${BROWSER} | alias=BrowserA | # Se abre el navegador A con la primera ventana.                                       |\n    | `Ejecutar Javascript` | window.open() |                  |                  | # En el navegador se abre una segunda ventana.                                        |\n    | `Cambiar Ventana` | locator=NEW |                  |                  | # Cambiado a la segunda ventana en BrowserA |\n    | `Ir A` | https://robocon.io |                  |                  | # La segunda ventana navega al sitio de robocon.                                    |\n    | `Ejecutar Javascript` | window.open() |                  |                  | # En el navegador se abre una tercera ventana.                                         |\n    | ${handle} | `Cambiar Ventana` | locator=NEW |                  | # Cambiado a la tercera ventana en BrowserA |\n    | `Ir A` | https://github.com/robotframework/ |                  |                  | # La tercera ventana va al sitio github del frame del robot.                          |\n    | `Abrir Navegador` | https://github.com | ${BROWSER} | alias=BrowserB | # Se abre el navegador B con las primeras ventanas.                                      |\n    | ${location} | `Obtener Ubicacion` |                  |                  | # ${location} es: https://www.github.com |\n    | `Cambiar Ventana` | ${handle} | browser=BrowserA |                  | # NavegadorSe selecciona una segunda ventana.                                        |\n    | ${location} | `Obtener Ubicacion` |                  |                  | # ${location} = https://robocon.io/ |\n    | @{locations 1} | `Obtener Ubicaciones` |                  |                  | # De forma predeterminada, enumera las ubicaciones en el navegador actualmente activo (NavegadorA).   |\n    | @{locations 2} | `Obtener Ubicaciones` |  browser=ALL |                  | # Al utilizar la palabra clave del argumento browser=ALL, se enumeran todas las ubicaciones de todos los navegadores. |\n\n    El ejemplo anterior, @{locations 1} contiene los siguientes elementos:\n    https://robotframework.org/, https://robocon.io/ y\n    https://github.com/robotframework/'. El @{locations 2}\n    contiene los siguientes elementos: https://robotframework.org/,\n    https://robocon.io/, https://github.com/robotframework/'\n    y 'https://github.com/.\n\n    = Opciones de navegador y controlador y clase de servicio =\n\n    Esta sección habla sobre cómo configurar el navegador o\n    el controlador usando las opciones y argumentos de servicio del `Abrir\n    Palabra clave del navegador.\n\n    == Configurar el navegador usando las Opciones de Selenium ==\n\n    Como se indica en la documentación de palabras clave para `Abrir Navegador`, su\n    El argumento ``options`` acepta opciones de Selenium en dos diferentes\n    formatos: como una cadena y como un objeto Python que es una instancia de\n    la clase de opciones de Selenium.\n\n    === Opciones de formato de cadena ===\n\n    El formato de cadena permite definir métodos de opciones de Selenium.\n    O atributos y sus argumentos en los datos de prueba de Robot Framework.\n    Los nombres de métodos y atributos distinguen entre mayúsculas y minúsculas y\n    debe coincidir con los nombres de atributos y métodos de opciones de Selenium.\n    Al definir un método, debe definirse de manera similar a como en\n    Python: nombre del método, paréntesis de apertura, cero a muchos argumentos\n    y paréntesis de cierre. Si es necesario definir varios\n    argumentos para un solo método, los argumentos deben estar separados con\n    coma, como en Python. Ejemplo: `add_argument(\"--headless\")`\n    o `add_experimental_option(\"clave\", \"valor\")`. Los atributos son\n    definido de manera similar a Python: nombre de atributo, signo igual,\n    y valor del atributo. Ejemplo, \"headless=True\". Múltiples métodos\n    y los atributos deben estar separados por un punto y coma. Ejemplo:\n    `add_argument(\"--headless\");add_argument(\"--start-maximized\")`.\n\n    Los argumentos permiten definir tipos de datos de Python y los argumentos son\n    evaluado usando Python\n    [https://docs.python.org/3/library/ast.html#ast.literal_eval|ast.literal_eval].\n    Las cadenas deben estar entre comillas simples o dobles, por ejemplo \"valor\"\n    o 'valor'. También es posible definir otras funciones integradas de Python.\n    Tipos de datos, por ejemplo \"True\" o \"None\", sin utilizar comillas\n    en torno a los argumentos.\n\n    El formato de cadena es compatible con el espacio. Por lo general, los espacios no se modifican.\n    Los métodos o atributos definitorios. Hay dos excepciones.\n    En algunos formatos de datos de prueba de Robot Framework, se utilizan dos o más espacios.\n    Considerado como separador de celdas y en lugar de definir un solo\n    argumento, se pueden definir dos o más argumentos. Espacios en cadena\n    Los argumentos no se eliminan y se dejan como están. Ejemplo\n    `add_argument (\"--headless\")` es lo mismo que\n    `add_argument(\"--headless\")`. Pero `add_argument(\" --headless \")` es\n    no es lo mismo que `add_argument (\"--headless\")`, porque\n    Los espacios dentro de las comillas no se eliminan. Tenga en cuenta que si\n    La cadena de opciones contiene una barra invertida, por ejemplo, una ruta del sistema operativo Windows.\n    La barra invertida debe escapar tanto en los datos de Robot Framework como en\n    en el lado de Python. Esto significa que se debe escribir una sola barra invertida usando\n    cuatro caracteres de barra invertida. Ejemplo, ruta de Windows:\n    \"C:\\path\\to\\profile\" debe escribirse como\n    \"C:\\\\\\\\path\\\\\\to\\\\\\\\profile\". Otra forma de escribir\n    barra invertida es usar Python\n    [https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals|cadenas crudas]\n    y por ejemplo escriba: r\"C:\\\\path\\\\to\\\\profile\".\n\n    === Opciones de Selenium como clase Python ===\n\n    Como último formato, el argumento ``options`` también admite la recepción\n    las opciones de Selenium como instancia de clase Python. En este caso, el\n    La instancia se usa tal cual y SeleniumLibrary no convertirá\n    la instancia a otros formatos.\n    Por ejemplo, si el siguiente valor de retorno del código se guarda en\n    Variable `${options}` en los datos de Robot Framework:\n    | options = webdriver.ChromeOptions()\n    | options.add_argument('--disable-dev-shm-usage')\n    | options de devolución\n\n    Entonces la variable `${options}` se puede usar como argumento para\n    ``options``.\n\n    Por ejemplo, el argumento ``options`` se puede utilizar para iniciar un programa basado en Chomium.\n    Aplicaciones que utilizan el\n    [https://bitbucket.org/chromiumembedded/cef/wiki/UsingChromeDriver|Chrome Embedded Framework]\n    . Para iniciar una aplicación basada en Chromium, use ``options`` para definir\n    atributo `binary_location` y utilice el método `add_argument` para definir\n    Puerto `remote-debugging-port` para la aplicación. Una vez que el navegador\n    se abre, la prueba puede interactuar con el contenido web incrustado de\n    el sistema bajo prueba.\n\n    == Configurar el controlador usando la clase de Servicio ==\n\n    Con el argumento ``service``, se puede instalar y configurar el controlador. Por ejemplo\n    se puede establecer la ubicación del controlador y/el puerto o especificar los argumentos de la línea de comando. También hay varios atributos específicos del navegador relacionados con el registro. Para los diversos\n    Los atributos de clase de servicio se refieren a\n    [https://www.selenium.dev/documentation/webdriver/drivers/service/|la documentación de Selenium]\n    . Actualmente, el argumento ``service`` solo acepta el servicio Selenium en formato de cadena.\n\n    === Formato de cadena de servicio ===\n\n    El formato de cadena permite definir atributos del servicio Selenium.\n    Y sus valores en la palabra clave `Abrir Navegador`. Los nombres de los atributos.\n    Distinguen entre mayúsculas y minúsculas y deben coincidir con los atributos de Selenium\n    nombres. Los atributos se definen de forma similar a Python: atributo\n    nombre, signo igual y valor de atributo. Ejemplo, \"puerto = 1234\". Múltiple\n    Los atributos deben estar separados por un punto y coma. Ejemplo:\n    `executable_path='/path/to/driver';port=1234`. No tener duplicado\n    atributos, como `service_args=['--append-log', '--readable-timestamp']; service_args=['--log-level=DEBUG']` ya que el segundo anulará el primero.\n    En lugar de eso, combínalos como en\n    `service_args=['--append-log', '--readable-timestamp', '--log-level=DEBUG']`\n\n    Los argumentos permiten definir tipos de datos de Python y los argumentos son\n    evaluado usando Python. Las cadenas deben estar entrecomilladas con una sola\n    o comillas dobles, ejemplo \"valor\" o 'valor'\n\n    = Tiempos de espera, esperas y retrasos =\n\n    Esta sección analiza diferentes formas de esperar a que los elementos\n    aparecen en páginas web y, de lo contrario, ralentizar la velocidad de ejecución.\n    También explica el `formato de hora` que se puede utilizar al configurar varios\n    tiempos de espera, esperas y retrasos.\n\n    == Tiempo de espera ==\n\n    SeleniumLibrary contiene varias palabras clave que tienen una opción\n    ``timeout`` argumento que especifica cuánto tiempo deben durar estas palabras clave\n    esperar ciertos eventos o acciones. Estas palabras clave incluyen, por ejemplo,\n    ``Wait ...`` palabras clave y palabras clave relacionadas con alertas. Además\n    `Ejecutar Javascript Asincrono`. Aunque no tiene ``timeout``,\n    argumento, utiliza un tiempo de espera para definir cuánto tiempo JavaScript asíncrono\n    puede correr.\n\n    El tiempo de espera predeterminado que utilizan estas palabras clave se puede establecer globalmente mediante\n    usando la palabra clave `Establecer Tiempo De Espera De Selenium` o con el argumento ``timeout``\n    al `importar` la biblioteca. Si no se establece un tiempo de espera predeterminado globalmente, el\n    El valor predeterminado es 5 segundos. Si se especifica `None` para el argumento de tiempo de espera en el\n    palabras clave, se utiliza el valor predeterminado. Consulte el `formato de hora` a continuación para conocer la sintaxis de tiempo de espera admitida.\n\n    == Espera implícita ==\n\n    La espera implícita especifica el tiempo máximo de espera de Selenium cuando\n    buscando elementos. Se puede configurar usando `Establecer Espera Implicita De Selenium` o con el argumento ``implicit_wait`` al `importar`\n    la biblioteca. Ver [https://www.seleniumhq.org/docs/04_webdriver_advanced.jsp|\n    Documentación de Selenium] para obtener más información sobre esta funcionalidad.\n\n    Consulte el `formato de hora` a continuación para conocer la sintaxis admitida.\n\n    == Carga de página ==\n    El tiempo de espera de carga de la página es la cantidad de tiempo que se espera hasta que se complete la carga de la página.\n    Hasta que se genere una excepción de tiempo de espera.\n\n    El tiempo de espera de carga de página predeterminado se puede configurar globalmente\n    al `importar` la biblioteca con el argumento ``page_load_timeout``\n    o utilizando la palabra clave `Establecer Tiempo De Espera De Carga De Pagina De Selenium`.\n\n    Consulte `formato de hora` a continuación para conocer la sintaxis de tiempo de espera admitida.\n\n    La compatibilidad con la carga de páginas es nueva en SeleniumLibrary 6.1\n\n    == Velocidad de Selenium ==\n\n    La velocidad de ejecución de Selenium se puede reducir globalmente usando la palabra clave `Establecer Velocidad De Selenium`. Esta funcionalidad está diseñada para fines de demostración o depuración. Usarla para asegurarse de que los elementos aparezcan en una página no es una buena idea. En su lugar se deben usar los tiempos de espera y esperas explicados anteriormente.\n\n    Consulte `formato de hora` a continuación para conocer la sintaxis admitida.\n\n    == Formato de hora ==\n\n    Todos los tiempos de espera y esperas se pueden dar como números considerados segundos.\n    (por ejemplo, ``0.5`` o ``42``) o en la sintaxis de tiempo de Robot Framework\n    (por ejemplo, ``1.5 seconds`` o ``1 min 30 s``). Para más información sobre\n    la sintaxis de tiempo ver el\n    [http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#time-format|Guía del usuario de Robot Framework].\n\n    = Funcionalidad de ejecución en caso de falla =\n\n    SeleniumLibrary tiene una característica útil que puede ejecutar automáticamente\n    una palabra clave si alguna de sus propias palabras clave falla. Por defecto, utiliza el\n    Palabra clave `Capturar Pantalla De La Pagina`, pero esto se puede cambiar mediante\n    usando la palabra clave `Definir La Palabra Clave A Ejecutar En Caso De Fallo` o con la\n    ``run_on_failure`` argumento al `importar` la biblioteca. Es posible utilizar cualquier palabra clave de cualquier biblioteca o archivo de recursos importado.\n\n    La funcionalidad de ejecución en caso de error se puede desactivar mediante el uso de un valor especial\n    ``NOTHING`` o cualquier cosa considerada falsa (ver `Argumentos booleanos`)\n    como ``NONE``.\n\n    = Argumentos booleanos =\n\n    A partir de 5.0, SeleniumLibrary se basa en Robot Framework para realizar la\n    conversión booleana basada en argumentos de palabras clave [https://docs.python.org/3/library/typing.html|type hints].\n    Más detalles en Robot Framework\n    [http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#supported-conversions|guía de usuario]\n\n    Tenga en cuenta que SeleniumLibrary 3 y 4 tenían sus propios métodos personalizados para convertir\n    argumentos para valores booleanos.\n\n    = EventFiringWebDriver =\n\n    SeleniumLibrary ofrece soporte para\n    [https://www.selenium.dev/selenium/docs/api/py/selenium_webdriver_support/selenium.webdriver.support.event_firing_webdriver.html#module-selenium.webdriver.support.event_firing_webdriver|EventFiringWebDriver].\n    Ver Selenium y SeleniumLibrary\n    [https://github.com/robotframework/SeleniumLibrary/blob/master/docs/extending/extending.rst#EventFiringWebDriver|Soporte de EventFiringWebDriver]\n    documentación para más detalles.\n\n    EventFiringWebDriver es nuevo en SeleniumLibrary 4.0\n\n    = Soporte de hilo =\n\n    SeleniumLibrary no es seguro para subprocesos. Esto se debe principalmente a que el subyacente\n    [https://github.com/SeleniumHQ/selenium/wiki/Frequently-Asked-Questions#q-is-webdriver-thread-safe|\n    La herramienta Selenium no es segura para subprocesos] dentro de una instancia de navegador/controlador.\n    Debido a la limitación en el lado de Selenium, las palabras clave o el\n    La API proporcionada por SeleniumLibrary no es segura para subprocesos.\n\n    = Complementos =\n\n    SeleniumLibrary ofrece complementos como una forma de modificar y agregar palabras clave de la biblioteca y modificar algunos de los elementos internos.\n    Funcionalidad sin crear una nueva biblioteca o modificar el código fuente. Ver\n    [https://github.com/robotframework/SeleniumLibrary/blob/master/docs/extending/extending.rst#Plugins|API de complemento]\n    documentación para más detalles.\n\n    La API del complemento es la nueva SeleniumLibrary 4.0\n\n    = Idioma =\n\n    SeleniumLibrary permite traducir los nombres de las palabras clave y su documentación\n    a otro idioma. Si se define un idioma, SeleniumLibrary busca en la\n    [https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#module-search-path | ruta de búsqueda del módulo]\n    paquetes de Python cuyo nombre comienza con ``robotframework-seleniumlibrary-translation``,\n    usando la\n    [https://packaging.python.org/en/latest/guides/creating-and-discovering-plugins/ | API de plugins de Python].\n    La biblioteca usa esta convención de nombres para descubrir los plugins de traducción.\n\n    El paquete debe implementar una única API: ``get_language``, sin argumentos. El método debe\n    devolver un diccionario con dos claves: ``language`` y ``path``. El valor de ``language``\n    indica el idioma que proporciona el paquete y debe coincidir (sin distinguir mayúsculas/minúsculas)\n    con el parámetro de importación ``language`` de la biblioteca. El valor de ``path`` debe ser\n    la ruta completa al archivo de traducción.\n\n= Archivo de traducción =\n\n    El nombre o la extensión del archivo no son importantes, pero el contenido debe estar en formato\n    [https://www.json.org/json-en.html | JSON]. Las claves del JSON son los nombres de los métodos\n    (no los nombres de las palabras clave) que implementan las palabras clave. El valor de cada clave\n    es un objeto JSON con dos campos: ``name`` y ``doc``. ``name`` contiene el nombre traducido de la\n    palabra clave y ``doc`` la documentación traducida. Ambos son opcionales: el archivo puede\n    traducir solo nombres, solo documentación, o ambos. Aun así, se recomienda proporcionar\n    siempre ambos.\n\n= Generando archivo de traducción de plantilla =\n\n    El archivo de plantilla de traducción (en inglés) se puede crear con:\n\n    `selib translation /path/to/translation.json`\n\n    El comando no traduce a otros idiomas: solo genera la lista completa de palabras clave y su\n    documentación en el formato correcto. También se pueden incluir palabras clave de plugins de la\n    biblioteca con ``--plugins``. Ejemplo:\n\n    `selib translation --plugins myplugin.SomePlugin /path/to/translation.json`\n\n    El JSON generado incluye la clave ``sha256`` con la suma sha256 de la documentación de la\n    palabra clave. Si cambia la documentación, la suma cambia y se puede detectar qué partes de la\n    traducción hay que actualizar.\n",
-        "sha256": "b77fc68197a3e1c8690947216bd9568fc5e39a9486b89625deb3bcf53ac8412c"
+        "sha256": "9913183e163b9f441939ae0588db21597378bbbd90039f14e87ea00a2ebd2b05"
     }
 }
